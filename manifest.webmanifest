@@ -1,0 +1,16 @@
+{
+  "name": "Bloom: women's exercise library",
+  "short_name": "Bloom",
+  "description": "Equipment-free strength, bone health, balance, mobility and pelvic floor training for women, in English and Arabic. Works offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf5fa",
+  "theme_color": "#fdf5fa",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
