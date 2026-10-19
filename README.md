@@ -37,7 +37,7 @@ All progress, favourites and saved routines stay on the device; nothing is sent 
 
 ## Updating the app
 
-Replace `index.html`, then bump the cache version in `sw.js` (currently `bloom-v2` → `bloom-v3`) so installed copies pick up the change.
+Replace `index.html`, then bump the cache version in `sw.js` (currently `bloom-v3` → `bloom-v4`) so installed copies pick up the change.
 
 ## Disclaimer
 
