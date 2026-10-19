@@ -1,5 +1,5 @@
 // Bloom offline cache. Bump the version when index.html changes.
-const CACHE = "bloom-v1";
+const CACHE = "bloom-v2";
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png"];
 const FONT_HOSTS = ["fonts.googleapis.com", "fonts.gstatic.com"];
 

@@ -460,6 +460,210 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
   .panel,.day,.why,.pfcard,.pf-rt{break-inside:avoid;box-shadow:none}
   .pf-coach{display:block}.pf-left{max-width:420px}
 }
+
+/* ===== plans experience ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--link);text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:3px;cursor:pointer}
+.btn.danger{color:var(--red);border-color:var(--red)}
+.btn.go{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.px-wrap{scroll-margin-top:130px}
+.px-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:8px 0 10px;padding-bottom:2px}
+.px-tabs::-webkit-scrollbar{display:none}
+.px-tabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;min-height:40px}
+.px-tabs button[aria-selected="true"]{background:var(--grad);color:#fff;border-color:transparent}
+.px-tabs .ct{font-weight:600;opacity:.7;margin-left:6px}
+.px-list{display:flex;gap:10px;overflow-x:auto;padding:3px 3px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.px-card{flex:0 0 auto;width:min(250px,74vw);scroll-snap-align:start;text-align:start;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:12px;cursor:pointer;color:var(--text);display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;align-items:start;font:inherit}
+.px-card:hover{border-color:var(--faint)}
+.px-card[aria-current="true"]{border-color:var(--pink);box-shadow:0 0 0 2px var(--pink) inset,0 0 0 4px var(--accent-soft)}
+.px-card .bx-kit{grid-row:span 2}
+.px-card b{font-size:15px;line-height:1.25}
+.px-card small{color:var(--muted);font-size:12.5px;grid-column:2/4;line-height:1.35}
+.px-card .pstar{color:var(--star);font-size:18px;line-height:1}
+.px-empty{padding:14px 16px;border:1px dashed var(--line);border-radius:var(--radius);color:var(--muted);font-size:14.5px;width:100%;background:var(--surface)}
+.px-log{list-style:none;margin:0;padding:0;display:grid;gap:8px;width:100%}
+.px-log li{display:grid;gap:2px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.px-log span{font-size:14px}.px-log small{color:var(--muted);font-size:12.5px}
+.px-head{display:flex;gap:14px;align-items:flex-start;margin:12px 0 4px}
+.px-head h3{font-family:var(--display);font-size:30px;font-weight:700;line-height:1.1;margin:6px 0 8px;overflow-wrap:anywhere}
+.px-ht{flex:1;min-width:0}
+.px-badges,.px-tags{display:flex;flex-wrap:wrap;gap:6px}
+.px-tags:empty{display:none}
+.px-badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:750;padding:2px 9px;border-radius:999px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.px-badge.cust{background:var(--accent-soft);color:var(--link)}
+.px-badge.mod,.px-badge.sw{background:var(--yellow-soft);color:var(--text)}
+.px-badge.pv{background:var(--grad);color:#fff}
+.px-badge.td{background:var(--vio-soft);color:var(--vio-ink)}
+.px-meta,.px-meta2{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.px-meta2{margin-top:5px}
+.px-star{flex:0 0 auto;width:48px;height:48px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:24px;line-height:1;cursor:pointer;color:var(--faint)}
+.px-star[aria-pressed="true"]{color:var(--star);border-color:var(--star);background:var(--yellow-soft)}
+.px-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.px-printonly{display:none}
+.px-dayact{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:4px 0 10px}
+.px-swc{color:var(--text);font-weight:700}
+/* slot */
+.exrow.slot{grid-template-columns:34px minmax(0,1fr);gap:4px 10px;position:relative;outline:none}
+.exrow.slot>.check{grid-row:1;align-self:start}
+.px-swipe{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:10px;touch-action:pan-y;transition:transform .18s ease;user-select:none;-webkit-user-select:none}
+.px-swipe .exthumb{grid-column:2;grid-row:1;width:104px;align-self:start}
+.px-top{min-width:0;grid-column:1;grid-row:1}
+.px-rest{grid-column:1/-1;min-width:0}
+.px-rest:empty{display:none}
+.px-eq{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.px-mus{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.35}
+.px-ctl{grid-column:2;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px}
+.px-nav{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:22px;line-height:1;font-weight:700;cursor:pointer;color:var(--text);display:inline-grid;place-items:center;padding:0 0 3px}
+.px-nav:hover{background:var(--surface-2)}
+.px-ctl .btn.sm{min-height:40px}
+.px-rep span{font-size:16px}
+.exrow.slot.pv{background:var(--accent-soft);border-radius:12px;box-shadow:0 0 0 2px var(--accent) inset;padding-left:8px;padding-right:8px;border-top-color:transparent}
+.exrow.slot.swapped .exthumb{border-color:var(--yellow)}
+.exrow.slot:focus-visible{box-shadow:0 0 0 2px var(--accent) inset;border-radius:12px}
+.px-diff{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.px-diff span{font-size:12.5px;line-height:1.35;padding:3px 8px;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
+.px-diff .w{background:var(--yellow-soft);border-color:var(--yellow)}
+.px-why{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.35}
+.px-adj{font-size:13.5px;background:var(--yellow-soft);border-radius:8px;padding:6px 10px;margin-top:7px;line-height:1.4}
+.px-was{font-size:13.5px;color:var(--muted);margin-top:6px}
+.px-hid{font-style:italic}
+@media(max-width:380px){.px-swipe{grid-template-columns:minmax(0,1fr) 80px}.px-swipe .exthumb{width:80px}}
+/* picker */
+.px-sheet .sheet-b{padding-bottom:12px}
+.px-cmp{display:grid;grid-template-columns:1fr 26px 1fr;gap:6px;align-items:stretch;margin:12px 0}
+.px-cmp .c{border:1px solid var(--line);border-radius:12px;padding:8px;background:var(--bg);text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+.px-cmp .c.on{border:2px solid var(--accent);padding:7px}
+.px-cmp .c.empty{justify-content:center;border-style:dashed}
+.px-cmp .c svg{display:block;width:100%;height:auto;max-height:110px}
+.px-cmp b{font-size:14px;line-height:1.25}
+.px-arr{display:grid;place-items:center;font-size:20px;color:var(--muted)}
+.px-filt{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.px-filt>button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:650;font-size:14px;cursor:pointer;color:var(--muted);min-height:38px}
+.px-filt>button[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
+.px-filt select{min-height:38px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:4px 10px;font:inherit;font-size:14px}
+.px-tog{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:650;color:var(--muted);min-height:38px;cursor:pointer;padding:0 4px}
+.px-tog input{width:18px;height:18px;accent-color:var(--accent)}
+.px-grid{display:grid;gap:8px}
+@media(min-width:640px){.px-grid{grid-template-columns:1fr 1fr}}
+.px-grp{grid-column:1/-1;font-weight:750;font-size:13.5px;color:var(--muted);margin:8px 0 0;list-style:none}
+.px-alt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;display:flex;flex-direction:column;gap:2px}
+.px-alt.on{border:2px solid var(--accent);padding:7px;background:var(--accent-soft)}
+.px-pick{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;align-items:start;background:none;border:0;padding:0;text-align:start;color:var(--text);font:inherit;cursor:pointer;width:100%}
+.px-pick:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.px-at{display:block;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.px-at svg{display:block;width:100%;height:auto}
+.px-ab{display:flex;flex-direction:column;gap:3px;align-items:flex-start;min-width:0}
+.px-ab b{font-size:15px;line-height:1.25}
+.px-det{align-self:flex-start;margin-top:4px}
+.px-foot{position:sticky;bottom:0;z-index:2;display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line)}
+.px-foot .sp{flex:1}
+.px-foot #pkUse{max-width:100%;white-space:normal;text-align:center}
+/* adapt */
+.ad-lv>button{display:inline-flex}
+.ad-list{list-style:none;margin:6px 0 0;padding:0}
+.ad-row{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}
+.ad-row small{color:var(--muted)}
+.ad-row.ch .ad-t{font-weight:700}
+.ad-a{color:var(--muted)}
+.ad-w{flex-basis:100%;font-size:13px;color:var(--muted)}
+.ad-row:not(.ch) .ad-f{color:var(--muted)}
+/* name dialog */
+dialog.px-mini{border:0;border-radius:18px;padding:18px;width:min(440px,calc(100vw - 32px));background:var(--surface);color:var(--text)}
+dialog.px-mini::backdrop{background:rgba(5,15,10,.55)}
+dialog.px-mini h3{font-family:var(--display);font-size:28px;line-height:1;margin:2px 0 6px}
+dialog.px-mini input{width:100%;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:8px 12px;font:inherit}
+dialog.px-mini .btn-row{justify-content:flex-end}
+/* toast + resume */
+.px-toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:70;background:var(--text);color:var(--bg);border-radius:12px;padding:10px 10px 10px 16px;display:flex;gap:12px;align-items:center;width:max-content;max-width:calc(100vw - 32px);box-shadow:0 8px 28px rgba(0,0,0,.28);font-size:14.5px;line-height:1.35}
+.px-toast button{background:transparent;border:1px solid currentColor;color:inherit;border-radius:8px;padding:6px 12px;font-weight:750;cursor:pointer;min-height:38px;flex:0 0 auto}
+.px-resume{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:59;display:flex;flex-direction:column;align-items:flex-start;gap:0;border:0;border-radius:16px;padding:9px 16px;background:var(--grad);color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.22);max-width:calc(100vw - 110px)}
+.px-resume small{font-weight:650;font-size:12px;opacity:.85}
+/* workout mode */
+dialog.wo{border:0;padding:0;margin:0;width:100vw;height:100%;max-width:100vw;max-height:none;background:var(--bg);color:var(--text);overflow:auto;overscroll-behavior:contain}
+dialog.wo::backdrop{background:var(--bg)}
+.wo-in{display:flex;flex-direction:column;min-height:100%;max-width:880px;margin:0 auto;padding:calc(10px + env(safe-area-inset-top,0px)) 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.wo-top{display:flex;align-items:center;gap:10px}
+.wo-title{flex:1;min-width:0;font-weight:800;font-size:15px;line-height:1.25}
+.wo-title small{display:block;font-weight:600;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wo-n{font-family:var(--display);font-size:30px;font-weight:700;line-height:1}
+.wo-n small{font-size:18px;color:var(--muted)}
+.wo-bar{height:6px;border-radius:99px;background:var(--surface-2);margin:10px 0 12px;overflow:hidden}
+.wo-bar i{display:block;height:100%;background:var(--grad);transition:width .3s}
+.wo-body{flex:1;display:grid;gap:14px;align-content:start}
+@media(min-width:760px){.wo-body{grid-template-columns:1.05fr 1fr;align-items:start}}
+.wo-fig{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;touch-action:pan-y;transition:transform .18s ease}
+.wo-fig svg{display:block;width:100%;height:auto;max-height:44vh}
+.px-nofig{padding:40px;text-align:center;color:var(--muted)}
+.wo-info{display:flex;flex-direction:column;gap:6px;min-width:0}
+.wo-name{background:none;border:0;padding:0;text-align:start;font-family:var(--display);font-size:clamp(28px,7vw,40px);font-weight:700;line-height:1.1;color:var(--text);cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px}
+.wo-dose{font-family:var(--display);font-size:clamp(28px,8vw,40px);font-weight:700;line-height:1.15;margin-top:6px}
+.wo-sets{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.wo-sets button{min-width:72px;min-height:50px;border-radius:12px;border:2px solid var(--line);background:var(--surface);font-weight:800;font-size:15px;cursor:pointer;color:var(--text)}
+.wo-sets button[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#fff}
+.wo-rest{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:10px 12px;border-radius:12px;background:var(--yellow-soft);border:1px solid var(--yellow)}
+.wo-rest b{font-family:var(--display);font-size:36px;line-height:1;min-width:72px}
+.wo-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.wo-nav{position:sticky;bottom:0;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;padding:12px 0 2px;margin-top:14px;background:var(--bg);border-top:1px solid var(--line)}
+.wo-nav .btn{min-height:54px;font-size:16px}
+.wo-sum{text-align:center;padding:40px 8px;display:grid;justify-items:center;gap:8px}
+
+.wo-sum h3{font-family:var(--display);font-size:40px;line-height:1}
+@media (prefers-reduced-motion:reduce){.px-swipe,.wo-fig,.wo-bar i{transition:none}}
+@media print{.px-printonly{display:flex}.px-ctl,.px-dayact,.px-resume,.px-toast,#pxHead,.px-tabs,.px-list{display:none!important}.px-swipe{grid-template-columns:1fr 88px}}
+@media(max-width:520px){.px-head .bx-kit{display:none}.px-head h3{font-size:26px}}
+@media(min-width:760px){.px-swipe{grid-template-columns:minmax(0,1fr) 150px}.px-swipe .exthumb{width:150px}}
+
+.bx-kit{display:inline-grid;place-items:center;flex:0 0 auto;min-width:48px;height:48px;padding:0 8px;border-radius:16px;background:var(--grad);color:#fff;font-family:var(--display);font-weight:700;font-size:20px;line-height:1}
+.bx-kit.sm{min-width:36px;height:36px;border-radius:12px;font-size:15px}
+.bx-kit.lg{min-width:84px;height:84px;border-radius:28px;font-size:40px}
+.btn.td{border-color:var(--violet);color:var(--vio-ink);background:var(--vio-soft)}
+[dir="rtl"] .px-nav,[dir="rtl"] .px-arr,[dir="rtl"] .ad-a{transform:scaleX(-1)}
+.ck-banner{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;padding:12px 14px;margin:6px 0 12px;border-radius:16px;background:var(--vio-soft);border:1px solid var(--violet-2)}
+.ck-banner b{display:block;font-size:15px}.ck-banner span{font-size:14px;color:var(--text)}
+.ck-bact{display:flex;flex-wrap:wrap;gap:6px}
+/* cycle section */
+.cy-bar{position:relative;display:flex;height:46px;border-radius:14px;overflow:hidden;margin-top:12px;border:1px solid var(--line)}
+.cy-seg{display:flex;align-items:center;justify-content:center;min-width:0;padding:0 4px;font-size:12px;font-weight:800;color:#fff;text-align:center;line-height:1.1}
+.cy-seg span{overflow:hidden;text-overflow:ellipsis}
+.cy-men{background:var(--pink)}.cy-fol{background:var(--violet)}
+.cy-ovu{background:repeating-linear-gradient(135deg,#e9a23b 0 8px,#f2c27a 8px 16px);color:#3b1c41}
+.cy-lut{background:#8a6fd1}
+.cy-you{position:absolute;top:-4px;bottom:-4px;width:4px;margin-inline-start:-2px;border-radius:3px;background:var(--text);box-shadow:0 0 0 2px #fff}
+.cy-days{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
+.cy-grid{display:grid;gap:14px}
+@media(min-width:900px){.cy-grid{grid-template-columns:1.1fr 1fr;align-items:start}}
+.cy-row{display:flex;flex-wrap:wrap;gap:12px}
+.cy-f{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cy-f input{min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:8px 12px;font:inherit;max-width:100%}
+.cy-q{margin-bottom:12px}
+.cy-checks{display:grid;gap:6px}
+@media(min-width:640px){.cy-checks{grid-template-columns:1fr 1fr}}
+.cy-rf .label{color:var(--red)}
+.ck-out{border-radius:16px;padding:14px;border:1px solid var(--line);background:var(--surface)}
+.ck-tier{display:inline-block;font-weight:800;font-size:13px;padding:4px 12px;border-radius:999px;background:var(--vio-soft);color:var(--vio-ink)}
+.ck-out.t0 .ck-tier,.ck-out.t1 .ck-tier{background:var(--accent-soft);color:var(--link)}
+.ck-out.t3 .ck-tier{background:var(--yellow-soft);color:#7a4a05}
+.ck-out.t4{border-color:var(--red);background:var(--red-soft)}.ck-out.t4 .ck-tier{background:var(--red);color:#fff}
+.cy-ph summary{gap:10px}
+.cy-dot{width:14px;height:14px;border-radius:50%;background:var(--phc);flex:0 0 auto}
+.ev-lvs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.ev-lv{display:inline-block;font-size:12px;font-weight:800;padding:2px 9px;border-radius:999px;white-space:nowrap;vertical-align:baseline}
+.ev-well{background:#dff3e6;color:#17603a}.ev-maybe{background:var(--vio-soft);color:var(--vio-ink)}.ev-insuff{background:var(--surface-2);color:var(--muted)}.ev-pref{background:var(--yellow-soft);color:#7a4a05}.ev-no{background:var(--red-soft);color:var(--red)}
+.chips.adj .chip{border-style:dashed}
+.sy-grid{display:grid;gap:10px}
+@media(min-width:760px){.sy-grid{grid-template-columns:1fr 1fr}}
+.sy-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:14px}
+.sy-card h4{margin:0 0 6px}
+.sy-l{margin:6px 0}
+.sy-k{display:inline-block;font-size:12px;font-weight:800;margin-bottom:2px}
+.sy-k.good{color:var(--vio-ink)}.sy-k.bad{color:#9a5a0b}
+.ev-tbl{display:grid;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.ev-r{display:grid;grid-template-columns:1.2fr auto 1.6fr;gap:6px 14px;padding:12px 14px;border-top:1px solid var(--line);align-items:start;font-size:14.5px}
+.ev-r:first-child{border-top:0}
+.ev-h{background:var(--surface-2);font-size:13px;font-weight:800;color:var(--muted)}
+@media(max-width:700px){.ev-r{grid-template-columns:1fr}.ev-h{display:none}}
+html,body{overscroll-behavior-x:none}
 </style>
 </head>
 <body>
@@ -482,6 +686,7 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
     <a href="#find"><span data-l="en">Start</span><span data-l="ar">ابدئي</span></a>
     <a href="#library"><span data-l="en">Library</span><span data-l="ar">المكتبة</span></a>
     <a href="#routines"><span data-l="en">Routines</span><span data-l="ar">الروتينات</span></a>
+    <a href="#cycle"><span data-l="en">Cycle</span><span data-l="ar">الدورة الشهرية</span></a>
     <a href="#her"><span data-l="en">Lower body</span><span data-l="ar">الجزء السفلي</span></a>
     <a href="#pelvic"><span data-l="en">Pelvic floor</span><span data-l="ar">قاع الحوض</span></a>
     <a href="#guide"><span data-l="en">Guide &amp; safety</span><span data-l="ar">الدليل والسلامة</span></a>
@@ -510,6 +715,7 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
       <a class="pathcard" href="#library"><span class="pc-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><div><b><span data-l="en">Exercise library</span><span data-l="ar">مكتبة التمارين</span></b><span data-l="en">Search, filter and save favourites.</span><span data-l="ar">ابحثي وصفّي واحفظي المفضّلة.</span></div></a>
       <a class="pathcard" href="#routines"><span class="pc-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><div><b><span data-l="en">Routines and weekly plans</span><span data-l="ar">الروتينات والخطط الأسبوعية</span></b><span data-l="en">5 to 45 minutes, plus your own routine.</span><span data-l="ar">من 5 إلى 45 دقيقة، وروتينك الخاص.</span></div></a>
       <a class="pathcard" href="#pelvic"><span class="pc-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 12c3 4 13 4 16 0"/><path d="M9 9.5l0 3M15 9.5l0 3M7.5 11l1.5-1.5L10.5 11M13.5 11l1.5-1.5 1.5 1.5"/></svg></span><div><b><span data-l="en">Pelvic floor</span><span data-l="ar">قاع الحوض</span></b><span data-l="en">Kegels done properly, relaxation and a guided coach.</span><span data-l="ar">تمارين كيجل بالطريقة الصحيحة، والإرخاء، ومدرّب موجّه.</span></div></a>
+      <a class="pathcard" href="#cycle"><span class="pc-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3c2.2 2.8 3.3 4.9 3.3 6.4a3.3 3.3 0 0 1-6.6 0C8.7 7.9 9.8 5.8 12 3z"/></svg></span><div><b><span data-l="en">Your cycle and exercise</span><span data-l="ar">دورتك الشهرية والتمرين</span></b><small><span data-l="en">Optional check-in, phase-by-phase evidence, what helps and what to adjust.</span><span data-l="ar">تسجيل يومي اختياري، والدليل مرحلة بمرحلة، وما يساعد وما يُعدَّل.</span></small></div></a>
     </div>
     <p class="disclaimer" data-l="en">General education for adult women, not individual medical advice. If you're pregnant, recently gave birth, have osteoporosis, have fallen recently, have a medical condition, or have pain or symptoms, read the guide and safety notes and check with your doctor or physiotherapist first.</p>
     <p class="disclaimer" data-l="ar">محتوى توعوي عام للنساء البالغات، وليس استشارة طبية فردية. إن كنتِ حاملًا، أو ولدتِ حديثًا، أو لديكِ هشاشة عظام، أو سقطتِ مؤخرًا، أو لديكِ حالة طبية، أو ألم أو أعراض، فاقرئي الدليل وملاحظات السلامة وراجعي طبيبتك أو أخصائية العلاج الطبيعي أولًا.</p>
@@ -558,11 +764,12 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
     <p data-l="en">Quick routines for busy days, full sessions, example weeks for different goals, and your own routine. Tick exercises as you go and tap a rest time to start the timer.</p>
     <p data-l="ar">روتينات سريعة للأيام المزدحمة، وجلسات كاملة، وأسابيع نموذجية لأهداف مختلفة، وروتينك الخاص. ضعي علامة على التمارين أثناء التقدّم واضغطي على وقت الراحة لتشغيل المؤقّت.</p>
   </div>
-  <div class="pf-tabs no-print" id="rTabs" role="group" aria-label="Routines">
-    <button type="button" data-rtab="quick"><span data-l="en">Quick: ⁦5–15⁩ min</span><span data-l="ar">سريعة: ⁦5–15⁩ دقيقة</span></button>
-    <button type="button" data-rtab="session"><span data-l="en">Sessions: ⁦20–45⁩ min</span><span data-l="ar">جلسات: ⁦20–45⁩ دقيقة</span></button>
-    <button type="button" data-rtab="plans"><span data-l="en">Weekly plans</span><span data-l="ar">خطط أسبوعية</span></button>
-    <button type="button" data-rtab="mine"><span data-l="en">My routine</span><span data-l="ar">روتيني</span></button>
+  <div class="px-wrap" id="bxWrap">
+    <div class="px-tabs no-print" id="bxTabs" role="tablist" aria-label="Routine lists"></div>
+    <div id="bxToday" aria-live="polite"></div>
+    <div class="px-list no-print" id="bxList"></div>
+    <div id="bxHead" class="no-print" aria-live="polite"></div>
+    <div id="bxPanel"></div>
   </div>
   <div id="rBody" class="mt"></div>
   <p class="small muted mt" data-l="en">General examples, not individual prescriptions. A short routine on its own doesn't meet every weekly health target; see the guide for what a healthy week includes.</p>
@@ -570,6 +777,25 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
 </section>
 
 <!-- ===================== HER LOWER BODY ===================== -->
+<!-- ===================== CYCLE ===================== -->
+<section id="cycle" class="sec">
+  <div class="sec-head">
+    <h2><span data-l="en">Your cycle and exercise</span><span data-l="ar">دورتك الشهرية والتمرين</span></h2>
+    <p data-l="en">What the research really says about training across the menstrual cycle, an optional daily check-in that adjusts today's routine to how you feel, and the symptoms that need a doctor rather than a workout tweak.</p>
+    <p data-l="ar">ما تقوله الأبحاث فعلًا عن التمرين عبر الدورة الشهرية، وتسجيل يومي اختياري يعدّل روتين اليوم حسب شعورك، والأعراض التي تحتاج إلى طبيبة لا إلى تعديل التمرين.</p>
+  </div>
+  <div class="panel" id="cyIntro"></div>
+  <div class="cy-grid mt">
+    <div class="panel" id="cyCheck"><h3><span data-l="en">Daily check-in (optional)</span><span data-l="ar">التسجيل اليومي (اختياري)</span></h3><p class="small muted" data-l="en">Answer only what you want. Your routines stay exactly as they are unless you choose to apply today's suggestions.</p><p class="small muted" data-l="ar">أجيبي عمّا تريدين فقط. تبقى روتيناتك كما هي تمامًا إلا إذا اخترتِ تطبيق اقتراحات اليوم.</p><div id="cyQs"></div><div id="cyOut" aria-live="polite"></div></div>
+    <div class="panel"><h3 id="cyEstT"></h3><div id="cyEstF"></div><div id="cyBar"></div><div id="cyEstOut" aria-live="polite"></div></div>
+  </div>
+  <div class="sub-head"><h3 id="cyPhT"></h3></div><div class="glife" id="cyPh"></div>
+  <div class="sub-head"><h3 id="cySyT"></h3></div><div id="cySy"></div>
+  <div class="sub-head"><h3 id="cyEvT"></h3></div><div id="cyEv"></div>
+  <div class="sub-head"><h3 id="cyOtT"></h3></div><div class="glife" id="cyOt"></div>
+  <div class="flags mt" id="cySafeWrap"><h3 id="cySafeT"></h3><div id="cySafe"></div></div>
+</section>
+
 <section id="her" class="sec">
   <div class="sec-head">
     <span class="eyebrow"><span data-l="en">Part 1</span><span data-l="ar">الجزء الأول</span></span>
@@ -903,6 +1129,20 @@ table.tests input{width:72px;min-height:40px;border-radius:10px;border:1px solid
   <div class="sheet-h"><div><span class="tag acc" id="dlgCat"></span><h3 id="dlgTitle"></h3></div><button type="button" class="icon-btn" id="dlgClose" aria-label="Close">✕</button></div>
   <div class="sheet-b" id="dlgBody"></div>
 </dialog>
+<dialog class="sheet px-sheet" id="bxDlg" aria-labelledby="bxDlgT">
+  <div class="sheet-h"><div><span class="tag acc" id="bxDlgCtx"></span><h3 id="bxDlgT"></h3></div><button class="icon-btn" type="button" id="bxDlgClose" aria-label="Close">✕</button></div>
+  <div class="sheet-b"><div class="px-cmp" id="bxCmp"></div><div class="px-filt" id="bxFilt" role="group"></div><p class="small muted" id="bxMsg" aria-live="polite"></p><div class="px-grid" id="bxGrid"></div></div>
+  <div class="px-foot"><button type="button" class="btn sm ghost" id="bkRestore"></button><span class="sp"></span><button type="button" class="btn" id="bkCancel"></button><button type="button" class="btn primary" id="bkUse" disabled></button></div>
+</dialog>
+<dialog class="sheet" id="bdDlg" aria-labelledby="bdT">
+  <div class="sheet-h"><div><span class="tag acc" id="bdCtx"></span><h3 id="bdT"></h3></div><button class="icon-btn" type="button" id="bdClose" aria-label="Close">✕</button></div>
+  <div class="sheet-b"><p class="small muted" id="bdText"></p><div class="px-filt ad-lv" id="bdLv" role="group"></div><p class="small" id="bdSum" aria-live="polite"></p><ol class="ad-list" id="bdList"></ol></div>
+  <div class="px-foot"><span class="sp"></span><button type="button" class="btn" id="bdSave"></button><button type="button" class="btn primary" id="bdApply"></button></div>
+</dialog>
+<dialog class="px-mini" id="bnDlg" aria-labelledby="bnTitle"><h3 id="bnTitle"></h3><p class="small muted" id="bnText"></p><label class="label" id="bnLabel" for="bnInput"></label><input id="bnInput" maxlength="60" autocomplete="off"><div class="btn-row"><button type="button" class="btn" id="bnCancel"></button><button type="button" class="btn primary" id="bnOk"></button></div></dialog>
+<dialog class="wo" id="bwDlg" aria-label="Workout"><div class="wo-in" id="bwIn"></div></dialog>
+<button class="px-resume no-print" id="bxResume" type="button" hidden></button>
+<div class="px-toast" id="bxToast" role="status" aria-live="polite" hidden></div>
 
 <script>
 (function(){
@@ -914,7 +1154,7 @@ var HER={"intro":"2–3 days a week with a rest day between. Weeks 1–2: stop e
 var PFR={"P1":{"t":"Routine 1: Awareness and relaxation","who":"Start here if you're new to pelvic floor training, or if you have pain, painful intercourse, constipation or trouble relaxing. In that case stay here and see a pelvic health physiotherapist before adding strengthening.","freq":"Once or twice a day, about 8 minutes","prog":"Move to Routine 2 when you can feel a clear lift and a clear release, and you have no pain or symptoms of over-tightness.","days":[{"badge":"1","name":"Awareness and relaxation","focus":"Feel it, then let it go","time":"About 8 min","items":[{"ex":"pf_breath","sets":"","reps":"8 slow breaths","rest":""},{"ex":"pf_find","sets":"","reps":"5 gentle squeezes","rest":"","note":"Squeeze 2–3 s, relax at least 5 s."},{"ex":"pf_release","sets":"","reps":"8 breaths","rest":""},{"ex":"child_pose","sets":"","reps":"1–2 min","rest":""},{"ex":"happy_baby","sets":"","reps":"45–60 s","rest":""}]}]},"P2":{"t":"Routine 2: Beginner coordination and strength","who":"For people who can find the muscles easily and have no pain.","freq":"3 times a day, about 5 minutes","prog":"Move to Routine 3 after a week or more of 10 holds of 10 s lying down with full relaxation between them.","days":[{"badge":"2","name":"Beginner","focus":"Accurate squeeze, full release","time":"About 5 min","items":[{"ex":"pf_breath","sets":"","reps":"3 breaths","rest":""},{"ex":"pf_gentle","sets":"","reps":"6 squeezes, 3–5 s","rest":"","note":"About half effort."},{"ex":"pf_slow","sets":"","reps":"5–8 holds of 3–5 s","rest":"","note":"Rest at least as long as each hold; add 1 s or 1 rep each week."},{"ex":"pf_quick","sets":"","reps":"10 quick flicks","rest":""},{"ex":"pf_release","sets":"","reps":"3 breaths","rest":""}]}]},"P3":{"t":"Routine 3: Intermediate endurance and control","who":"For people who have mastered lying holds and want upright strength and coordination.","freq":"Holds 3 times a day; the movement part once a day","prog":"Move to Routine 4 when standing holds of 10 × 10 s feel solid and movements are symptom-free.","days":[{"badge":"3","name":"Intermediate","focus":"Upright holds and coordination","time":"About 12 min","items":[{"ex":"pf_seated","sets":"","reps":"10 × 10 s holds + 10 flicks","rest":""},{"ex":"pf_standing","sets":"","reps":"10 × 10 s holds + 10 flicks","rest":""},{"ex":"pf_elevator","sets":"","reps":"3–5","rest":""},{"ex":"pf_breath_coord","sets":"","reps":"8 breaths","rest":""},{"ex":"pf_bridge","sets":"2","reps":"8","rest":"45 s"},{"ex":"pf_sit_stand","sets":"2","reps":"8","rest":"45 s"},{"ex":"pf_release","sets":"","reps":"5 breaths","rest":""}]}]},"P4":{"t":"Routine 4: Advanced functional coordination","who":"Optional. For people who want to return to heavier lifting or sport and are symptom-free in Routine 3. Not everyone needs this.","freq":"Movement part 2–3 times a week; keep daily standing holds","prog":"Keep it as maintenance. Return to running or jumping gradually, only while symptom-free. A pelvic health physiotherapist can guide a return to running.","days":[{"badge":"4","name":"Advanced functional","focus":"Timing under load","time":"About 15 min","items":[{"ex":"pf_knack","sets":"","reps":"5 rehearsals","rest":""},{"ex":"pf_squat","sets":"2","reps":"10","rest":"60 s"},{"ex":"pf_lunge","sets":"2","reps":"8 per side","rest":"60 s"},{"ex":"pf_single_leg","sets":"2","reps":"6 per side","rest":"45 s"},{"ex":"pf_lift","sets":"2","reps":"6","rest":"45 s"},{"ex":"pf_walk","sets":"","reps":"3 min","rest":""},{"ex":"pf_release","sets":"","reps":"5 breaths","rest":""}]}]}};
 var PFCATS=[["all","All"],["awareness","Awareness"],["beginner","Beginner"],["intermediate","Intermediate"],["advanced","Advanced"],["relax","Relaxation and mobility"],["functional","Functional"]];
 var PFCAT_EXTRA={"relax":["deep_squat","cat_cow","ninety_ninety"]};
-var REFS=[{"id":"who2020","s":"WHO 2020","t":"World Health Organization 2020 guidelines on physical activity and sedentary behaviour","f":"Bull FC, Al-Ansari SS, Biddle S, et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med. 2020;54(24):1451–1462."},{"id":"acsm2026","s":"ACSM 2026","t":"Resistance training prescription for muscle function, hypertrophy, and physical performance in healthy adults: an overview of reviews","f":"Currier BS, D'Souza AC, Fiatarone Singh MA, et al. American College of Sports Medicine position stand. Resistance training prescription for muscle function, hypertrophy, and physical performance in healthy adults: an overview of reviews. Med Sci Sports Exerc. 2026;58(4):851–872. doi:10.1249/MSS.0000000000003897"},{"id":"momma2022","s":"Momma 2022","t":"Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases","f":"Momma H, Kawakami R, Honda T, Sawada SS. Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies. Br J Sports Med. 2022;56(13):755–763."},{"id":"leong2015","s":"Leong 2015","t":"Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study","f":"Leong DP, Teo KK, Rangarajan S, et al. Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study. Lancet. 2015;386(9990):266–273."},{"id":"schoenfeld2017b","s":"Schoenfeld 2017b","t":"Strength and hypertrophy adaptations between low- vs. high-load resistance training","f":"Schoenfeld BJ, Grgic J, Ogborn D, Krieger JW. Strength and hypertrophy adaptations between low- vs. high-load resistance training: a systematic review and meta-analysis. J Strength Cond Res. 2017;31(12):3508–3523."},{"id":"helms2016","s":"Helms 2016","t":"Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training","f":"Helms ER, Cronin J, Storey A, Zourdos MC. Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training. Strength Cond J. 2016;38(4):42–49."},{"id":"speirs2016","s":"Speirs 2016","t":"Unilateral vs. bilateral squat training for strength, sprints, and agility in academy rugby players","f":"Speirs DE, Bennett MA, Finn CV, Turner AP. Unilateral vs. bilateral squat training for strength, sprints, and agility in academy rugby players. J Strength Cond Res. 2016;30(2):386–392."},{"id":"coleman2024","s":"Coleman 2024","t":"Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations","f":"Coleman M, Burke R, Augustin F, et al. Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations. PeerJ. 2024;12:e16777."},{"id":"lauersen2014","s":"Lauersen 2014","t":"The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials","f":"Lauersen JB, Bertelsen DM, Andersen LB. The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials. Br J Sports Med. 2014;48(11):871–877."},{"id":"soligard2008","s":"Soligard 2008","t":"Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial","f":"Soligard T, Myklebust G, Steffen K, et al. Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial. BMJ. 2008;337:a2469."},{"id":"webster2018","s":"Webster 2018","t":"Meta-analysis of meta-analyses of anterior cruciate ligament injury reduction training programs","f":"Webster KE, Hewett TE. Meta-analysis of meta-analyses of anterior cruciate ligament injury reduction training programs. J Orthop Res. 2018;36(10):2696–2708."},{"id":"vanderhorst2015","s":"van der Horst 2015","t":"The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players","f":"van der Horst N, Smits DW, Petersen J, Goedhart EA, Backx FJ. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players: a randomized controlled trial. Am J Sports Med. 2015;43(6):1316–1323."},{"id":"vandyk2019","s":"van Dyk 2019","t":"Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries","f":"van Dyk N, Behan FP, Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes. Br J Sports Med. 2019;53(21):1362–1370."},{"id":"haroy2019","s":"Harøy 2019","t":"The Adductor Strengthening Programme prevents groin problems among male football players","f":"Harøy J, Clarsen B, Wiger EG, et al. The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial. Br J Sports Med. 2019;53(3):150–157."},{"id":"ishoi2016","s":"Ishøi 2016","t":"Large eccentric strength increase using the Copenhagen Adduction exercise in football","f":"Ishøi L, Sørensen CN, Kaae NM, Jørgensen LB, Hölmich P, Serner A. Large eccentric strength increase using the Copenhagen Adduction exercise in football: a randomized controlled trial. Scand J Med Sci Sports. 2016;26(11):1334–1342."},{"id":"hupperets2009","s":"Hupperets 2009","t":"Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain","f":"Hupperets MDW, Verhagen EALM, van Mechelen W. Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain: randomised controlled trial. BMJ. 2009;339:b2684."},{"id":"dill2014","s":"Dill 2014","t":"Altered knee and ankle kinematics during squatting in those with limited weight-bearing-lunge ankle-dorsiflexion range of motion","f":"Dill KE, Begalle RL, Frank BS, Zinder SM, Padua DA. Altered knee and ankle kinematics during squatting in those with limited weight-bearing-lunge ankle-dorsiflexion range of motion. J Athl Train. 2014;49(6):723–732."},{"id":"distefano2009","s":"Distefano 2009","t":"Gluteal muscle activation during common therapeutic exercises","f":"Distefano LJ, Blackburn JT, Marshall SW, Padua DA. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther. 2009;39(7):532–540."},{"id":"cools2007","s":"Cools 2007","t":"Rehabilitation of scapular muscle balance: which exercises to prescribe?","f":"Cools AM, Dewitte V, Lanszweert F, et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med. 2007;35(10):1744–1751."},{"id":"steffens2016","s":"Steffens 2016","t":"Prevention of low back pain: a systematic review and meta-analysis","f":"Steffens D, Maher CG, Pereira LS, et al. Prevention of low back pain: a systematic review and meta-analysis. JAMA Intern Med. 2016;176(2):199–208."},{"id":"mcgill2016","s":"McGill 2016","t":"Low Back Disorders: Evidence-Based Prevention and Rehabilitation","f":"McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. 3rd ed. Champaign, IL: Human Kinetics; 2016.","book":true},{"id":"afonso2021","s":"Afonso 2021","t":"Strength training versus stretching for improving range of motion: a systematic review and meta-analysis","f":"Afonso J, Ramirez-Campillo R, Moscão J, et al. Strength training versus stretching for improving range of motion: a systematic review and meta-analysis. Healthcare (Basel). 2021;9(4):427."},{"id":"gabbett2016","s":"Gabbett 2016","t":"The training-injury prevention paradox: should athletes be training smarter and harder?","f":"Gabbett TJ. The training-injury prevention paradox: should athletes be training smarter and harder? Br J Sports Med. 2016;50(5):273–280."},{"id":"silbernagel2007","s":"Silbernagel 2007","t":"Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy","f":"Silbernagel KG, Thomeé R, Eriksson BI, Karlsson J. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study. Am J Sports Med. 2007;35(6):897–906."},{"id":"gollwitzer2006","s":"Gollwitzer 2006","t":"Implementation intentions and goal achievement: a meta-analysis of effects and processes","f":"Gollwitzer PM, Sheeran P. Implementation intentions and goal achievement: a meta-analysis of effects and processes. Adv Exp Soc Psychol. 2006;38:69–119.","nopm":true},{"id":"kotarsky2018","s":"Kotarsky 2018","t":"Effect of progressive calisthenic push-up training on muscle strength and thickness","f":"Kotarsky CJ, Christensen BK, Miller JS, Hackney KJ. Effect of progressive calisthenic push-up training on muscle strength and thickness. J Strength Cond Res. 2018;32(3):651–659."},{"id":"calatayud2015","s":"Calatayud 2015","t":"Bench press and push-up at comparable levels of muscle activity results in similar strength gains","f":"Calatayud J, Borreani S, Colado JC, Martin F, Tella V, Andersen LL. Bench press and push-up at comparable levels of muscle activity results in similar strength gains. J Strength Cond Res. 2015;29(1):246–253."},{"id":"neto2020","s":"Neto 2020","t":"Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review","f":"Neto WK, Soares EG, Vieira TL, et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med. 2020;19(1):195–203."},{"id":"woodley2020","s":"Woodley 2020 (Cochrane)","t":"Pelvic floor muscle training for preventing and treating urinary and faecal incontinence in antenatal and postnatal women","f":"Woodley SJ, Lawrenson P, Boyle R, et al. Pelvic floor muscle training for preventing and treating urinary and faecal incontinence in antenatal and postnatal women. Cochrane Database Syst Rev. 2020;5:CD007471."},{"id":"hodges2007","s":"Hodges 2007","t":"Postural and respiratory functions of the pelvic floor muscles","f":"Hodges PW, Sapsford R, Pengel LHM. Postural and respiratory functions of the pelvic floor muscles. Neurourol Urodyn. 2007;26(3):362-371."},{"id":"selkowitz2013","s":"Selkowitz 2013","t":"Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes","f":"Selkowitz DM, Beneck GJ, Powers CM. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther. 2013;43(2):54–64."},{"id":"montalvo2019","s":"Montalvo 2019","t":"What's my risk of sustaining an ACL injury while playing sports? A systematic review with meta-analysis","f":"Montalvo AM, Schneider DK, Yut L, et al. “What's my risk of sustaining an ACL injury while playing sports?” A systematic review with meta-analysis. Br J Sports Med. 2019;53(16):1003–1012."},{"id":"fry2003","s":"Fry 2003","t":"Effect of knee position on hip and knee torques during the barbell squat","f":"Fry AC, Smith JC, Schilling BK. Effect of knee position on hip and knee torques during the barbell squat. J Strength Cond Res. 2003;17(4):629–633."},{"id":"roberts2020","s":"Roberts 2020","t":"Sex differences in resistance training: a systematic review and meta-analysis","f":"Roberts BM, Nuckols G, Krieger JW. Sex differences in resistance training: a systematic review and meta-analysis. J Strength Cond Res. 2020;34(5):1448–1460."},{"id":"weaver2016","s":"Weaver 2016","t":"The National Osteoporosis Foundation's position statement on peak bone mass development and lifestyle factors","f":"Weaver CM, Gordon CM, Janz KF, et al. The National Osteoporosis Foundation's position statement on peak bone mass development and lifestyle factors: a systematic review and implementation recommendations. Osteoporos Int. 2016;27(4):1281–1386."},{"id":"mcnulty2020","s":"McNulty 2020","t":"The effects of menstrual cycle phase on exercise performance in eumenorrheic women: a systematic review and meta-analysis","f":"McNulty KL, Elliott-Sale KJ, Dolan E, et al. The effects of menstrual cycle phase on exercise performance in eumenorrheic women: a systematic review and meta-analysis. Sports Med. 2020;50(10):1813–1827."},{"id":"edwards2023","s":"Edwards 2023","t":"Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials","f":"Edwards JJ, Deenmamode AHP, Griffiths M, et al. Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials. Br J Sports Med. 2023;57(20):1317–1326."},{"id":"teixeira2018","s":"Teixeira 2018","t":"Prevalence of urinary incontinence in female athletes: a systematic review with meta-analysis","f":"Teixeira RV, Colla C, Sbruzzi G, Mallmann A, Paiva LL. Prevalence of urinary incontinence in female athletes: a systematic review with meta-analysis. Int Urogynecol J. 2018;29(12):1717–1725."},{"id":"dumoulin2018","s":"Dumoulin 2018 (Cochrane)","t":"Pelvic floor muscle training versus no treatment, or inactive control treatments, for urinary incontinence in women","f":"Dumoulin C, Cacciari LP, Hay-Smith EJC. Pelvic floor muscle training versus no treatment, or inactive control treatments, for urinary incontinence in women. Cochrane Database Syst Rev. 2018;10:CD005654."},{"id":"ng123","s":"NICE NG123","t":"Urinary incontinence and pelvic organ prolapse in women: management","f":"National Institute for Health and Care Excellence. Urinary incontinence and pelvic organ prolapse in women: management (NG123). London: NICE; 2019. Recommendations 1.4.4–1.4.7.","nopm":true,"url":"https://www.nice.org.uk/guidance/ng123"},{"id":"ng210","s":"NICE NG210","t":"Pelvic floor dysfunction: prevention and non-surgical management","f":"National Institute for Health and Care Excellence. Pelvic floor dysfunction: prevention and non-surgical management (NG210). London: NICE; 2021. Section 1.3.","nopm":true,"url":"https://www.nice.org.uk/guidance/ng210"},{"id":"bump1991","s":"Bump 1991","t":"Assessment of Kegel pelvic muscle exercise performance after brief verbal instruction","f":"Bump RC, Hurt WG, Fantl JA, Wyman JF. Assessment of Kegel pelvic muscle exercise performance after brief verbal instruction. Am J Obstet Gynecol. 1991;165(2):322–329."},{"id":"miller1998","s":"Miller 1998","t":"A pelvic muscle precontraction can reduce cough-related urine loss in selected women with mild SUI","f":"Miller JM, Ashton-Miller JA, DeLancey JO. A pelvic muscle precontraction can reduce cough-related urine loss in selected women with mild SUI. J Am Geriatr Soc. 1998;46(7):870–874."},{"id":"faubion2012","s":"Faubion 2012","t":"Recognition and management of nonrelaxing pelvic floor dysfunction","f":"Faubion SS, Shuster LT, Bharucha AE. Recognition and management of nonrelaxing pelvic floor dysfunction. Mayo Clin Proc. 2012;87(2):187–193."},{"id":"uhcw2024","s":"UHCW NHS 2024","t":"Pelvic floor exercises for women","f":"University Hospitals Coventry and Warwickshire NHS Trust. Pelvic floor exercises for women. Patient information leaflet, updated October 2024.","nopm":true,"url":"https://www.uhcw.nhs.uk/download/clientfiles/files/Patient%20Information%20Leaflets/Women%20and%20Children_s/Gynaecology/Pelvic%20floor%20exercises%20for%20women.pdf"},{"id":"ros2022","s":"ROS consensus 2022","t":"Strong, steady and straight: UK consensus statement on physical activity and exercise for osteoporosis","f":"Brooke-Wavell K, Skelton DA, Barker KL, et al. Strong, steady and straight: UK consensus statement on physical activity and exercise for osteoporosis. Br J Sports Med. 2022;56(15):837–846.","url":"https://bjsm.bmj.com/content/56/15/837"},{"id":"watson2018","s":"Watson 2018 (LIFTMOR)","t":"High-Intensity Resistance and Impact Training Improves Bone Mineral Density and Physical Function in Postmenopausal Women With Osteopenia and Osteoporosis: The LIFTMOR Randomized Controlled Trial","f":"Watson SL, Weeks BK, Weis LJ, Harding AT, Horan SA, Beck BR. High-intensity resistance and impact training improves bone mineral density and physical function in postmenopausal women with osteopenia and osteoporosis: the LIFTMOR randomized controlled trial. J Bone Miner Res. 2018;33(2):211–220."},{"id":"greendale2012","s":"Greendale 2012 (SWAN)","t":"Bone mineral density loss in relation to the final menstrual period in a multiethnic cohort: results from the Study of Women's Health Across the Nation (SWAN)","f":"Greendale GA, Sowers M, Han W, et al. Bone mineral density loss in relation to the final menstrual period in a multiethnic cohort: results from the Study of Women's Health Across the Nation (SWAN). J Bone Miner Res. 2012;27(1):111–118."},{"id":"sinaki1984","s":"Sinaki 1984","t":"Postmenopausal spinal osteoporosis: flexion versus extension exercises","f":"Sinaki M, Mikkelsen BA. Postmenopausal spinal osteoporosis: flexion versus extension exercises. Arch Phys Med Rehabil. 1984;65(10):593–596."},{"id":"sherrington2019","s":"Sherrington 2019 (Cochrane)","t":"Exercise for preventing falls in older people living in the community","f":"Sherrington C, Fairhall NJ, Wallbank GK, et al. Exercise for preventing falls in older people living in the community. Cochrane Database Syst Rev. 2019;1:CD012424."},{"id":"montero2022","s":"World Falls Guidelines 2022","t":"World guidelines for falls prevention and management for older adults: a global initiative","f":"Montero-Odasso M, van der Velde N, Martin FC, et al. World guidelines for falls prevention and management for older adults: a global initiative. Age Ageing. 2022;51(9):afac205."},{"id":"reid2012","s":"Reid & Fielding 2012","t":"Skeletal muscle power: a critical determinant of physical functioning in older adults","f":"Reid KF, Fielding RA. Skeletal muscle power: a critical determinant of physical functioning in older adults. Exerc Sport Sci Rev. 2012;40(1):4–12."},{"id":"brito2014","s":"Brito 2014","t":"Ability to sit and rise from the floor as a predictor of all-cause mortality","f":"Brito LBB, Ricardo DR, Araújo DSMS, Ramos PS, Myers J, Araújo CGS. Ability to sit and rise from the floor as a predictor of all-cause mortality. Eur J Prev Cardiol. 2014;21(7):892–898."},{"id":"paluch2022","s":"Paluch 2022","t":"Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts","f":"Paluch AE, Bajpai S, Bassett DR, et al. Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts. Lancet Public Health. 2022;7(3):e219–e228."},{"id":"acog2020","s":"ACOG CO 804 (2020)","t":"Physical Activity and Exercise During Pregnancy and the Postpartum Period: ACOG Committee Opinion, Number 804","f":"American College of Obstetricians and Gynecologists. Physical activity and exercise during pregnancy and the postpartum period: ACOG Committee Opinion No. 804. Obstet Gynecol. 2020;135(4):e178–e188.","nopm":1},{"id":"mottola2018","s":"Canadian pregnancy guideline 2019","t":"2019 Canadian guideline for physical activity throughout pregnancy","f":"Mottola MF, Davenport MH, Ruchat SM, et al. 2019 Canadian guideline for physical activity throughout pregnancy. Br J Sports Med. 2018;52(21):1339–1346.","url":"https://bjsm.bmj.com/content/52/21/1339"},{"id":"goom2019","s":"Goom 2019 (return to running)","t":"Returning to running postnatal: guidelines for medical, health and fitness professionals managing this population","f":"Goom T, Donnelly G, Brockwell E. Returning to running postnatal: guidelines for medical, health and fitness professionals managing this population. 2019.","book":1},{"id":"nams2023","s":"Menopause Society 2023","t":"The 2023 nonhormone therapy position statement of The North American Menopause Society","f":"The 2023 nonhormone therapy position statement of The North American Menopause Society. Menopause. 2023;30(6):573–590."},{"id":"engelbert2017","s":"Engelbert 2017","t":"The evidence-based rationale for physical therapy treatment of children, adolescents, and adults diagnosed with joint hypermobility syndrome/hypermobile Ehlers Danlos syndrome","f":"Engelbert RHH, Juul-Kristensen B, Pacey V, et al. The evidence-based rationale for physical therapy treatment of children, adolescents, and adults diagnosed with joint hypermobility syndrome/hypermobile Ehlers Danlos syndrome. Am J Med Genet C Semin Med Genet. 2017;175(1):158–167."}];
+var REFS=[{"id":"who2020","s":"WHO 2020","t":"World Health Organization 2020 guidelines on physical activity and sedentary behaviour","f":"Bull FC, Al-Ansari SS, Biddle S, et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med. 2020;54(24):1451–1462."},{"id":"acsm2026","s":"ACSM 2026","t":"Resistance training prescription for muscle function, hypertrophy, and physical performance in healthy adults: an overview of reviews","f":"Currier BS, D'Souza AC, Fiatarone Singh MA, et al. American College of Sports Medicine position stand. Resistance training prescription for muscle function, hypertrophy, and physical performance in healthy adults: an overview of reviews. Med Sci Sports Exerc. 2026;58(4):851–872. doi:10.1249/MSS.0000000000003897"},{"id":"momma2022","s":"Momma 2022","t":"Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases","f":"Momma H, Kawakami R, Honda T, Sawada SS. Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies. Br J Sports Med. 2022;56(13):755–763."},{"id":"leong2015","s":"Leong 2015","t":"Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study","f":"Leong DP, Teo KK, Rangarajan S, et al. Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study. Lancet. 2015;386(9990):266–273."},{"id":"schoenfeld2017b","s":"Schoenfeld 2017b","t":"Strength and hypertrophy adaptations between low- vs. high-load resistance training","f":"Schoenfeld BJ, Grgic J, Ogborn D, Krieger JW. Strength and hypertrophy adaptations between low- vs. high-load resistance training: a systematic review and meta-analysis. J Strength Cond Res. 2017;31(12):3508–3523."},{"id":"helms2016","s":"Helms 2016","t":"Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training","f":"Helms ER, Cronin J, Storey A, Zourdos MC. Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training. Strength Cond J. 2016;38(4):42–49."},{"id":"speirs2016","s":"Speirs 2016","t":"Unilateral vs. bilateral squat training for strength, sprints, and agility in academy rugby players","f":"Speirs DE, Bennett MA, Finn CV, Turner AP. Unilateral vs. bilateral squat training for strength, sprints, and agility in academy rugby players. J Strength Cond Res. 2016;30(2):386–392."},{"id":"coleman2024","s":"Coleman 2024","t":"Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations","f":"Coleman M, Burke R, Augustin F, et al. Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations. PeerJ. 2024;12:e16777."},{"id":"lauersen2014","s":"Lauersen 2014","t":"The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials","f":"Lauersen JB, Bertelsen DM, Andersen LB. The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials. Br J Sports Med. 2014;48(11):871–877."},{"id":"soligard2008","s":"Soligard 2008","t":"Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial","f":"Soligard T, Myklebust G, Steffen K, et al. Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial. BMJ. 2008;337:a2469."},{"id":"webster2018","s":"Webster 2018","t":"Meta-analysis of meta-analyses of anterior cruciate ligament injury reduction training programs","f":"Webster KE, Hewett TE. Meta-analysis of meta-analyses of anterior cruciate ligament injury reduction training programs. J Orthop Res. 2018;36(10):2696–2708."},{"id":"vanderhorst2015","s":"van der Horst 2015","t":"The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players","f":"van der Horst N, Smits DW, Petersen J, Goedhart EA, Backx FJ. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players: a randomized controlled trial. Am J Sports Med. 2015;43(6):1316–1323."},{"id":"vandyk2019","s":"van Dyk 2019","t":"Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries","f":"van Dyk N, Behan FP, Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes. Br J Sports Med. 2019;53(21):1362–1370."},{"id":"haroy2019","s":"Harøy 2019","t":"The Adductor Strengthening Programme prevents groin problems among male football players","f":"Harøy J, Clarsen B, Wiger EG, et al. The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial. Br J Sports Med. 2019;53(3):150–157."},{"id":"ishoi2016","s":"Ishøi 2016","t":"Large eccentric strength increase using the Copenhagen Adduction exercise in football","f":"Ishøi L, Sørensen CN, Kaae NM, Jørgensen LB, Hölmich P, Serner A. Large eccentric strength increase using the Copenhagen Adduction exercise in football: a randomized controlled trial. Scand J Med Sci Sports. 2016;26(11):1334–1342."},{"id":"hupperets2009","s":"Hupperets 2009","t":"Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain","f":"Hupperets MDW, Verhagen EALM, van Mechelen W. Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain: randomised controlled trial. BMJ. 2009;339:b2684."},{"id":"dill2014","s":"Dill 2014","t":"Altered knee and ankle kinematics during squatting in those with limited weight-bearing-lunge ankle-dorsiflexion range of motion","f":"Dill KE, Begalle RL, Frank BS, Zinder SM, Padua DA. Altered knee and ankle kinematics during squatting in those with limited weight-bearing-lunge ankle-dorsiflexion range of motion. J Athl Train. 2014;49(6):723–732."},{"id":"distefano2009","s":"Distefano 2009","t":"Gluteal muscle activation during common therapeutic exercises","f":"Distefano LJ, Blackburn JT, Marshall SW, Padua DA. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther. 2009;39(7):532–540."},{"id":"cools2007","s":"Cools 2007","t":"Rehabilitation of scapular muscle balance: which exercises to prescribe?","f":"Cools AM, Dewitte V, Lanszweert F, et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med. 2007;35(10):1744–1751."},{"id":"steffens2016","s":"Steffens 2016","t":"Prevention of low back pain: a systematic review and meta-analysis","f":"Steffens D, Maher CG, Pereira LS, et al. Prevention of low back pain: a systematic review and meta-analysis. JAMA Intern Med. 2016;176(2):199–208."},{"id":"mcgill2016","s":"McGill 2016","t":"Low Back Disorders: Evidence-Based Prevention and Rehabilitation","f":"McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. 3rd ed. Champaign, IL: Human Kinetics; 2016.","book":true},{"id":"afonso2021","s":"Afonso 2021","t":"Strength training versus stretching for improving range of motion: a systematic review and meta-analysis","f":"Afonso J, Ramirez-Campillo R, Moscão J, et al. Strength training versus stretching for improving range of motion: a systematic review and meta-analysis. Healthcare (Basel). 2021;9(4):427."},{"id":"gabbett2016","s":"Gabbett 2016","t":"The training-injury prevention paradox: should athletes be training smarter and harder?","f":"Gabbett TJ. The training-injury prevention paradox: should athletes be training smarter and harder? Br J Sports Med. 2016;50(5):273–280."},{"id":"silbernagel2007","s":"Silbernagel 2007","t":"Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy","f":"Silbernagel KG, Thomeé R, Eriksson BI, Karlsson J. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study. Am J Sports Med. 2007;35(6):897–906."},{"id":"gollwitzer2006","s":"Gollwitzer 2006","t":"Implementation intentions and goal achievement: a meta-analysis of effects and processes","f":"Gollwitzer PM, Sheeran P. Implementation intentions and goal achievement: a meta-analysis of effects and processes. Adv Exp Soc Psychol. 2006;38:69–119.","nopm":true},{"id":"kotarsky2018","s":"Kotarsky 2018","t":"Effect of progressive calisthenic push-up training on muscle strength and thickness","f":"Kotarsky CJ, Christensen BK, Miller JS, Hackney KJ. Effect of progressive calisthenic push-up training on muscle strength and thickness. J Strength Cond Res. 2018;32(3):651–659."},{"id":"calatayud2015","s":"Calatayud 2015","t":"Bench press and push-up at comparable levels of muscle activity results in similar strength gains","f":"Calatayud J, Borreani S, Colado JC, Martin F, Tella V, Andersen LL. Bench press and push-up at comparable levels of muscle activity results in similar strength gains. J Strength Cond Res. 2015;29(1):246–253."},{"id":"neto2020","s":"Neto 2020","t":"Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review","f":"Neto WK, Soares EG, Vieira TL, et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med. 2020;19(1):195–203."},{"id":"woodley2020","s":"Woodley 2020 (Cochrane)","t":"Pelvic floor muscle training for preventing and treating urinary and faecal incontinence in antenatal and postnatal women","f":"Woodley SJ, Lawrenson P, Boyle R, et al. Pelvic floor muscle training for preventing and treating urinary and faecal incontinence in antenatal and postnatal women. Cochrane Database Syst Rev. 2020;5:CD007471."},{"id":"hodges2007","s":"Hodges 2007","t":"Postural and respiratory functions of the pelvic floor muscles","f":"Hodges PW, Sapsford R, Pengel LHM. Postural and respiratory functions of the pelvic floor muscles. Neurourol Urodyn. 2007;26(3):362-371."},{"id":"selkowitz2013","s":"Selkowitz 2013","t":"Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes","f":"Selkowitz DM, Beneck GJ, Powers CM. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther. 2013;43(2):54–64."},{"id":"montalvo2019","s":"Montalvo 2019","t":"What's my risk of sustaining an ACL injury while playing sports? A systematic review with meta-analysis","f":"Montalvo AM, Schneider DK, Yut L, et al. “What's my risk of sustaining an ACL injury while playing sports?” A systematic review with meta-analysis. Br J Sports Med. 2019;53(16):1003–1012."},{"id":"fry2003","s":"Fry 2003","t":"Effect of knee position on hip and knee torques during the barbell squat","f":"Fry AC, Smith JC, Schilling BK. Effect of knee position on hip and knee torques during the barbell squat. J Strength Cond Res. 2003;17(4):629–633."},{"id":"roberts2020","s":"Roberts 2020","t":"Sex differences in resistance training: a systematic review and meta-analysis","f":"Roberts BM, Nuckols G, Krieger JW. Sex differences in resistance training: a systematic review and meta-analysis. J Strength Cond Res. 2020;34(5):1448–1460."},{"id":"weaver2016","s":"Weaver 2016","t":"The National Osteoporosis Foundation's position statement on peak bone mass development and lifestyle factors","f":"Weaver CM, Gordon CM, Janz KF, et al. The National Osteoporosis Foundation's position statement on peak bone mass development and lifestyle factors: a systematic review and implementation recommendations. Osteoporos Int. 2016;27(4):1281–1386."},{"id":"mcnulty2020","s":"McNulty 2020","t":"The effects of menstrual cycle phase on exercise performance in eumenorrheic women: a systematic review and meta-analysis","f":"McNulty KL, Elliott-Sale KJ, Dolan E, et al. The effects of menstrual cycle phase on exercise performance in eumenorrheic women: a systematic review and meta-analysis. Sports Med. 2020;50(10):1813–1827."},{"id":"edwards2023","s":"Edwards 2023","t":"Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials","f":"Edwards JJ, Deenmamode AHP, Griffiths M, et al. Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials. Br J Sports Med. 2023;57(20):1317–1326."},{"id":"teixeira2018","s":"Teixeira 2018","t":"Prevalence of urinary incontinence in female athletes: a systematic review with meta-analysis","f":"Teixeira RV, Colla C, Sbruzzi G, Mallmann A, Paiva LL. Prevalence of urinary incontinence in female athletes: a systematic review with meta-analysis. Int Urogynecol J. 2018;29(12):1717–1725."},{"id":"dumoulin2018","s":"Dumoulin 2018 (Cochrane)","t":"Pelvic floor muscle training versus no treatment, or inactive control treatments, for urinary incontinence in women","f":"Dumoulin C, Cacciari LP, Hay-Smith EJC. Pelvic floor muscle training versus no treatment, or inactive control treatments, for urinary incontinence in women. Cochrane Database Syst Rev. 2018;10:CD005654."},{"id":"ng123","s":"NICE NG123","t":"Urinary incontinence and pelvic organ prolapse in women: management","f":"National Institute for Health and Care Excellence. Urinary incontinence and pelvic organ prolapse in women: management (NG123). London: NICE; 2019. Recommendations 1.4.4–1.4.7.","nopm":true,"url":"https://www.nice.org.uk/guidance/ng123"},{"id":"ng210","s":"NICE NG210","t":"Pelvic floor dysfunction: prevention and non-surgical management","f":"National Institute for Health and Care Excellence. Pelvic floor dysfunction: prevention and non-surgical management (NG210). London: NICE; 2021. Section 1.3.","nopm":true,"url":"https://www.nice.org.uk/guidance/ng210"},{"id":"bump1991","s":"Bump 1991","t":"Assessment of Kegel pelvic muscle exercise performance after brief verbal instruction","f":"Bump RC, Hurt WG, Fantl JA, Wyman JF. Assessment of Kegel pelvic muscle exercise performance after brief verbal instruction. Am J Obstet Gynecol. 1991;165(2):322–329."},{"id":"miller1998","s":"Miller 1998","t":"A pelvic muscle precontraction can reduce cough-related urine loss in selected women with mild SUI","f":"Miller JM, Ashton-Miller JA, DeLancey JO. A pelvic muscle precontraction can reduce cough-related urine loss in selected women with mild SUI. J Am Geriatr Soc. 1998;46(7):870–874."},{"id":"faubion2012","s":"Faubion 2012","t":"Recognition and management of nonrelaxing pelvic floor dysfunction","f":"Faubion SS, Shuster LT, Bharucha AE. Recognition and management of nonrelaxing pelvic floor dysfunction. Mayo Clin Proc. 2012;87(2):187–193."},{"id":"uhcw2024","s":"UHCW NHS 2024","t":"Pelvic floor exercises for women","f":"University Hospitals Coventry and Warwickshire NHS Trust. Pelvic floor exercises for women. Patient information leaflet, updated October 2024.","nopm":true,"url":"https://www.uhcw.nhs.uk/download/clientfiles/files/Patient%20Information%20Leaflets/Women%20and%20Children_s/Gynaecology/Pelvic%20floor%20exercises%20for%20women.pdf"},{"id":"ros2022","s":"ROS consensus 2022","t":"Strong, steady and straight: UK consensus statement on physical activity and exercise for osteoporosis","f":"Brooke-Wavell K, Skelton DA, Barker KL, et al. Strong, steady and straight: UK consensus statement on physical activity and exercise for osteoporosis. Br J Sports Med. 2022;56(15):837–846.","url":"https://bjsm.bmj.com/content/56/15/837"},{"id":"watson2018","s":"Watson 2018 (LIFTMOR)","t":"High-Intensity Resistance and Impact Training Improves Bone Mineral Density and Physical Function in Postmenopausal Women With Osteopenia and Osteoporosis: The LIFTMOR Randomized Controlled Trial","f":"Watson SL, Weeks BK, Weis LJ, Harding AT, Horan SA, Beck BR. High-intensity resistance and impact training improves bone mineral density and physical function in postmenopausal women with osteopenia and osteoporosis: the LIFTMOR randomized controlled trial. J Bone Miner Res. 2018;33(2):211–220."},{"id":"greendale2012","s":"Greendale 2012 (SWAN)","t":"Bone mineral density loss in relation to the final menstrual period in a multiethnic cohort: results from the Study of Women's Health Across the Nation (SWAN)","f":"Greendale GA, Sowers M, Han W, et al. Bone mineral density loss in relation to the final menstrual period in a multiethnic cohort: results from the Study of Women's Health Across the Nation (SWAN). J Bone Miner Res. 2012;27(1):111–118."},{"id":"sinaki1984","s":"Sinaki 1984","t":"Postmenopausal spinal osteoporosis: flexion versus extension exercises","f":"Sinaki M, Mikkelsen BA. Postmenopausal spinal osteoporosis: flexion versus extension exercises. Arch Phys Med Rehabil. 1984;65(10):593–596."},{"id":"sherrington2019","s":"Sherrington 2019 (Cochrane)","t":"Exercise for preventing falls in older people living in the community","f":"Sherrington C, Fairhall NJ, Wallbank GK, et al. Exercise for preventing falls in older people living in the community. Cochrane Database Syst Rev. 2019;1:CD012424."},{"id":"montero2022","s":"World Falls Guidelines 2022","t":"World guidelines for falls prevention and management for older adults: a global initiative","f":"Montero-Odasso M, van der Velde N, Martin FC, et al. World guidelines for falls prevention and management for older adults: a global initiative. Age Ageing. 2022;51(9):afac205."},{"id":"reid2012","s":"Reid & Fielding 2012","t":"Skeletal muscle power: a critical determinant of physical functioning in older adults","f":"Reid KF, Fielding RA. Skeletal muscle power: a critical determinant of physical functioning in older adults. Exerc Sport Sci Rev. 2012;40(1):4–12."},{"id":"brito2014","s":"Brito 2014","t":"Ability to sit and rise from the floor as a predictor of all-cause mortality","f":"Brito LBB, Ricardo DR, Araújo DSMS, Ramos PS, Myers J, Araújo CGS. Ability to sit and rise from the floor as a predictor of all-cause mortality. Eur J Prev Cardiol. 2014;21(7):892–898."},{"id":"paluch2022","s":"Paluch 2022","t":"Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts","f":"Paluch AE, Bajpai S, Bassett DR, et al. Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts. Lancet Public Health. 2022;7(3):e219–e228."},{"id":"acog2020","s":"ACOG CO 804 (2020)","t":"Physical Activity and Exercise During Pregnancy and the Postpartum Period: ACOG Committee Opinion, Number 804","f":"American College of Obstetricians and Gynecologists. Physical activity and exercise during pregnancy and the postpartum period: ACOG Committee Opinion No. 804. Obstet Gynecol. 2020;135(4):e178–e188.","nopm":1},{"id":"mottola2018","s":"Canadian pregnancy guideline 2019","t":"2019 Canadian guideline for physical activity throughout pregnancy","f":"Mottola MF, Davenport MH, Ruchat SM, et al. 2019 Canadian guideline for physical activity throughout pregnancy. Br J Sports Med. 2018;52(21):1339–1346.","url":"https://bjsm.bmj.com/content/52/21/1339"},{"id":"goom2019","s":"Goom 2019 (return to running)","t":"Returning to running postnatal: guidelines for medical, health and fitness professionals managing this population","f":"Goom T, Donnelly G, Brockwell E. Returning to running postnatal: guidelines for medical, health and fitness professionals managing this population. 2019.","book":1},{"id":"nams2023","s":"Menopause Society 2023","t":"The 2023 nonhormone therapy position statement of The North American Menopause Society","f":"The 2023 nonhormone therapy position statement of The North American Menopause Society. Menopause. 2023;30(6):573–590."},{"id":"engelbert2017","s":"Engelbert 2017","t":"The evidence-based rationale for physical therapy treatment of children, adolescents, and adults diagnosed with joint hypermobility syndrome/hypermobile Ehlers Danlos syndrome","f":"Engelbert RHH, Juul-Kristensen B, Pacey V, et al. The evidence-based rationale for physical therapy treatment of children, adolescents, and adults diagnosed with joint hypermobility syndrome/hypermobile Ehlers Danlos syndrome. Am J Med Genet C Semin Med Genet. 2017;175(1):158–167."},{"id":"armour2019","s":"Armour 2019 (Cochrane)","t":"Exercise for dysmenorrhoea","f":"Armour M, Ee CC, Naidoo D, et al. Exercise for dysmenorrhoea. Cochrane Database Syst Rev. 2019;9:CD004142.","url":"https://www.cochrane.org/evidence/CD004142"},{"id":"pearce2020","s":"Pearce 2020","t":"Exercise for premenstrual syndrome: a systematic review and meta-analysis of randomised controlled trials","f":"Pearce E, Jolly K, Jones LL, Matthewman G, Zanganeh M, Daley A. Exercise for premenstrual syndrome: a systematic review and meta-analysis of randomised controlled trials. BJGP Open. 2020;4(3):bjgpopen20X101032.","url":"https://bjgpopen.org/content/4/3/bjgpopen20X101032"},{"id":"colenso2023","s":"Colenso-Semple 2023","t":"Current evidence shows no influence of women's menstrual cycle phase on acute strength performance or adaptations to resistance exercise training","f":"Colenso-Semple LM, D'Souza AC, Elliott-Sale KJ, Phillips SM. Current evidence shows no influence of women's menstrual cycle phase on acute strength performance or adaptations to resistance exercise training. Front Sports Act Living. 2023;5:1054542.","url":"https://www.frontiersin.org/articles/10.3389/fspor.2023.1054542"},{"id":"kissow2022","s":"Kissow 2022","t":"Effects of follicular and luteal phase-based menstrual cycle resistance training on muscle strength and mass","f":"Kissow J, Jacobsen KJ, Gunnarsson TP, Jessen S, Hostrup M. Effects of follicular and luteal phase-based menstrual cycle resistance training on muscle strength and mass. Sports Med. 2022;52(12):2813–2819."},{"id":"bull2019","s":"Bull 2019","t":"Real-world menstrual cycle characteristics of more than 600,000 menstrual cycles","f":"Bull JR, Rowland SP, Berglund Scherwitzl E, Scherwitzl R, Gemzell Danielsson K, Harper J. Real-world menstrual cycle characteristics of more than 600,000 menstrual cycles. NPJ Digit Med. 2019;2:83.","url":"https://discovery.ucl.ac.uk/id/eprint/10084180/"},{"id":"dossantos2023","s":"Dos'Santos 2023","t":"Effects of the menstrual cycle phase on anterior cruciate ligament neuromuscular and biomechanical injury risk surrogates in eumenorrheic and naturally menstruating women: A systematic review","f":"Dos'Santos T, Stebbings GK, Morse C, Shashidharan M, Daniels KAJ, Sanderson A. Effects of the menstrual cycle phase on anterior cruciate ligament neuromuscular and biomechanical injury risk surrogates in eumenorrheic and naturally menstruating women: a systematic review. PLoS One. 2023;18(1):e0280800.","url":"https://doaj.org/article/6fa24da89b06422d99b8d5ab0f325f59"},{"id":"elliottsale2020","s":"Elliott-Sale 2020","t":"The effects of oral contraceptives on exercise performance in women: a systematic review and meta-analysis","f":"Elliott-Sale KJ, McNulty KL, Ansdell P, et al. The effects of oral contraceptives on exercise performance in women: a systematic review and meta-analysis. Sports Med. 2020;50(10):1785–1812.","url":"https://nrl.northumbria.ac.uk/id/eprint/43772"},{"id":"bruinvels2021","s":"Bruinvels 2021","t":"Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app","f":"Bruinvels G, Goldsmith E, Blagrove R, et al. Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app. Br J Sports Med. 2021;55(8):438–443.","url":"https://bjsm.bmj.com/content/55/8/438"},{"id":"mountjoy2023","s":"IOC REDs consensus 2023","t":"2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs)","f":"Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med. 2023;57(17):1073–1097."},{"id":"ng88","s":"NICE NG88","t":"Heavy menstrual bleeding: assessment and management","f":"National Institute for Health and Care Excellence. Heavy menstrual bleeding: assessment and management (NG88). London: NICE; 2018, updated 2021.","url":"https://www.nice.org.uk/guidance/ng88","nopm":1},{"id":"acog651","s":"ACOG CO 651","t":"Menstruation in girls and adolescents: using the menstrual cycle as a vital sign","f":"American College of Obstetricians and Gynecologists. Menstruation in girls and adolescents: using the menstrual cycle as a vital sign. Committee Opinion No. 651. Obstet Gynecol. 2015;126(6):e143–e146."},{"id":"acog760","s":"ACOG CO 760","t":"Dysmenorrhea and endometriosis in the adolescent","f":"American College of Obstetricians and Gynecologists. Dysmenorrhea and endometriosis in the adolescent. Committee Opinion No. 760. Obstet Gynecol. 2018;132(6):e249–e258."},{"id":"acogpmd2023","s":"ACOG 2023 (premenstrual disorders)","t":"Management of premenstrual disorders: ACOG Clinical Practice Guideline No. 7","f":"American College of Obstetricians and Gynecologists. Management of premenstrual disorders. Clinical Practice Guideline No. 7. Obstet Gynecol. 2023;142(6):1516–1533."}];
 var GATE_EN="Impact readiness: do this only if you have no leaking, heaviness or bulging; no osteoporosis with spinal or repeated fragility fractures (unless a physiotherapist has cleared you); you aren't pregnant; you're more than 12 weeks after giving birth and can hop 10 times per leg without symptoms; and you can do 3 × 15 squats and 30 s on one leg comfortably.";
 var GATE_AR="جاهزية التمارين ذات الارتطام: نفّذيه فقط إن لم يكن لديكِ تسرّب أو ثقل أو انتفاخ في الحوض؛ ولا هشاشة عظام مع كسور في العمود الفقري أو كسور هشاشة متكررة (إلا بإذن أخصائية علاج طبيعي)؛ ولستِ حاملًا؛ ومرّ أكثر من 12 أسبوعًا على الولادة وتستطيعين القفز 10 مرات على كل رِجل بلا أعراض؛ وتستطيعين أداء ⁦3 × 15⁩ قرفصاء والوقوف 30 ث على رِجل واحدة براحة.";
 var EN_FIX={};
@@ -1171,6 +1411,114 @@ var TESTS=[
 {id:"t_push",t:{en:"Push-ups (your current level)",ar:"تمرين الضغط (مستواك الحالي)"},u:{en:"reps",ar:"تكرار"},h:{en:"Wall, counter, knee or full; note which.",ar:"على الجدار أو السطح أو الركبتين أو الكامل؛ دوّني أيّها."}},
 {id:"t_floor",t:{en:"Floor rise",ar:"النهوض من الأرض"},u:{en:"supports used",ar:"عدد مرات الاستناد"},h:{en:"Sit down to the floor and get up; count hand, knee or chair supports (fewer is better).",ar:"اجلسي على الأرض وانهضي؛ عُدّي مرات الاستناد باليد أو الركبة أو الكرسي (الأقل أفضل)."}}
 ];
+
+/* ================= Menstrual cycle: content, evidence ratings and cycle-friendly routines ================= */
+/* New routines built only from existing library exercises (no new exercise records). */
+ROUT.C1={kind:"cycle",min:15,lv:1,t:{en:"Period-comfort gentle session",ar:"جلسة لطيفة لأيام الدورة"},
+who:{en:"For days with cramps, back discomfort or low energy when you'd still like to move. Low-intensity stretching, core and easy aerobic movement are the kinds of exercise studied for period pain. Skip anything that hurts.",ar:"لأيام التقلّصات أو انزعاج الظهر أو انخفاض الطاقة حين ترغبين في الحركة رغم ذلك. التمدّد وتمارين الجذع والحركة الهوائية الخفيفة هي أنواع التمارين التي دُرست لآلام الدورة. تخطّي أي شيء يؤلمك."},
+items:[["march","3 min, easy pace","3 دقائق بوتيرة هادئة",0],["pf_breath","6 slow breaths","6 أنفاس بطيئة",0],["cat_cow","8 slow cycles","8 دورات بطيئة",0],["child_pose","⁦1–2⁩ min","⁦1–2⁩ دقيقة",0],["glute_bridge","⁦2 × 8–10⁩, gentle","⁦2 × 8–10⁩ بلطف",30],["figure4","⁦30–45⁩ s per side","⁦30–45⁩ ث لكل جهة",0],["butterfly","45 s","45 ث",0],["open_book","5 per side","5 لكل جهة",0],["march","⁦2–5⁩ min, as you feel","⁦2–5⁩ دقائق حسب شعورك",0]],
+prog:{en:"Go back to your usual plan whenever you feel ready. There's no need to make up a session you skipped.",ar:"عودي إلى خطتك المعتادة متى شعرتِ بالاستعداد. ولا حاجة لتعويض جلسة فاتتكِ."}};
+ROUT.C2={kind:"cycle",min:15,lv:1,t:{en:"Low-energy strength (short)",ar:"قوة لأيام الطاقة المنخفضة (قصيرة)"},
+who:{en:"Keeps strength training going on tired or premenstrual days: the same main movements with fewer sets, lower effort, no jumping and nothing face-down. Stop each set ⁦3–4⁩ reps before you couldn't do another.",ar:"تحافظ على تمارين القوة في أيام التعب أو ما قبل الدورة: الحركات الأساسية نفسها بمجموعات أقل وجهد أخف، بلا قفز ولا استلقاء على البطن. أنهي كل مجموعة وأنتِ قادرة على ⁦3–4⁩ تكرارات إضافية."},
+items:[["march","2 min warm-up","دقيقتان إحماء",0],["squat","⁦2 × 8–10⁩","⁦2 × 8–10⁩",60],["incline_pushup","⁦2 × 8–10⁩","⁦2 × 8–10⁩",60],["glute_bridge","⁦2 × 10⁩","⁦2 × 10⁩",45],["wall_slide","⁦2 × 8⁩","⁦2 × 8⁩",30],["dead_bug","⁦2 × 5⁩ per side","⁦2 × 5⁩ لكل جهة",30],["pf_breath","5 breaths","5 أنفاس",0]],
+prog:{en:"When you feel like yourself again, return to your usual session at your usual level.",ar:"عندما تعودين إلى طبيعتك، ارجعي إلى جلستك المعتادة بمستواك المعتاد."}};
+ROUT.C3={kind:"cycle",min:20,lv:1,t:{en:"Steady low-impact cardio",ar:"تمارين قلبية ثابتة منخفضة الارتطام"},
+who:{en:"Moderate aerobic exercise (“can talk, can't sing”) with no jumping. Regular aerobic exercise is the type most studied for premenstrual symptoms and period pain; the benefit in trials came from doing it several times a week across the month.",ar:"تمارين هوائية معتدلة («أستطيع الكلام لا الغناء») بلا قفز. التمارين الهوائية المنتظمة هي النوع الأكثر دراسةً لأعراض ما قبل الدورة وآلامها، وقد جاءت الفائدة في الدراسات من ممارستها عدة مرات أسبوعيًا على مدار الشهر."},
+items:[["march","3 min, easy","3 دقائق بهدوء",0],["step_touch","⁦4 × 2⁩ min","⁦4 × 2⁩ دقيقة",30],["shadow_box","⁦3 × 1⁩ min, easy to moderate","⁦3 × 1⁩ دقيقة، خفيف إلى معتدل",30],["step_jack","⁦3 × 45⁩ s (optional)","⁦3 × 45⁩ ث (اختياري)",30],["march","3 min, easing down","3 دقائق مع التهدئة",0],["calf_stretch","30 s per leg","30 ث لكل رِجل",0]],
+prog:{en:"Build toward about 30 minutes, about 3 times a week, across the whole month.",ar:"تدرّجي نحو 30 دقيقة تقريبًا، نحو 3 مرات أسبوعيًا، على مدار الشهر كله."}};
+
+var CYC={
+/* evidence levels */
+LV:{well:{en:"Well supported",ar:"مدعوم جيدًا"},maybe:{en:"Potentially useful",ar:"مفيد محتملًا"},insuff:{en:"Insufficient evidence",ar:"دليل غير كافٍ"},pref:{en:"Individual preference / symptom management",ar:"تفضيل شخصي / التعامل مع الأعراض"},no:{en:"Not supported",ar:"غير مدعوم"}},
+LVD:{en:"Ratings reflect the quality of the research, not how popular a claim is. Well supported: consistent evidence or clinical guidance. Potentially useful: some evidence, real uncertainty. Insufficient evidence: don't use it as a rule for everyone. Individual preference: a reasonable optional adjustment, without a proven phase-specific advantage.",ar:"تعكس التقييمات جودة الأبحاث لا شيوع الادعاء. مدعوم جيدًا: دليل متّسق أو توصيات سريرية. مفيد محتملًا: يوجد بعض الدليل مع شكّ حقيقي. دليل غير كافٍ: لا يُستخدم قاعدةً للجميع. تفضيل شخصي: تعديل اختياري معقول دون ميزة مثبتة لمرحلة بعينها."},
+/* phases */
+PH:[
+{id:"men",c:"var(--pink)",t:{en:"Period (menstruation)",ar:"الحيض (أيام الدورة)"},
+when:{en:"Day 1 is the first day of bleeding. Bleeding usually lasts ⁦2–7⁩ days.",ar:"اليوم الأول هو أول يوم لنزول الدم، ويستمر النزول عادة ⁦2–7⁩ أيام."},
+says:{en:"On average, performance in the early follicular phase (the period days) was only trivially lower than at other times, and results varied a lot between women. There's no evidence that strength training or vigorous exercise during a period is harmful. Regular exercise across the month reduced period pain by roughly a quarter of the pain scale in trials, though the evidence is low certainty, and the benefit came from regular training, not from one session during the period. "+R("mcnulty2020,armour2019"),
+ar:"في المتوسط، كان الأداء في بداية الطور الجريبي (أيام الدورة) أقل بقدر ضئيل جدًا فقط مقارنة ببقية الأوقات، وتفاوتت النتائج كثيرًا بين النساء. ولا يوجد دليل على أن تمارين القوة أو التمارين الشديدة أثناء الدورة ضارة. وفي الدراسات، خفّفت التمارين المنتظمة على مدار الشهر ألم الدورة بنحو ربع مقياس الألم، مع أن الدليل منخفض اليقين، وجاءت الفائدة من التمرين المنتظم لا من جلسة واحدة أثناء الدورة. "+R("mcnulty2020,armour2019")},
+act:{en:"Feel fine? Train as usual. With cramps, low back pain or fatigue you can keep your plan with fewer sets, lower effort or no jumping, or switch to gentle movement such as walking, stretching and breathing. Resting on a bad day is also a valid choice.",ar:"تشعرين بأنكِ بخير؟ تمرّني كالمعتاد. ومع التقلّصات أو ألم أسفل الظهر أو التعب يمكنكِ الإبقاء على خطتك بمجموعات أقل أو جهد أخف أو دون قفز، أو التحوّل إلى حركة لطيفة مثل المشي والتمدّد والتنفّس. والراحة في اليوم الصعب خيار سليم أيضًا."},
+good:["march","cat_cow","child_pose","figure4","butterfly","pf_breath","glute_bridge"],adj:["pogo_hops","squat_jump_stick","superman","prone_pull","pike"],r:["C1","C2"],lv:["maybe","pref"]},
+{id:"fol",c:"var(--violet)",t:{en:"Follicular phase",ar:"الطور الجريبي"},
+when:{en:"From day 1 until ovulation. Its length varies more than any other part of the cycle, which is why ovulation day varies so much.",ar:"من اليوم الأول حتى الإباضة. يتفاوت طوله أكثر من أي جزء آخر من الدورة، ولهذا يتفاوت يوم الإباضة كثيرًا."},
+says:{en:"A few small trials suggested more strength gain when training was concentrated in the follicular phase, but the results are inconsistent. Reviews of the research found no meaningful effect of cycle phase on strength or muscle growth, and concluded that phase-based strength programming isn't evidence-based. "+R("kissow2022,colenso2023"),
+ar:"أشارت بضع تجارب صغيرة إلى مكاسب أكبر في القوة عند تركيز التمرين في الطور الجريبي، لكن النتائج غير متّسقة. ولم تجد المراجعات العلمية أثرًا ذا معنى لمرحلة الدورة في القوة أو نمو العضلات، وخلصت إلى أن برمجة تمارين القوة حسب المرحلة ليست مبنية على الدليل. "+R("kissow2022,colenso2023")},
+act:{en:"Keep your usual plan and progression. If you feel energetic, progress as normal, because you feel ready, not because the phase demands it.",ar:"حافظي على خطتك وتدرّجك المعتادين. وإن شعرتِ بالنشاط فتقدّمي كالمعتاد، لأنكِ مستعدة لا لأن المرحلة تفرض ذلك."},
+good:[],adj:[],r:[],lv:["insuff"]},
+{id:"ovu",c:"#e0a33a",t:{en:"Around ovulation",ar:"حول الإباضة"},
+when:{en:"Ovulation usually happens about ⁦10–16⁩ days before the next period, not reliably on day 14. A calendar can't confirm it.",ar:"تحدث الإباضة عادة قبل الدورة التالية بنحو ⁦10–16⁩ يومًا، وليس في اليوم 14 بشكل ثابت. ولا يمكن للتقويم أن يؤكدها."},
+says:{en:"The idea that everyone is strongest at ovulation isn't supported. Knee laxity changes across the cycle in some women, but whether any phase raises ACL injury risk is inconclusive, and the evidence is very low certainty, so phase-based restrictions aren't recommended. "+R("dossantos2023,mcnulty2020"),
+ar:"فكرة أن كل امرأة تكون في أقوى حالاتها عند الإباضة غير مدعومة. ويتغيّر ارتخاء الركبة عبر الدورة لدى بعض النساء، لكن ما إذا كانت أي مرحلة ترفع خطر إصابة الرباط الصليبي الأمامي غير محسوم، والدليل منخفض اليقين جدًا، لذلك لا يُنصح بقيود مبنية على المرحلة. "+R("dossantos2023,mcnulty2020")},
+act:{en:"Train as usual. Landing softly and keeping the knee over the toes matter on every day of the month, not only mid-cycle.",ar:"تمرّني كالمعتاد. فالهبوط بلطف وإبقاء الركبة فوق أصابع القدم مهمّان في كل أيام الشهر لا في منتصف الدورة فقط."},
+good:["decel","step_down","lateral_lunge"],adj:[],r:[],lv:["insuff"]},
+{id:"lut",c:"#8a6fd1",t:{en:"Luteal phase and premenstrual days",ar:"الطور الأصفري وأيام ما قبل الدورة"},
+when:{en:"From ovulation to the next period, usually about ⁦10–16⁩ days. Premenstrual symptoms, if you get them, tend to come in the last days.",ar:"من الإباضة حتى الدورة التالية، عادة نحو ⁦10–16⁩ يومًا. وتظهر أعراض ما قبل الدورة، إن وُجدت، في الأيام الأخيرة غالبًا."},
+says:{en:"There's no consistent evidence that strength or performance drops in the luteal phase for women in general. For premenstrual symptoms, regular exercise (mostly aerobic, over ⁦8–12⁩ weeks) reduced symptoms in trials, though most trials had a high risk of bias. Symptoms such as tiredness, mood changes, bloating and breast tenderness are very common in exercising women, and a heavier symptom load is linked to changing or missing training. "+R("colenso2023,pearce2020,bruinvels2021"),
+ar:"لا يوجد دليل متّسق على أن القوة أو الأداء ينخفضان في الطور الأصفري لدى النساء عمومًا. أما أعراض ما قبل الدورة، فقد خفّفتها التمارين المنتظمة (الهوائية غالبًا، على مدى ⁦8–12⁩ أسبوعًا) في الدراسات، مع أن معظم تلك الدراسات كانت عالية الخطر من حيث التحيّز. وأعراض مثل التعب وتقلّب المزاج والانتفاخ وألم الثدي شائعة جدًا لدى النساء الرياضيات، ويرتبط ثقل الأعراض بتعديل التمرين أو تفويته. "+R("colenso2023,pearce2020,bruinvels2021")},
+act:{en:"No symptoms? Carry on as usual. With premenstrual symptoms, keep moving if you can, especially regular moderate cardio. Shorten the session, lower the effort, or swap jumping for low-impact options if bloating or breast tenderness make impact uncomfortable.",ar:"لا أعراض؟ استمري كالمعتاد. ومع أعراض ما قبل الدورة، حافظي على الحركة إن استطعتِ، وخاصة التمارين القلبية المعتدلة المنتظمة. قصّري الجلسة أو خفّفي الجهد أو استبدلي القفز بخيارات منخفضة الارتطام إن جعل الانتفاخ أو ألم الثدي الارتطام مزعجًا."},
+good:["march","step_touch","shadow_box","squat","glute_bridge"],adj:["pogo_hops","squat_jump_stick","skater_hop","superman"],r:["C3","C2"],lv:["maybe","insuff"]}
+],
+/* other situations */
+OT:[
+{id:"irr",t:{en:"Irregular cycles or not sure where you are",ar:"دورات غير منتظمة أو لستِ متأكدة من موقعك"},
+en:"<p>You don't need to know your phase. Use the daily check-in instead: it works on how you feel today. Only about 13% of cycles in a large app study were exactly 28 days, and ovulation day varied widely even in regular cycles, so phase estimates are rough at best. "+R("bull2019")+"</p>",
+ar:"<p>لا تحتاجين إلى معرفة مرحلتك. استخدمي التسجيل اليومي بدلًا من ذلك، فهو يعتمد على شعورك اليوم. في دراسة كبيرة لتطبيق إلكتروني، كانت نحو 13% فقط من الدورات 28 يومًا بالضبط، وتفاوت يوم الإباضة كثيرًا حتى في الدورات المنتظمة، لذا فتقديرات المراحل تقريبية في أحسن الأحوال. "+R("bull2019")+"</p>"},
+{id:"hc",t:{en:"Hormonal contraception",ar:"موانع الحمل الهرمونية"},
+en:"<p>Hormonal contraception changes hormone patterns and bleeding. A withdrawal bleed during the pill-free days isn't a natural period, so natural-cycle phases don't apply; use the symptom check-in. On average, pill use made only a trivial difference to exercise performance. "+R("elliottsale2020,colenso2023")+"</p>",
+ar:"<p>تغيّر موانع الحمل الهرمونية نمط الهرمونات والنزيف. والنزيف الانسحابي في أيام التوقف عن الحبوب ليس دورة طبيعية، لذا لا تنطبق عليه مراحل الدورة الطبيعية؛ استخدمي تسجيل الأعراض. وفي المتوسط، لم يُحدث استخدام الحبوب إلا فرقًا ضئيلًا جدًا في الأداء الرياضي. "+R("elliottsale2020,colenso2023")+"</p>"},
+{id:"teen",t:{en:"Teenagers and the first years of periods",ar:"المراهقات والسنوات الأولى من الدورة"},
+en:"<p>In the first years after periods start, cycles of ⁦21–45⁩ days are common and some irregularity is normal. A doctor should check if periods haven't started by age 15, stop for more than 90 days, come more often than every 21 days, last more than 7 days, or need a pad or tampon change every ⁦1–2⁩ hours. "+R("acog651")+"</p>",
+ar:"<p>في السنوات الأولى بعد بدء الدورة، تكون الدورات بين 21 و45 يومًا شائعة، وبعض عدم الانتظام طبيعي. ويجب أن تُراجَع الطبيبة إن لم تبدأ الدورة حتى سن 15، أو انقطعت أكثر من 90 يومًا، أو جاءت أكثر من مرة كل 21 يومًا، أو استمرت أكثر من 7 أيام، أو احتاجت إلى تغيير الفوطة أو السدادة كل ⁦1–2⁩ ساعة. "+R("acog651")+"</p>"},
+{id:"reds",t:{en:"Missing periods with heavy training",ar:"انقطاع الدورة مع التمرين الشاق"},
+en:"<p>Periods that stop or become very infrequent during heavy training, or when eating too little for the training load, are not a normal adaptation. This can be a sign of low energy availability (REDs), which also affects bone health. Get assessed, and take a pregnancy test if pregnancy is possible. "+R("mountjoy2023,acog651")+"</p>",
+ar:"<p>توقّف الدورة أو تباعدها كثيرًا أثناء التمرين الشاق، أو عند تناول طعام أقل مما يتطلبه حجم التمرين، ليس تكيّفًا طبيعيًا. وقد يكون علامة على نقص الطاقة المتاحة (REDs) الذي يؤثّر في صحة العظام أيضًا. راجعي الطبيبة، وأجري اختبار حمل إن كان الحمل ممكنًا. "+R("mountjoy2023,acog651")+"</p>"}
+],
+/* symptom guide: often more comfortable vs often less comfortable */
+SY:[
+{id:"cramps",t:{en:"Cramps or lower tummy pain",ar:"التقلّصات أو ألم أسفل البطن"},good:["march","cat_cow","child_pose","figure4","butterfly","pf_breath","glute_bridge"],bad:["superman","prone_pull","ytw","squat_jump_stick","pogo_hops","hollow_hold"],
+tip:{en:"Gentle movement is reasonable if it helps; lying face-down and hard bracing often feel worse. Rest is fine if the pain is strong. Use pain relief as advised by your doctor or pharmacist.",ar:"الحركة اللطيفة معقولة إن ساعدتك؛ والاستلقاء على البطن وشدّ البطن القوي يكونان غالبًا أسوأ. والراحة مناسبة إن كان الألم شديدًا. واستخدمي المسكّنات حسب نصيحة طبيبتك أو الصيدلانية."},lv:"maybe",ev:{en:"Regular exercise over weeks: potentially useful. Choices within a single session: individual preference.",ar:"التمرين المنتظم على مدى أسابيع: مفيد محتملًا. والاختيارات داخل الجلسة الواحدة: تفضيل شخصي."},r:"armour2019"},
+{id:"back",t:{en:"Lower back discomfort",ar:"انزعاج أسفل الظهر"},good:["cat_cow","child_pose","pf_breath","glute_bridge","bird_dog","open_book"],bad:["pike_stretch","hollow_hold","plank"],
+tip:{en:"Gentle spine and hip movement often eases stiffness. Deep forward folds and long plank holds may feel worse; shorten or skip them.",ar:"غالبًا ما تخفّف الحركة اللطيفة للعمود الفقري والوركين التيبّس. وقد يكون الانحناء العميق للأمام والثبات الطويل في البلانك أسوأ؛ قصّريهما أو تخطّيهما."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:""},
+{id:"tired",t:{en:"Tiredness or low energy",ar:"التعب أو انخفاض الطاقة"},good:["march","squat","incline_pushup","glute_bridge","dead_bug"],bad:["skater_hop","squat_jump_stick","bulgarian_split","pistol_squat"],
+tip:{en:"A shorter session at lower effort keeps the habit and the strength stimulus. Try the low-energy strength session, or rest.",ar:"الجلسة الأقصر بجهد أخف تحافظ على العادة وعلى تحفيز القوة. جرّبي جلسة القوة لأيام الطاقة المنخفضة، أو استريحي."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:"bruinvels2021"},
+{id:"head",t:{en:"Headache",ar:"الصداع"},good:["march","pf_breath","wall_slide","calf_stretch"],bad:["pike","step_back_burpee","mountain_climber"],
+tip:{en:"Keep the effort easy, avoid head-down positions and never hold your breath. Stop if the headache gets worse with effort. A sudden, severe headache needs urgent medical care.",ar:"اجعلي الجهد خفيفًا، وتجنّبي وضعيات الرأس للأسفل، ولا تحبسي النفس أبدًا. توقّفي إن ازداد الصداع مع الجهد. والصداع المفاجئ الشديد يحتاج إلى رعاية طبية عاجلة."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:""},
+{id:"nausea",t:{en:"Nausea",ar:"الغثيان"},good:["pf_breath","march","pf_seated","wall_slide"],bad:["pike","step_back_burpee","mountain_climber","superman"],
+tip:{en:"Slow, upright movement is usually easier. Avoid fast floor-to-standing changes, lying face-down and head-down positions.",ar:"الحركة البطيئة في وضعية قائمة أسهل عادة. تجنّبي الانتقال السريع من الأرض إلى الوقوف، والاستلقاء على البطن، ووضعيات الرأس للأسفل."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:""},
+{id:"heavy",t:{en:"Heavy bleeding",ar:"النزيف الغزير"},good:["march","squat","incline_pushup","glute_bridge","step_touch"],bad:["pike","pogo_hops","squat_jump_stick"],
+tip:{en:"Any exercise that feels comfortable is fine. Inversions and jumping are often less comfortable. Bleeding heavy enough to affect daily life deserves a check-up, including for low iron.",ar:"أي تمرين مريح لا بأس به. والوضعيات المقلوبة والقفز أقل راحة غالبًا. والنزيف الغزير لدرجة تؤثر في حياتك اليومية يستحق الفحص، بما في ذلك نقص الحديد."},lv:"well",ev:{en:"Seeking assessment: well supported. Exercise choices: individual preference.",ar:"طلب التقييم الطبي: مدعوم جيدًا. واختيار التمارين: تفضيل شخصي."},r:"ng88"},
+{id:"breast",t:{en:"Bloating or breast tenderness",ar:"الانتفاخ أو ألم الثدي"},good:["march","step_touch","shadow_box","squat","glute_bridge","incline_pushup"],bad:["pogo_hops","squat_jump_stick","skater_hop","superman","prone_pull"],
+tip:{en:"Low-impact cardio and strength usually feel fine. Jumping and lying face-down may feel worse; a supportive sports bra can help.",ar:"التمارين القلبية منخفضة الارتطام وتمارين القوة مريحة عادة. وقد يكون القفز والاستلقاء على البطن أسوأ؛ وقد تساعد حمّالة صدر رياضية داعمة."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:"bruinvels2021"},
+{id:"mood",t:{en:"Low mood, anxiety or irritability",ar:"انخفاض المزاج أو القلق أو العصبية"},good:["march","step_touch","shadow_box","squat","glute_bridge"],bad:[],
+tip:{en:"Regular aerobic exercise is the best-studied option for premenstrual symptoms. If mood symptoms seriously affect your relationships, work or study, see a doctor: effective treatments exist.",ar:"التمارين الهوائية المنتظمة هي الخيار الأكثر دراسةً لأعراض ما قبل الدورة. وإن أثّرت أعراض المزاج بشدة في علاقاتك أو عملك أو دراستك فراجعي الطبيبة، فهناك علاجات فعّالة."},lv:"maybe",ev:{en:"Regular exercise for premenstrual symptoms: potentially useful.",ar:"التمرين المنتظم لأعراض ما قبل الدورة: مفيد محتملًا."},r:"pearce2020,acogpmd2023"},
+{id:"sleep",t:{en:"Poor sleep",ar:"قلة النوم"},good:["squat","glute_bridge","cat_cow","open_book"],bad:["skater_hop","pistol_squat","bal_reactive"],
+tip:{en:"Keep your usual exercises at lower effort and avoid trying new hard skills or maximum efforts today.",ar:"حافظي على تمارينك المعتادة بجهد أخف، وتجنّبي تجربة مهارات صعبة جديدة أو بذل أقصى جهد اليوم."},lv:"pref",ev:{en:"Individual preference.",ar:"تفضيل شخصي."},r:""},
+{id:"none",t:{en:"No symptoms",ar:"لا أعراض"},good:[],bad:[],
+tip:{en:"Nothing needs to change. Follow your usual plan in every phase.",ar:"لا شيء يحتاج إلى تغيير. اتّبعي خطتك المعتادة في كل المراحل."},lv:"insuff",ev:{en:"Phase-based changes for women without symptoms: insufficient evidence.",ar:"تغيير التمرين حسب المرحلة لمن لا أعراض لديها: دليل غير كافٍ."},r:"mcnulty2020,colenso2023"}
+],
+/* evidence table */
+EV:[
+{c:{en:"Regular exercise reduces period pain (primary dysmenorrhoea)",ar:"التمرين المنتظم يخفّف ألم الدورة (عسر الطمث الأولي)"},v:"maybe",s:{en:"Cochrane review, 12 trials: about 25 points lower pain on a 100-point scale. Low-certainty evidence; sessions were about ⁦45–60⁩ min, 3 times a week, throughout the month.",ar:"مراجعة كوكرين، 12 تجربة: ألم أقل بنحو 25 نقطة على مقياس من 100. دليل منخفض اليقين؛ وكانت الجلسات نحو ⁦45–60⁩ دقيقة، 3 مرات أسبوعيًا، على مدار الشهر."},r:"armour2019"},
+{c:{en:"Regular exercise reduces premenstrual symptoms",ar:"التمرين المنتظم يخفّف أعراض ما قبل الدورة"},v:"maybe",s:{en:"Meta-analysis of 15 trials: fewer symptoms with mostly aerobic exercise over ⁦8–12⁩ weeks, but most trials had a high risk of bias.",ar:"تحليل تجميعي لـ15 تجربة: أعراض أقل مع تمارين هوائية غالبًا على مدى ⁦8–12⁩ أسبوعًا، لكن معظم التجارب عالية الخطر من حيث التحيّز."},r:"pearce2020"},
+{c:{en:"Performance drops during the period",ar:"الأداء ينخفض أثناء الدورة"},v:"insuff",s:{en:"78 studies: only a trivial average drop in the early follicular phase, with large differences between women. Guidance should be individual.",ar:"78 دراسة: انخفاض متوسط ضئيل جدًا فقط في بداية الطور الجريبي، مع فروق كبيرة بين النساء. يجب أن تكون التوصيات فردية."},r:"mcnulty2020"},
+{c:{en:"Plan strength training by phase (for example, train hardest in the follicular phase)",ar:"تخطيط تمارين القوة حسب المرحلة (مثلًا: أقوى تمرين في الطور الجريبي)"},v:"insuff",s:{en:"An umbrella review found no meaningful phase effect on strength or muscle growth; small phase-based trials were inconsistent.",ar:"وجدت مراجعة شاملة غياب أثر ذي معنى للمرحلة في القوة أو نمو العضلات؛ وكانت التجارب الصغيرة المبنية على المرحلة غير متّسقة."},r:"colenso2023,kissow2022"},
+{c:{en:"Everyone is strongest around ovulation",ar:"كل النساء أقوى حول الإباضة"},v:"no",s:{en:"Not supported by systematic reviews of performance and strength.",ar:"غير مدعوم بالمراجعات المنهجية للأداء والقوة."},r:"mcnulty2020,colenso2023"},
+{c:{en:"Avoid jumping and landing mid-cycle to prevent knee (ACL) injuries",ar:"تجنّب القفز والهبوط في منتصف الدورة للوقاية من إصابة الركبة (الرباط الصليبي)"},v:"insuff",s:{en:"Systematic review: inconclusive, very low certainty. Good landing technique all month is the practical takeaway.",ar:"مراجعة منهجية: النتيجة غير محسومة، ويقين منخفض جدًا. والخلاصة العملية: تقنية هبوط جيدة طوال الشهر."},r:"dossantos2023"},
+{c:{en:"Rest, or only light exercise, during the period or the luteal phase",ar:"الراحة أو التمارين الخفيفة فقط أثناء الدورة أو الطور الأصفري"},v:"insuff",s:{en:"Not supported as a rule for everyone. It's a reasonable choice for a woman who feels unwell.",ar:"غير مدعوم كقاعدة للجميع، لكنه خيار معقول لمن تشعر بتوعّك."},r:"mcnulty2020,colenso2023"},
+{c:{en:"Adjust a session to your symptoms (fewer sets, lower effort, no impact, gentle session)",ar:"تعديل الجلسة حسب الأعراض (مجموعات أقل، جهد أخف، بلا ارتطام، جلسة لطيفة)"},v:"pref",s:{en:"Symptoms are very common and linked to changing or missing training. Adjusting to how you feel is sensible, but there's no proof of a phase-specific advantage.",ar:"الأعراض شائعة جدًا وترتبط بتعديل التمرين أو تفويته. والتعديل حسب شعورك منطقي، لكن لا دليل على ميزة خاصة بمرحلة بعينها."},r:"bruinvels2021"},
+{c:{en:"A calendar app can pinpoint ovulation and hormone levels",ar:"تطبيق التقويم يحدّد الإباضة ومستوى الهرمونات بدقة"},v:"no",s:{en:"Ovulation day varies widely; only about 13% of cycles were exactly 28 days. Research needs urine or blood tests to confirm phases.",ar:"يتفاوت يوم الإباضة كثيرًا، ونحو 13% فقط من الدورات كانت 28 يومًا بالضبط. والأبحاث تحتاج إلى تحاليل البول أو الدم لتأكيد المراحل."},r:"bull2019,colenso2023"},
+{c:{en:"Certain exercises “balance hormones”, “detox” or shorten your period",ar:"تمارين معينة «توازن الهرمونات» أو «تزيل السموم» أو تقصّر الدورة"},v:"no",s:{en:"No credible evidence. Bloom doesn't make these claims.",ar:"لا يوجد دليل موثوق، وازدهار لا يقدّم هذه الادعاءات."},r:""},
+{c:{en:"Hormonal contraception meaningfully changes performance",ar:"موانع الحمل الهرمونية تغيّر الأداء بشكل ملموس"},v:"insuff",s:{en:"Meta-analysis: at most a trivial average effect; an individual approach is suggested.",ar:"تحليل تجميعي: أثر متوسط ضئيل جدًا على الأكثر، ويُقترح نهج فردي."},r:"elliottsale2020"},
+{c:{en:"Missing periods with heavy training or low food intake need assessment",ar:"انقطاع الدورة مع التمرين الشاق أو قلة الأكل يحتاج إلى تقييم"},v:"well",s:{en:"International consensus on low energy availability (REDs); menstrual changes are a key warning sign.",ar:"إجماع دولي حول نقص الطاقة المتاحة (REDs)؛ وتغيّرات الدورة علامة إنذار رئيسية."},r:"mountjoy2023,acog651"},
+{c:{en:"Severe pain or heavy bleeding needs medical assessment, not exercise alone",ar:"الألم الشديد أو النزيف الغزير يحتاجان إلى تقييم طبي لا إلى التمرين وحده"},v:"well",s:{en:"Clinical guidance: pain not controlled by usual treatment, or bleeding that affects quality of life, should be assessed.",ar:"التوصيات السريرية: يجب تقييم الألم غير المنضبط بالعلاج المعتاد، أو النزيف الذي يؤثّر في جودة الحياة."},r:"acog760,ng88"}
+],
+/* safety */
+SAFE:{en:"<ul class=\"plain\"><li>Period pain that is severe, gets worse over months, stops you doing normal activities, or isn't eased by your usual pain relief. "+R("acog760")+"</li><li>Very heavy bleeding: soaking a pad or tampon every ⁦1–2⁩ hours, passing large clots, bleeding for more than 7 days, or bleeding that affects your daily life. "+R("acog651,ng88")+"</li><li>Feeling dizzy, faint, short of breath or unusually tired with heavy periods (possible low iron or anaemia). "+R("ng88")+"</li><li>Bleeding between periods, after sex, or after menopause. "+R("ng88")+"</li><li>Periods that stop for 3 months or more, or become very irregular, especially with heavy training or eating too little. "+R("acog651,mountjoy2023")+"</li><li>Pelvic pain between periods, or pain during sex.</li><li>Premenstrual mood symptoms that seriously affect your relationships, work or study. "+R("acogpmd2023")+"</li></ul><p class=\"small\"><b>Get urgent care</b> for sudden severe pelvic or tummy pain, fainting, heavy bleeding with dizziness, fever with pelvic pain, or pain or bleeding if you could be pregnant. In Saudi Arabia call 997 (911 also works).</p><p class=\"small muted\">Bloom can't diagnose conditions such as endometriosis, fibroids or anaemia, and exercise alone isn't adequate treatment for severe period pain or abnormal bleeding.</p>",
+ar:"<ul class=\"plain\"><li>ألم دورة شديد، أو يزداد سوءًا على مدى الأشهر، أو يمنعك من أنشطتك المعتادة، أو لا يخفّ بالمسكّنات المعتادة. "+R("acog760")+"</li><li>نزيف غزير جدًا: امتلاء الفوطة أو السدادة كل ⁦1–2⁩ ساعة، أو خروج جلطات كبيرة، أو نزيف أكثر من 7 أيام، أو نزيف يؤثّر في حياتك اليومية. "+R("acog651,ng88")+"</li><li>دوخة أو إغماء أو ضيق نفس أو تعب غير معتاد مع الدورات الغزيرة (احتمال نقص الحديد أو فقر الدم). "+R("ng88")+"</li><li>نزيف بين الدورات، أو بعد الجماع، أو بعد انقطاع الطمث. "+R("ng88")+"</li><li>انقطاع الدورة 3 أشهر أو أكثر، أو صيرورتها غير منتظمة جدًا، خاصة مع التمرين الشاق أو قلة الأكل. "+R("acog651,mountjoy2023")+"</li><li>ألم في الحوض بين الدورات، أو ألم أثناء الجماع.</li><li>أعراض مزاجية قبل الدورة تؤثّر بشدة في علاقاتك أو عملك أو دراستك. "+R("acogpmd2023")+"</li></ul><p class=\"small\"><b>اطلبي رعاية عاجلة</b> عند ألم مفاجئ شديد في الحوض أو البطن، أو الإغماء، أو نزيف غزير مع دوخة، أو حرارة مع ألم في الحوض، أو ألم أو نزيف مع احتمال الحمل. في السعودية اتصلي بـ 997 (ويعمل 911 أيضًا).</p><p class=\"small muted\">لا يستطيع ازدهار تشخيص حالات مثل بطانة الرحم المهاجرة أو الأورام الليفية أو فقر الدم، والتمرين وحده ليس علاجًا كافيًا لآلام الدورة الشديدة أو النزيف غير الطبيعي.</p>"},
+/* intro / what to expect */
+INTRO:{en:"<p><b>The menstrual cycle</b> runs from the first day of one period to the day before the next. The period itself is only the first few days. The rest of the cycle includes the follicular phase, ovulation and the luteal phase. Cycle length and symptoms vary between women and from month to month.</p><p><b>What research can tell you:</b> on average, cycle phase makes only a trivial difference to performance, and there's no good evidence for rigid phase-based workouts. What clearly varies is <i>symptoms</i>, so Bloom adjusts to how you feel, not to a calendar. "+R("mcnulty2020,colenso2023")+"</p><p><b>Everything here is optional.</b> You can follow your normal plan in every phase, skip the check-in, or never enter cycle dates at all.</p>",
+ar:"<p><b>الدورة الشهرية</b> تمتد من أول يوم في حيضةٍ إلى اليوم السابق للحيضة التالية. أما الحيض نفسه فهو الأيام الأولى فقط، ويشمل باقي الدورة الطور الجريبي والإباضة والطور الأصفري. ويتفاوت طول الدورة وأعراضها بين النساء ومن شهر لآخر.</p><p><b>ما يستطيع البحث العلمي قوله:</b> في المتوسط، لا تُحدث مرحلة الدورة إلا فرقًا ضئيلًا جدًا في الأداء، ولا يوجد دليل جيد على برامج تمرين صارمة حسب المرحلة. أما ما يتفاوت بوضوح فهو <i>الأعراض</i>، لذا يتكيّف ازدهار مع شعورك لا مع التقويم. "+R("mcnulty2020,colenso2023")+"</p><p><b>كل ما هنا اختياري.</b> يمكنكِ اتّباع خطتك المعتادة في كل المراحل، أو تخطّي التسجيل اليومي، أو عدم إدخال تواريخ الدورة إطلاقًا.</p>"}
+};
 
 /* ---------- figure renderer: 2D skeleton + IK ---------- */
 var FIG={T:28,UA:15,FA:14,TH:20,SH:19,HEAD:6.5,NECK:3,FL:110};
@@ -2053,8 +2401,694 @@ function applyLang(){
   renderFind();renderLibUI();renderLib2();renderRoutines();renderGuide();refreshLevels();
   if(dlg.open&&dlgId)openEx(dlgId);
 }
-renderRefList();renderRefs(document);pfSetLift(0);applyLang();
 window.__bloom={EX:EX,openEx:openEx,closeDlg:closeDlg,reasonsFor:reasonsFor,ROUT:ROUT,WEEK:WEEK,FIGS:FIGS,AR_EX:AR_EX};
+
+/* ================= Menstrual cycle: check-in, optional phase estimate, guide ================= */
+var CYS={
+en:{q:{cr:"Cramps or period pain today",en:"Energy",sl:"Last night's sleep",bl:"Bleeding today",pref:"What would you prefer today?"},
+o:{cr:[["none","None"],["mild","Mild"],["mod","Moderate"],["sev","Strong"]],en:[["good","Good"],["ok","OK"],["low","Low"]],sl:[["good","Good"],["poor","Poor"]],bl:[["none","None"],["light","Light"],["normal","Normal"],["heavy","Heavy"]],pref:[["normal","My normal session"],["modified","A lighter version"],["gentle","Gentle movement"],["rest","Rest today"]]},
+symT:"Anything else today? (optional)",sym:[["head","Headache"],["nausea","Nausea"],["back","Lower back discomfort"],["bloat","Bloating or breast tenderness"],["mood","Low mood, anxiety or irritability"],["prone","Lying face-down is uncomfortable"]],
+rfT:"Any of these? (they need medical advice, not a workout tweak)",rf:[["soak","Soaking a pad or tampon every 1–2 hours, or large clots"],["faint","Dizzy, faint or short of breath"],["severe","Pain much worse than usual, or not eased by usual pain relief"],["fever","Fever with pelvic or tummy pain"],["preg","Pain or bleeding and I could be pregnant"],["between","Bleeding between periods, after sex or after menopause"]],
+tier:["Your usual training","Usual plan, with easier options","Lighter session suggested","Gentle movement or rest","Medical advice first"],
+msg:["Nothing needs to change today. Train as planned.","Keep your plan. If you'd like it easier, tap ‹ › on any exercise to preview an easier option.","If you'd like: one set fewer per exercise, stop each set 3–4 reps before you couldn't do another, and swap jumping or face-down exercises for gentler ones. Or try the low-energy strength session.","Try the period-comfort gentle session or an easy walk. Resting today is also a good choice. Don't push through pain.","Please get medical advice before exercising. Exercise isn't the priority today."],
+restMsg:"Rest is a valid choice. Gentle walking or breathing is there if you change your mind.",normalNote:"You chose your normal session: that's fine if you feel able. Lower the effort or stop if pain or symptoms increase.",
+urgent:"Fainting, heavy bleeding with dizziness, fever with pelvic pain, or pain or bleeding when you could be pregnant can be urgent: seek care today. In Saudi Arabia call 997 (911 also works).",
+apply:"Apply to my routines today",applied:"Applied to your routines for today",unapply:"Stop applying today",clear:"Clear today's check-in",skip:"Skip: use my plan as usual",goR:"Open {r}",
+note:"Not a diagnostic tool. It suggests optional adjustments only and never changes your saved routines. Your answers stay on this device and are replaced each day.",
+banner:"Today's check-in",bmsg:["Usual training.","Easier options are a tap away: use ‹ › on any exercise.","Showing one set fewer per exercise. Gentler swaps are offered for jumping or face-down exercises.","Gentle movement or rest is suggested. Routines show one set fewer if you still train.","Please get medical advice first."],estT:"Where am I in my cycle? (optional)",estStart:"First day of your last period",estLen:"Usual cycle length (days)",estMode:"My cycles are",modes:[["reg","Fairly regular"],["irr","Irregular"],["hc","On hormonal contraception"],["unsure","Not sure"]],
+estNo:"Phase estimates aren't useful for irregular cycles, hormonal contraception or when you're unsure. Use the daily check-in instead: it works on how you feel.",estNeed:"Add the first day of your last period to see a rough estimate.",
+estOut:"Day {d} of a cycle that's usually about {l} days. Rough estimate: {p}.",estCave:"This is a calendar estimate only. It can't confirm ovulation or hormone levels, and it doesn't change your workouts.",
+estLate:"Your period may be late, or this cycle is longer than usual. That's common, but if periods stop for 3 months, or you could be pregnant, take a test and see a doctor.",estFut:"That date is in the future.",
+phShort:{men:"period",fol:"follicular phase",ovu:"around ovulation (window)",lut:"luteal phase / premenstrual days"},
+clearEst:"Clear saved dates",bar:{men:"Period",fol:"Follicular",ovu:"Ovulation window",lut:"Luteal",ex:"Example: a {l}-day cycle. Real cycles vary, and ovulation timing varies most.",you:"Estimated day {d}"},
+phTitle:"Phase by phase: what the research says",phSays:"What research says",phDo:"What you can do",phGood:"Often comfortable if you have symptoms",phAdj:"May feel worse if you have symptoms: adjust, don't force",phR:"Routines that fit",
+syTitle:"By symptom: often better or often worse",syGood:"Often more comfortable",syBad:"Often less comfortable",syEv:"Evidence",
+evTitle:"Evidence check: claims you'll hear",evClaim:"Claim",evVerdict:"Verdict",evWhy:"What the research shows",otTitle:"If your situation is different",safeTitle:"When to see a doctor",lvKey:"How to read the ratings"},
+ar:{q:{cr:"التقلّصات أو ألم الدورة اليوم",en:"الطاقة",sl:"نوم الليلة الماضية",bl:"النزيف اليوم",pref:"ماذا تفضّلين اليوم؟"},
+o:{cr:[["none","لا يوجد"],["mild","خفيف"],["mod","متوسط"],["sev","شديد"]],en:[["good","جيدة"],["ok","مقبولة"],["low","منخفضة"]],sl:[["good","جيد"],["poor","سيئ"]],bl:[["none","لا يوجد"],["light","خفيف"],["normal","عادي"],["heavy","غزير"]],pref:[["normal","جلستي المعتادة"],["modified","نسخة أخف"],["gentle","حركة لطيفة"],["rest","راحة اليوم"]]},
+symT:"هل هناك شيء آخر اليوم؟ (اختياري)",sym:[["head","صداع"],["nausea","غثيان"],["back","انزعاج أسفل الظهر"],["bloat","انتفاخ أو ألم الثدي"],["mood","انخفاض المزاج أو القلق أو العصبية"],["prone","الاستلقاء على البطن مزعج"]],
+rfT:"هل يوجد أيٌّ مما يلي؟ (يحتاج إلى استشارة طبية لا إلى تعديل التمرين)",rf:[["soak","امتلاء الفوطة أو السدادة كل 1–2 ساعة، أو جلطات كبيرة"],["faint","دوخة أو إغماء أو ضيق نفس"],["severe","ألم أسوأ بكثير من المعتاد، أو لا يخفّ بالمسكّنات المعتادة"],["fever","حرارة مع ألم في الحوض أو البطن"],["preg","ألم أو نزيف مع احتمال الحمل"],["between","نزيف بين الدورات أو بعد الجماع أو بعد انقطاع الطمث"]],
+tier:["تمرينك المعتاد","خطتك المعتادة مع خيارات أسهل","يُقترح جلسة أخف","حركة لطيفة أو راحة","الاستشارة الطبية أولًا"],
+msg:["لا شيء يحتاج إلى تغيير اليوم. تمرّني كما خطّطتِ.","حافظي على خطتك. وإن أردتِها أسهل، اضغطي ‹ › على أي تمرين لمعاينة خيار أسهل.","إن رغبتِ: مجموعة أقل لكل تمرين، وأنهي كل مجموعة وأنتِ قادرة على 3–4 تكرارات إضافية، واستبدلي القفز أو تمارين الاستلقاء على البطن بخيارات ألطف. أو جرّبي جلسة القوة لأيام الطاقة المنخفضة.","جرّبي الجلسة اللطيفة لأيام الدورة أو مشيًا هادئًا. والراحة اليوم خيار جيد أيضًا. لا تتمرّني رغم الألم.","يُرجى طلب استشارة طبية قبل التمرين. التمرين ليس الأولوية اليوم."],
+restMsg:"الراحة خيار سليم. والمشي الهادئ أو التنفّس متاحان إن غيّرتِ رأيك.",normalNote:"اخترتِ جلستك المعتادة: لا بأس بذلك إن شعرتِ بالقدرة. خفّفي الجهد أو توقّفي إن زاد الألم أو الأعراض.",
+urgent:"الإغماء، أو النزيف الغزير مع الدوخة، أو الحرارة مع ألم الحوض، أو الألم أو النزيف مع احتمال الحمل قد تكون حالات عاجلة: اطلبي الرعاية اليوم. في السعودية اتصلي بـ 997 (ويعمل 911 أيضًا).",
+apply:"طبّقيه على روتيناتي اليوم",applied:"مُطبّق على روتيناتك اليوم",unapply:"أوقفي التطبيق اليوم",clear:"امسحي تسجيل اليوم",skip:"تخطّي: استخدمي خطتي كالمعتاد",goR:"افتحي {r}",
+note:"ليست أداة تشخيص. تقترح تعديلات اختيارية فقط ولا تغيّر روتيناتك المحفوظة أبدًا. تبقى إجاباتك على هذا الجهاز وتُستبدل كل يوم.",
+banner:"تسجيل اليوم",bmsg:["تمرين معتاد.","الخيارات الأسهل على بُعد نقرة: استخدمي ‹ › على أي تمرين.","تظهر مجموعة أقل لكل تمرين، مع بدائل ألطف لتمارين القفز أو الاستلقاء على البطن.","يُقترح حركة لطيفة أو راحة. وتظهر الروتينات بمجموعة أقل إن تمرّنتِ.","يُرجى طلب الاستشارة الطبية أولًا."],estT:"أين أنا في دورتي؟ (اختياري)",estStart:"أول يوم في آخر دورة",estLen:"طول الدورة المعتاد (بالأيام)",estMode:"دوراتي",modes:[["reg","منتظمة تقريبًا"],["irr","غير منتظمة"],["hc","أستخدم موانع حمل هرمونية"],["unsure","لستُ متأكدة"]],
+estNo:"تقدير المرحلة غير مفيد مع الدورات غير المنتظمة أو موانع الحمل الهرمونية أو عند عدم التأكد. استخدمي التسجيل اليومي بدلًا من ذلك، فهو يعتمد على شعورك.",estNeed:"أضيفي أول يوم في آخر دورة لرؤية تقدير تقريبي.",
+estOut:"اليوم {d} من دورة طولها المعتاد نحو {l} يومًا. تقدير تقريبي: {p}.",estCave:"هذا تقدير بالتقويم فقط، ولا يمكنه تأكيد الإباضة أو مستوى الهرمونات، ولا يغيّر تمارينك.",
+estLate:"قد تكون دورتك متأخرة، أو أن هذه الدورة أطول من المعتاد. هذا شائع، لكن إن انقطعت الدورة 3 أشهر أو كان الحمل ممكنًا فأجري اختبارًا وراجعي الطبيبة.",estFut:"هذا التاريخ في المستقبل.",
+phShort:{men:"أيام الدورة",fol:"الطور الجريبي",ovu:"حول الإباضة (نافذة تقريبية)",lut:"الطور الأصفري / أيام ما قبل الدورة"},
+clearEst:"امسحي التواريخ المحفوظة",bar:{men:"الدورة",fol:"الجريبي",ovu:"نافذة الإباضة",lut:"الأصفري",ex:"مثال: دورة طولها {l} يومًا. الدورات الحقيقية تتفاوت، ويتفاوت توقيت الإباضة أكثر من غيره.",you:"اليوم المقدّر {d}"},
+phTitle:"مرحلة بمرحلة: ماذا تقول الأبحاث",phSays:"ماذا تقول الأبحاث",phDo:"ما يمكنكِ فعله",phGood:"مريحة غالبًا إن كانت لديكِ أعراض",phAdj:"قد تكون أسوأ إن كانت لديكِ أعراض: عدّليها ولا تُجبري نفسك",phR:"روتينات مناسبة",
+syTitle:"حسب العَرَض: ما يكون غالبًا أفضل أو أسوأ",syGood:"أكثر راحة غالبًا",syBad:"أقل راحة غالبًا",syEv:"الدليل",
+evTitle:"فحص الدليل: ادعاءات ستسمعينها",evClaim:"الادعاء",evVerdict:"الحكم",evWhy:"ماذا تُظهر الأبحاث",otTitle:"إن كان وضعك مختلفًا",safeTitle:"متى تراجعين الطبيبة",lvKey:"كيف تقرئين التقييمات"}};
+function cy(k){return CYS[LANG][k];}
+var CK=store.get("cyck",null),CP=store.get("cycp",{start:"",len:28,mode:"reg"});
+function ckDay(){return dKey(new Date());}
+function ckValid(){return CK&&CK.d===ckDay();}
+function ckEnsure(){if(!ckValid())CK={d:ckDay(),sym:{},rf:{},on:false,subs:{}};return CK;}
+function ckSave(){store.set("cyck",CK);}
+function ckTier(c){
+  if(!c)return -1;var rf=Object.keys(c.rf||{}).some(function(k){return c.rf[k];});if(rf)return 4;
+  var sy=Object.keys(c.sym||{}).filter(function(k){return c.sym[k]&&k!=="prone";}).length,tier=0;
+  if(c.pref==="rest"||c.pref==="gentle"||c.cr==="sev")tier=3;
+  else if(c.cr==="mod"||c.en==="low"||c.bl==="heavy"||c.pref==="modified"||(c.sl==="poor"&&(sy||c.cr==="mild"))||sy>=2)tier=2;
+  else if(c.cr==="mild"||sy||c.sl==="poor"||c.en==="ok")tier=1;
+  if(c.pref==="normal"&&tier>1)tier=1;
+  return tier;
+}
+function ckAnswered(){return ckValid()&&(CK.cr||CK.en||CK.sl||CK.bl||CK.pref||Object.keys(CK.sym||{}).some(function(k){return CK.sym[k];})||Object.keys(CK.rf||{}).some(function(k){return CK.rf[k];}));}
+function ckToday(){if(!ckValid()||!ckAnswered())return null;return {on:!!CK.on,tier:ckTier(CK),noProne:!!(CK.sym&&CK.sym.prone),subs:CK.subs||{}};}
+function ckSub(key,id){ckEnsure();CK.subs=CK.subs||{};if(id)CK.subs[key]=id;else delete CK.subs[key];ckSave();}
+function ckSetOn(v){ckEnsure();CK.on=!!v;ckSave();renderCheckOut();}
+function ckBannerHTML(){
+  var td=ckToday();if(!td||!td.on)return "";var T=cy("tier");
+  var rr=td.tier===3?"C1":td.tier===2?"C2":"";
+  return '<div class="ck-banner" role="status"><div><b>'+esc(cy("banner"))+': '+esc(T[td.tier])+'</b><span>'+esc(cy("bmsg")[td.tier])+'</span></div><div class="ck-bact">'+
+  (td.tier>=2?'<button type="button" class="btn sm" data-ck="all">'+esc(bt("todayAll"))+'</button>':'')+(rr?'<button type="button" class="btn sm" data-goroutine="'+rr+'">'+esc(bf(cy("goR"),{r:ROUT[rr].t[LANG]}))+'</button>':'')+
+  '<button type="button" class="btn sm ghost" data-ck="open">'+esc(bt("todayOpen"))+'</button><button type="button" class="btn sm ghost" data-ck="off">'+esc(bt("todayOff"))+'</button></div></div>';
+}
+
+/* ---- phase estimate (optional, calendar-based, explicitly approximate) ---- */
+function cpEstimate(){
+  if(CP.mode!=="reg"||!CP.start)return null;
+  var p=CP.start.split("-"),s=new Date(+p[0],+p[1]-1,+p[2]),now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var d=Math.round((t0-s)/864e5)+1,L=Math.max(21,Math.min(45,+CP.len||28));
+  if(isNaN(d))return null;if(d<1)return {fut:1};
+  var ph=d<=5?"men":d>L+7?"late":d>=L-16&&d<=L-10?"ovu":d>L-10?"lut":"fol";
+  return {d:d,L:L,ph:ph};
+}
+function cyBarHTML(){
+  var est=cpEstimate(),L=est&&est.L?est.L:(+CP.len||28),B=cy("bar"),fol=Math.max(1,L-16-5),seg=[["men",5],["fol",fol],["ovu",6],["lut",L-5-fol-6]];
+  var h='<div class="cy-bar" role="img" aria-label="'+esc(bf(B.ex,{l:L}))+'">'+seg.map(function(x){return '<div class="cy-seg cy-'+x[0]+'" style="flex:'+x[1]+'"><span>'+esc(B[x[0]])+'</span></div>';}).join("");
+  if(est&&est.d&&est.d<=L)h+='<i class="cy-you" style="inset-inline-start:'+((est.d-0.5)/L*100).toFixed(1)+'%" title="'+esc(bf(B.you,{d:est.d}))+'"></i>';
+  return h+'</div><div class="cy-days" dir="ltr"><span>1</span><span>'+L+'</span></div><p class="small muted">'+esc(bf(B.ex,{l:L}))+' '+R("bull2019")+'</p>';
+}
+function renderEst(){
+  var M=cy("modes");
+  $("#cyEstF").innerHTML='<div class="cy-f"><span class="label">'+esc(cy("estMode"))+'</span><div class="chips">'+M.map(function(m){return '<button type="button" class="chip" data-cpmode="'+m[0]+'" aria-pressed="'+(CP.mode===m[0])+'">'+esc(m[1])+'</button>';}).join("")+'</div></div>'+
+  (CP.mode==="reg"?'<div class="cy-row"><label class="cy-f"><span class="label">'+esc(cy("estStart"))+'</span><input type="date" id="cpStart" value="'+esc(CP.start||"")+'" max="'+ckDay()+'"></label><label class="cy-f"><span class="label">'+esc(cy("estLen"))+'</span><input type="number" id="cpLen" min="21" max="45" inputmode="numeric" value="'+esc(CP.len||28)+'"></label></div>':'');
+  var est=cpEstimate(),o;
+  if(CP.mode!=="reg")o='<p>'+esc(cy("estNo"))+'</p>';
+  else if(!CP.start)o='<p class="muted">'+esc(cy("estNeed"))+'</p>';
+  else if(est&&est.fut)o='<p>'+esc(cy("estFut"))+'</p>';
+  else if(est.ph==="late")o='<p>'+esc(cy("estLate"))+' '+R("acog651")+'</p>';
+  else o='<p><b>'+esc(bf(cy("estOut"),{d:est.d,l:est.L,p:cy("phShort")[est.ph]}))+'</b></p><p class="small muted">'+esc(cy("estCave"))+' '+R("bull2019,colenso2023")+'</p><button type="button" class="chip" data-cyph="'+est.ph+'">'+esc(cy("phShort")[est.ph])+' →</button>';
+  $("#cyEstOut").innerHTML=o+(CP.start||CP.mode!=="reg"?'<p><button type="button" class="btn sm ghost" data-cpclear>'+esc(cy("clearEst"))+'</button></p>':'');
+  $("#cyBar").innerHTML=cyBarHTML();renderRefs($("#cycle"));
+}
+/* ---- check-in ---- */
+function renderCheck(){
+  var c=ckValid()?CK:{sym:{},rf:{}},Q=cy("q"),O=cy("o");
+  $("#cyQs").innerHTML=["cr","en","sl","bl","pref"].map(function(q){return '<div class="cy-q"><span class="label" id="cyq-'+q+'">'+esc(Q[q])+'</span><div class="chips" role="group" aria-labelledby="cyq-'+q+'">'+O[q].map(function(o){return '<button type="button" class="chip" data-ckq="'+q+'" data-v="'+o[0]+'" aria-pressed="'+(c[q]===o[0])+'">'+esc(o[1])+'</button>';}).join("")+'</div></div>';}).join("")+
+  '<div class="cy-q"><span class="label">'+esc(cy("symT"))+'</span><div class="cy-checks">'+cy("sym").map(function(s){return '<label class="pflag"><input type="checkbox" data-cks="'+s[0]+'"'+((c.sym||{})[s[0]]?" checked":"")+'><span>'+esc(s[1])+'</span></label>';}).join("")+'</div></div>'+
+  '<div class="cy-q cy-rf"><span class="label">'+esc(cy("rfT"))+'</span><div class="cy-checks">'+cy("rf").map(function(s){return '<label class="pflag"><input type="checkbox" data-ckr="'+s[0]+'"'+((c.rf||{})[s[0]]?" checked":"")+'><span>'+esc(bxIso(s[1]))+'</span></label>';}).join("")+'</div></div>';
+  renderCheckOut();
+}
+function renderCheckOut(){
+  var o=$("#cyOut");if(!o)return;
+  if(!ckAnswered()){o.innerHTML='<p class="muted small">'+esc(cy("note"))+'</p><button type="button" class="btn sm ghost" data-goroutine="'+(BX.sel||"Q10A")+'">'+esc(cy("skip"))+'</button>';return;}
+  var tr=ckTier(CK),T=cy("tier"),urgent=CK.rf&&(CK.rf.faint||CK.rf.fever||CK.rf.preg||CK.rf.soak);
+  var rr=tr===3?["C1","C3"]:tr===2?["C2","C1"]:tr===1?["C3"]:[];
+  o.innerHTML='<div class="ck-out t'+tr+'"><span class="ck-tier">'+esc(T[tr])+'</span><p>'+esc(CK.pref==="rest"&&tr===3?cy("restMsg"):CYS[LANG].msg[tr])+'</p>'+
+  (CK.pref==="normal"&&(CK.cr==="sev"||CK.cr==="mod"||CK.en==="low")?'<p class="small">'+esc(cy("normalNote"))+'</p>':'')+
+  (tr===4?(urgent?'<p class="small"><b>'+esc(cy("urgent"))+'</b></p>':'')+'<p class="small"><a href="#cySafe">'+esc(cy("safeTitle"))+'</a></p>':'')+
+  (tr<4&&rr.length?'<div class="chips">'+rr.map(function(r){return '<button type="button" class="chip big" data-goroutine="'+r+'">'+esc(ROUT[r].t[LANG])+'</button>';}).join("")+'</div>':'')+
+  '<div class="btn-row">'+(tr>=1&&tr<4?(CK.on?'<span class="tag acc">✓ '+esc(cy("applied"))+'</span><button type="button" class="btn sm ghost" data-ckapply="0">'+esc(cy("unapply"))+'</button>':'<button type="button" class="btn sm primary" data-ckapply="1">'+esc(cy("apply"))+'</button>'):'')+
+  '<button type="button" class="btn sm ghost" data-ckclear>'+esc(cy("clear"))+'</button></div><p class="small muted">'+esc(cy("note"))+'</p></div>';
+}
+/* ---- static guide parts ---- */
+function cyLv(k){return '<span class="ev-lv ev-'+k+'">'+esc(CYC.LV[k][LANG])+'</span>';}
+function cyChips(ids){return ids.filter(function(id){return EX[id];}).map(function(id){return '<button type="button" class="chip" data-open-ex="'+id+'">'+esc(X(id).name)+'</button>';}).join("");}
+function renderCycle(){
+  $("#cyIntro").innerHTML=CYC.INTRO[LANG];
+  $("#cyPhT").textContent=cy("phTitle");$("#cySyT").textContent=cy("syTitle");$("#cyEvT").textContent=cy("evTitle");$("#cyOtT").textContent=cy("otTitle");$("#cySafeT").textContent=cy("safeTitle");$("#cyEstT").textContent=cy("estT");
+  var open=$$("#cyPh details[open]").map(function(d){return d.id;});
+  $("#cyPh").innerHTML=CYC.PH.map(function(p){return '<details class="gcard cy-ph" id="cyph-'+p.id+'"'+(open.indexOf("cyph-"+p.id)>=0?" open":"")+' style="--phc:'+p.c+'"><summary><span class="cy-dot" aria-hidden="true"></span><b>'+esc(p.t[LANG])+'</b>'+CHEV+'</summary><div class="gbody">'+
+    '<p class="small muted">'+esc(bxIso(p.when[LANG]))+'</p><div class="ev-lvs">'+p.lv.map(cyLv).join("")+'</div>'+
+    '<h4>'+esc(cy("phSays"))+'</h4><p>'+p.says[LANG]+'</p><h4>'+esc(cy("phDo"))+'</h4><p>'+esc(bxIso(p.act[LANG]))+'</p>'+
+    (p.good.length?'<h4>'+esc(cy("phGood"))+'</h4><div class="chips">'+cyChips(p.good)+'</div>':'')+
+    (p.adj.length?'<h4>'+esc(cy("phAdj"))+'</h4><div class="chips adj">'+cyChips(p.adj)+'</div>':'')+
+    (p.r.length?'<h4>'+esc(cy("phR"))+'</h4><div class="chips">'+p.r.map(function(r){return '<button type="button" class="chip big" data-goroutine="'+r+'">'+esc(ROUT[r].t[LANG])+'</button>';}).join("")+'</div>':'')+'</div></details>';}).join("");
+  $("#cySy").innerHTML='<div class="sy-grid">'+CYC.SY.map(function(s){return '<article class="sy-card"><h4>'+esc(s.t[LANG])+'</h4>'+
+    (s.good.length?'<div class="sy-l"><span class="sy-k good">'+esc(cy("syGood"))+'</span><div class="chips">'+cyChips(s.good)+'</div></div>':'')+
+    (s.bad.length?'<div class="sy-l"><span class="sy-k bad">'+esc(cy("syBad"))+'</span><div class="chips adj">'+cyChips(s.bad)+'</div></div>':'')+
+    '<p class="small">'+esc(bxIso(s.tip[LANG]))+'</p><p class="small muted"><b>'+esc(cy("syEv"))+':</b> '+cyLv(s.lv)+' '+esc(s.ev[LANG])+(s.r?' '+R(s.r):'')+'</p></article>';}).join("")+'</div>';
+  $("#cyEv").innerHTML='<p class="small muted"><b>'+esc(cy("lvKey"))+':</b> '+esc(CYC.LVD[LANG])+'</p><div class="ev-tbl" role="table"><div class="ev-r ev-h" role="row"><span role="columnheader">'+esc(cy("evClaim"))+'</span><span role="columnheader">'+esc(cy("evVerdict"))+'</span><span role="columnheader">'+esc(cy("evWhy"))+'</span></div>'+
+    CYC.EV.map(function(e){return '<div class="ev-r" role="row"><span role="cell"><b>'+esc(e.c[LANG])+'</b></span><span role="cell">'+cyLv(e.v)+'</span><span role="cell">'+esc(bxIso(e.s[LANG]))+(e.r?' '+R(e.r):'')+'</span></div>';}).join("")+'</div>';
+  $("#cyOt").innerHTML=CYC.OT.map(function(o){return '<details class="gcard"><summary><b>'+esc(o.t[LANG])+'</b>'+CHEV+'</summary><div class="gbody">'+o[LANG]+'</div></details>';}).join("");
+  $("#cySafe").innerHTML=CYC.SAFE[LANG];
+  renderEst();renderCheck();renderRefs($("#cycle"));
+}
+/* ---- events ---- */
+document.addEventListener("click",function(e){
+  var tg=e.target,b;
+  if((b=tg.closest("[data-ckq]"))){ckEnsure();var q=b.getAttribute("data-ckq"),v=b.getAttribute("data-v");CK[q]=CK[q]===v?"":v;ckSave();renderCheck();renderRoutines();return;}
+  if((b=tg.closest("[data-ckapply]"))){ckSetOn(b.getAttribute("data-ckapply")==="1");renderRoutines();return;}
+  if((b=tg.closest("[data-ckclear]"))){CK=null;store.set("cyck",null);renderCheck();renderRoutines();return;}
+  if((b=tg.closest("[data-cpmode]"))){CP.mode=b.getAttribute("data-cpmode");store.set("cycp",CP);renderEst();return;}
+  if((b=tg.closest("[data-cpclear]"))){CP={start:"",len:28,mode:"reg"};store.set("cycp",CP);renderEst();return;}
+  if((b=tg.closest("[data-cyph]"))){var d=document.getElementById("cyph-"+b.getAttribute("data-cyph"));if(d){d.open=true;d.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});}return;}
+});
+document.addEventListener("change",function(e){
+  var tg=e.target;
+  if(tg.hasAttribute&&tg.hasAttribute("data-cks")){ckEnsure();CK.sym=CK.sym||{};CK.sym[tg.getAttribute("data-cks")]=tg.checked;ckSave();renderCheckOut();renderRoutines();return;}
+  if(tg.hasAttribute&&tg.hasAttribute("data-ckr")){ckEnsure();CK.rf=CK.rf||{};CK.rf[tg.getAttribute("data-ckr")]=tg.checked;ckSave();renderCheckOut();renderRoutines();return;}
+  if(tg.id==="cpStart"){CP.start=tg.value;store.set("cycp",CP);renderEst();return;}
+  if(tg.id==="cpLen"){var n=+tg.value;if(n>=21&&n<=45){CP.len=n;store.set("cycp",CP);renderEst();}return;}
+});
+
+/* =====================================================================
+   BLOOM ROUTINES EXPERIENCE: instant swaps, favourites, my routines,
+   difficulty adaptation, workout mode, history, cycle-aware "today" layer.
+   Original ROUT / HER / PFR records are never modified; user changes live
+   in BX (local storage) as slot -> exercise maps.
+   ===================================================================== */
+var BXS={
+en:{tabs:{all:"All",quick:"Quick",session:"Sessions",cycle:"Cycle-friendly",pelvic:"Lower body & pelvic floor",fav:"★ Favorites",mine:"My routines",week:"Weekly plans",hist:"History"},
+orig:"Original routine",mine:"My routine",based:"Based on",swN:"{n} swapped",unsaved:"not saved yet",saved:"saved",start:"▶ Start workout",adapt:"Adapt difficulty",saveas:"Save as my routine",rename:"Rename",dup:"Duplicate",reset:"Reset to original",del:"Delete",
+replace:"Replace",origBtn:"↺ Original",use:"Use this",cancel:"Cancel",preview:"Preview {i} of {n}",prevAlt:"Previous alternative",nextAlt:"Next alternative",was:"Routine's original:",swapped:"Swapped",origTag:"Original",
+noteHid:"The routine's note is written for {x}, so it's hidden here. Tap the name for this exercise's own coaching.",missing:"A saved swap is no longer in the library, so the routine's original exercise is shown.",
+ownDose:"Measured differently from the routine's exercise, so it uses its own dose: {d}.",much:"Much harder than the routine's exercise: start at the bottom of the range.",
+hint:"Swipe an exercise sideways, or use ‹ ›, to preview alternatives.",startMode:"▶ Start workout mode",clear:"Clear checkmarks",exN:"{n} exercises",min:"min",prog:"Progression",
+noAlt:"No close alternative for {x} in the library. Tap Replace to explore other levels.",replaced:"Replaced {a} with {b}.",restored:"Restored {a}.",undo:"Undo",
+favAdd:"Added to favorite routines.",favRm:"Removed from favorite routines.",favLbl:"Favorite routine",
+emptyFav:"No favorite routines yet. Tap ☆ next to a routine's name to add it here.",emptyMine:"No saved routines yet. Swap an exercise or adapt the difficulty, then tap “Save as my routine”.",emptyHist:"No workouts logged yet. Finish a routine in workout mode and it appears here, saved on this device.",
+pkTitle:"Replace exercise",pkCtx:"Exercise {i} of {n}",now:"Now",sel:"Selected",pick:"Pick an alternative below",modes:{best:"Best match",easier:"Easier",same:"Same level",harder:"Harder",all:"All levels"},anyLv:"Any level…",noImp:"No jumping",profInc:"Include ones my profile flags",
+pkMsg:"Matched to this slot's movement ({m}). Best matches first.",pkNone:"No suitable alternative at this setting. Try another level filter.",pkLoose:"No close match at this setting. Below are looser matches from the same category: check they fit your goal.",pkNoData:"No alternatives can be suggested for this exercise.",
+looser:"Looser matches",looserTag:"Looser match",origPlan:"Routine's original",full:"Full instructions",useX:"Use {x}",useDef:"Use this exercise",restoreOrig:"↺ Routine's original",profHidden:"{n} hidden by your profile answers.",
+d:{easier:"Easier: {l}",harder:"Harder: {l}",same:"Same level: {l}",eq:"Equipment: {e}",pre:"Prerequisite: {p}",elite:"{l}: check the prerequisites first",gate:"Has a readiness check before trying",imp:"Includes impact",invert:"Head below the heart",prone:"Lies face-down",wrist:"Weight on the hands",prof:"Your profile: {r}"},
+why:{same:"Same movement: {s}",fam:"Same category: {f}",rel:"Related movement: {s}",path:"Listed as a related exercise",orig:"The routine's original exercise"},
+nameTitleSave:"Save as my routine",nameTextSave:"Saves a copy with your current exercises. The original routine stays unchanged.",nameDef:"{t}: my version",nameLbl:"Routine name",saveBtn:"Save routine",savedT:"Saved “{n}”. Find it under My routines.",
+nameTitleRen:"Rename routine",renBtn:"Rename",nameTitleDup:"Duplicate routine",nameTextDup:"Creates a new routine in My routines with the same exercises.",dupBtn:"Duplicate",copy:"(copy)",created:"Created “{n}”.",
+resetT:"Restored the original exercises.",delTitle:"Delete “{n}”?",delText:"This removes the saved routine from this device. The original routine is not affected. This can't be undone.",delBtn:"Delete routine",deleted:"Routine deleted.",
+adTitle:"Adapt difficulty",adText:"Choose a target level. Each exercise is matched only to alternatives with the same movement. If none exists at that level, or your profile answers rule them out, the exercise stays and the reason is shown.",
+adSum:"{c} of {n} exercises would change.",adKeep:" {k} stay as they are; the reason is shown for each.",adNote:" Nothing changes until you apply it, and you can still adjust any exercise afterwards.",
+adAlready:"Already {l}.",adKept:"Kept: no {l} {s} exercise in the library suits you.",adKeptNo:"Kept: no matching data for this exercise.",adClosest:" Closest: {x} ({l}), available via Replace.",adApply:"Apply to this routine",adSave:"Save as new routine…",adDone:"{n} exercises adapted to {l}. Unchanged ones kept their exercise.",adName:"{t}: {l} version",
+wkExit:"✕ Exit",wkSet:"Set {n}",wkSetDone:"Set done",wkDone:"Done",wkOpt:"{s} sets: the last set is optional.",wkRest:"Rest",wkPause:"Pause",wkResume:"Resume",wkPlus:"+15 s",wkSkip:"Skip",wkSwap:"⇄ Swap exercise",wkMark:"Mark exercise done",wkUnmark:"Mark not done",wkPrev:"‹ Previous",wkNext:"Next ›",wkFin:"Finish workout",wkProg:"Exercises done",
+wkSumT:"Workout complete",wkSum:"{d}: {a} of {b} exercises marked done. Logged in History on this device.",wkBack:"Back to the routine",wkReview:"Review exercises",resume:"▶ Resume workout",logLine:"{a} of {b} exercises",
+today:"Today only",todayBtn:"Today: gentler option",todayBack:"↺ Back to the routine's exercise",todaySet:"−1 set today",todayNone:"No gentler alternative with the same purpose for {x}. You could skip it today.",todayAll:"Use today's gentler options",todayOff:"Turn off for today",todayOpen:"Open check-in",todayApplied:"{n} exercises swapped for today only.",
+lvRange:"{a} to {b}",noEq:"No equipment",eqL:"Equipment"},
+ar:{tabs:{all:"الكل",quick:"سريعة",session:"جلسات",cycle:"مناسبة لأيام الدورة",pelvic:"الجزء السفلي وقاع الحوض",fav:"★ المفضّلة",mine:"روتيناتي",week:"خطط أسبوعية",hist:"السجل"},
+orig:"روتين أصلي",mine:"روتيني",based:"مبني على",swN:"{n} مُستبدلة",unsaved:"لم تُحفظ بعد",saved:"محفوظة",start:"▶ ابدئي التمرين",adapt:"تعديل الصعوبة",saveas:"احفظيه كروتيني",rename:"إعادة التسمية",dup:"نسخ",reset:"استعادة الأصل",del:"حذف",
+replace:"استبدال",origBtn:"↺ الأصلي",use:"استخدميه",cancel:"إلغاء",preview:"معاينة {i} من {n}",prevAlt:"البديل السابق",nextAlt:"البديل التالي",was:"تمرين الروتين الأصلي:",swapped:"مُستبدل",origTag:"الأصلي",
+noteHid:"ملاحظة الروتين مكتوبة لتمرين {x}، لذا أُخفيت هنا. اضغطي الاسم لإرشادات هذا التمرين.",missing:"تمرين مُستبدل محفوظ لم يعد في المكتبة، لذا يظهر تمرين الروتين الأصلي.",
+ownDose:"يُقاس بطريقة مختلفة عن تمرين الروتين، لذا يستخدم جرعته الخاصة: {d}.",much:"أصعب بكثير من تمرين الروتين: ابدئي من أدنى المدى.",
+hint:"اسحبي التمرين جانبًا، أو استخدمي ‹ ›، لمعاينة البدائل.",startMode:"▶ ابدئي وضع التمرين",clear:"مسح العلامات",exN:"{n} تمارين",min:"دقيقة",prog:"التدرّج",
+noAlt:"لا يوجد بديل قريب لتمرين {x} في المكتبة. اضغطي «استبدال» لاستكشاف مستويات أخرى.",replaced:"استُبدل {a} بـ {b}.",restored:"استُعيد {a}.",undo:"تراجع",
+favAdd:"أُضيف إلى الروتينات المفضّلة.",favRm:"أُزيل من الروتينات المفضّلة.",favLbl:"روتين مفضّل",
+emptyFav:"لا توجد روتينات مفضّلة بعد. اضغطي ☆ بجانب اسم الروتين لإضافته هنا.",emptyMine:"لا توجد روتينات محفوظة بعد. استبدلي تمرينًا أو عدّلي الصعوبة، ثم اضغطي «احفظيه كروتيني».",emptyHist:"لا تمارين مسجّلة بعد. أنهي روتينًا في وضع التمرين ليظهر هنا، محفوظًا على هذا الجهاز.",
+pkTitle:"استبدال التمرين",pkCtx:"التمرين {i} من {n}",now:"الآن",sel:"المختار",pick:"اختاري بديلًا من الأسفل",modes:{best:"الأنسب",easier:"أسهل",same:"المستوى نفسه",harder:"أصعب",all:"كل المستويات"},anyLv:"مستوى محدد…",noImp:"بدون قفز",profInc:"أظهري ما يستبعده ملفي",
+pkMsg:"مطابَقة لحركة هذا التمرين ({m}). الأنسب أولًا.",pkNone:"لا يوجد بديل مناسب بهذا الإعداد. جرّبي مستوى آخر.",pkLoose:"لا يوجد تطابق قريب بهذا الإعداد. في الأسفل بدائل أبعد من الفئة نفسها: تأكّدي أنها تناسب هدفك.",pkNoData:"لا يمكن اقتراح بدائل لهذا التمرين.",
+looser:"بدائل أبعد",looserTag:"تطابق أبعد",origPlan:"تمرين الروتين الأصلي",full:"التعليمات الكاملة",useX:"استخدمي {x}",useDef:"استخدمي هذا التمرين",restoreOrig:"↺ تمرين الروتين الأصلي",profHidden:"{n} مخفية حسب إجابات ملفك.",
+d:{easier:"أسهل: {l}",harder:"أصعب: {l}",same:"المستوى نفسه: {l}",eq:"الأدوات: {e}",pre:"المتطلب المسبق: {p}",elite:"{l}: راجعي المتطلبات المسبقة أولًا",gate:"له شروط جاهزية قبل التجربة",imp:"يتضمّن ارتطامًا",invert:"الرأس أخفض من القلب",prone:"استلقاء على البطن",wrist:"استناد على اليدين",prof:"ملفك: {r}"},
+why:{same:"الحركة نفسها: {s}",fam:"الفئة نفسها: {f}",rel:"حركة قريبة: {s}",path:"مدرج كتمرين ذي صلة",orig:"تمرين الروتين الأصلي"},
+nameTitleSave:"احفظيه كروتيني",nameTextSave:"يحفظ نسخة بتمارينك الحالية، ويبقى الروتين الأصلي دون تغيير.",nameDef:"{t}: نسختي",nameLbl:"اسم الروتين",saveBtn:"احفظي الروتين",savedT:"حُفظ «{n}». تجدينه في روتيناتي.",
+nameTitleRen:"إعادة تسمية الروتين",renBtn:"إعادة التسمية",nameTitleDup:"نسخ الروتين",nameTextDup:"ينشئ روتينًا جديدًا في روتيناتي بالتمارين نفسها.",dupBtn:"نسخ",copy:"(نسخة)",created:"أُنشئ «{n}».",
+resetT:"استُعيدت التمارين الأصلية.",delTitle:"حذف «{n}»؟",delText:"يحذف هذا الروتين المحفوظ من هذا الجهاز، ولا يتأثر الروتين الأصلي. لا يمكن التراجع عن ذلك.",delBtn:"احذفي الروتين",deleted:"حُذف الروتين.",
+adTitle:"تعديل الصعوبة",adText:"اختاري المستوى المستهدف. يُطابَق كل تمرين مع بدائل لها الحركة نفسها فقط. وإن لم يوجد بديل بهذا المستوى، أو استبعدته إجابات ملفك، يبقى التمرين ويظهر السبب.",
+adSum:"سيتغيّر {c} من {n} تمارين.",adKeep:" ويبقى {k} كما هي، مع بيان السبب لكل منها.",adNote:" لا يتغيّر شيء حتى تطبّقي التعديل، ويمكنك تعديل أي تمرين بعد ذلك.",
+adAlready:"مستواه {l} أصلًا.",adKept:"بقي: لا يوجد في المكتبة تمرين {s} بمستوى {l} يناسبك.",adKeptNo:"بقي: لا توجد بيانات مطابقة لهذا التمرين.",adClosest:" الأقرب: {x} ({l})، متاح عبر «استبدال».",adApply:"طبّقي على هذا الروتين",adSave:"احفظيه روتينًا جديدًا…",adDone:"عُدّل {n} تمارين إلى مستوى {l}. وبقيت التمارين الأخرى كما هي.",adName:"{t}: نسخة {l}",
+wkExit:"✕ خروج",wkSet:"المجموعة {n}",wkSetDone:"تمّت المجموعة",wkDone:"تم",wkOpt:"{s} مجموعات: المجموعة الأخيرة اختيارية.",wkRest:"راحة",wkPause:"إيقاف مؤقت",wkResume:"استئناف",wkPlus:"+15 ث",wkSkip:"تخطٍّ",wkSwap:"⇄ استبدال التمرين",wkMark:"تم إنجاز التمرين",wkUnmark:"إلغاء الإنجاز",wkPrev:"› السابق",wkNext:"التالي ‹",wkFin:"إنهاء التمرين",wkProg:"التمارين المنجزة",
+wkSumT:"اكتمل التمرين",wkSum:"{d}: أُنجز {a} من {b} تمارين. سُجّل في السجل على هذا الجهاز.",wkBack:"العودة إلى الروتين",wkReview:"مراجعة التمارين",resume:"▶ تابعي التمرين",logLine:"{a} من {b} تمارين",
+today:"لليوم فقط",todayBtn:"اليوم: خيار ألطف",todayBack:"↺ العودة إلى تمرين الروتين",todaySet:"−1 مجموعة اليوم",todayNone:"لا يوجد بديل ألطف بالغرض نفسه لتمرين {x}. يمكنكِ تخطّيه اليوم.",todayAll:"استخدمي خيارات اليوم الألطف",todayOff:"أوقفيه لليوم",todayOpen:"افتحي التسجيل اليومي",todayApplied:"استُبدل {n} تمارين لليوم فقط.",
+lvRange:"{a} إلى {b}",noEq:"بدون أدوات",eqL:"الأدوات"}};
+function bt(k){var s=BXS[LANG][k];return s==null?BXS.en[k]:s;}
+function bf(s,o){return String(s).replace(/\{(\w+)\}/g,function(_,k){return o[k]==null?"":o[k];});}
+var BXRTL=function(){return LANG==="ar";};
+
+/* ---- supplementary matching metadata (separate from exercise records): family.sub ---- */
+var BROLE={
+wall_pushup:"push.pushup",incline_pushup:"push.pushup",knee_pushup:"push.pushup",pushup:"push.pushup",diamond_pushup:"push.pushup",archer_pushup:"push.pushup",pike:"push.vertical",
+prone_pull:"pull.prone",reverse_snow_angel:"pull.prone",ytw:"pull.prone",scap_pushup:"shoulder.scap",wall_slide:"shoulder.scap",arm_circles:"mob.shoulder",
+sit_to_stand:"knee.squat",squat:"knee.squat",wall_sit:"knee.squat",
+split_squat:"knee.single",reverse_lunge:"knee.single",bulgarian_split:"knee.single",step_up:"knee.single",assisted_pistol:"knee.single",pistol_squat:"knee.single",shrimp_squat:"knee.single",step_down:"knee.single",lateral_lunge:"knee.lateral",
+good_morning:"hip.hinge",sl_rdl:"hip.hinge",pickup:"hip.hinge",slide_curl:"hip.hamcurl",glute_bridge:"hip.bridge",hip_thrust:"hip.bridge",sl_hip_thrust:"hip.bridge",quad_hip_ext:"hip.bridge",clamshell:"hip.abd",hip_abd:"hip.abd",adductor:"hip.add",
+dead_bug:"core.antiext",plank:"core.antiext",bear_hold:"core.antiext",hollow_hold:"core.antiext",side_plank:"core.lateral",carry_march:"core.lateral",bird_dog:"core.rot",plank_drag:"core.rot",superman:"core.backext",
+calf_raise:"feet.calf",tib_raise:"feet.tib",
+sl_balance:"bal.static",bal_stance:"bal.static",bal_weight_shift:"bal.static",bal_walk_back:"bal.dynamic",bal_clock:"bal.dynamic",bal_step_multi:"bal.dynamic",bal_reactive:"bal.dynamic",step_over:"bal.dynamic",
+floor_transfer:"func.floor",floor_rise:"func.floor",
+decel:"pow.land",squat_jump_stick:"pow.jump",skater_hop:"pow.lateral",lateral_shuffle:"pow.lateral",fast_sts:"pow.fast",fast_feet:"pow.feet",
+heel_drop:"bone.impact",stomp:"bone.impact",pogo_hops:"bone.impact",
+march:"car.cardio",step_touch:"car.cardio",shadow_box:"car.cardio",step_jack:"car.cardio",mountain_climber:"car.cardio",step_back_burpee:"car.cardio",
+ankle_rock:"mob.ankle",calf_stretch:"mob.ankle",ninety_ninety:"mob.hip",butterfly:"mob.hip",hip_flexor:"mob.hipflex",wgs:"mob.full",open_book:"mob.tspine",cat_cow:"mob.spine",pike_stretch:"mob.ham",deep_squat:"mob.squat",
+pf_find:"pf.aware",pf_towel:"pf.aware",pf_gentle:"pf.lying",pf_slow:"pf.lying",pf_quick:"pf.lying",pf_heel_slide:"pf.lying",pf_seated:"pf.upright",pf_standing:"pf.upright",pf_elevator:"pf.upright",pf_breath_coord:"pf.upright",
+pf_bridge:"pf.func",pf_sit_stand:"pf.func",pf_squat:"pf.func",pf_lunge:"pf.func",pf_single_leg:"pf.func",pf_lift:"pf.func",pf_knack:"pf.func",pf_walk:"pf.func",
+pf_breath:"pf.relax",pf_release:"pf.relax",child_pose:"pf.relax",happy_baby:"pf.relax",figure4:"pf.relax"
+};
+var BFAM={push:{en:"pushing",ar:"الدفع"},pull:{en:"pulling and upper back",ar:"السحب وأعلى الظهر"},shoulder:{en:"shoulder health",ar:"صحة الكتف"},knee:{en:"knee-dominant legs",ar:"تمارين الساق المعتمدة على الركبة"},hip:{en:"hips and glutes",ar:"الوركان والأرداف"},core:{en:"trunk",ar:"الجذع"},feet:{en:"feet and lower legs",ar:"القدمان وأسفل الساق"},bal:{en:"balance",ar:"التوازن"},func:{en:"daily-life tasks",ar:"مهام الحياة اليومية"},pow:{en:"power and agility",ar:"القوة الانفجارية والرشاقة"},bone:{en:"bone impact",ar:"ارتطام العظام"},car:{en:"cardio",ar:"التمارين القلبية"},mob:{en:"mobility",ar:"المرونة"},pf:{en:"pelvic floor",ar:"قاع الحوض"}};
+var BSUB={"push.pushup":{en:"push-up",ar:"الضغط"},"push.vertical":{en:"overhead push",ar:"الدفع للأعلى"},"pull.prone":{en:"face-down upper-back pull",ar:"سحب أعلى الظهر على البطن"},"shoulder.scap":{en:"shoulder-blade control",ar:"التحكم بلوح الكتف"},"mob.shoulder":{en:"shoulder mobility",ar:"مرونة الكتف"},
+"knee.squat":{en:"two-leg squat",ar:"القرفصاء بالرِّجلين"},"knee.single":{en:"single-leg squat or lunge",ar:"القرفصاء أو الطعن برِجل واحدة"},"knee.lateral":{en:"side lunge",ar:"الطعن الجانبي"},
+"hip.hinge":{en:"hip hinge",ar:"ثني الورك"},"hip.hamcurl":{en:"hamstring curl",ar:"ثني أوتار الركبة"},"hip.bridge":{en:"bridge and hip extension",ar:"الجسر ومدّ الورك"},"hip.abd":{en:"side glute",ar:"الألوية الجانبية"},"hip.add":{en:"inner thigh",ar:"الفخذ الداخلي"},
+"core.antiext":{en:"anti-extension trunk",ar:"ثبات الجذع ضد التقوّس"},"core.lateral":{en:"side trunk",ar:"الجذع الجانبي"},"core.rot":{en:"anti-rotation trunk",ar:"ثبات الجذع ضد الدوران"},"core.backext":{en:"back extension",ar:"مدّ الظهر"},
+"feet.calf":{en:"calf strength",ar:"قوة الساق الخلفية"},"feet.tib":{en:"shin strength",ar:"قوة مقدمة الساق"},"bal.static":{en:"static balance",ar:"التوازن الثابت"},"bal.dynamic":{en:"moving balance",ar:"التوازن المتحرك"},"func.floor":{en:"getting down and up from the floor",ar:"النزول إلى الأرض والنهوض"},
+"pow.land":{en:"landing control",ar:"التحكم بالهبوط"},"pow.jump":{en:"jump and stick",ar:"القفز والثبات"},"pow.lateral":{en:"side-to-side speed",ar:"السرعة الجانبية"},"pow.fast":{en:"fast standing up",ar:"النهوض السريع"},"pow.feet":{en:"fast feet",ar:"الأقدام السريعة"},"bone.impact":{en:"bone-loading impact",ar:"ارتطام لتحميل العظام"},"car.cardio":{en:"cardio",ar:"تمرين قلبي"},
+"mob.ankle":{en:"ankle and calf mobility",ar:"مرونة الكاحل والساق"},"mob.hip":{en:"hip mobility",ar:"مرونة الورك"},"mob.hipflex":{en:"hip-flexor stretch",ar:"تمدّد قابضات الورك"},"mob.full":{en:"full-body mobility",ar:"مرونة الجسم كله"},"mob.tspine":{en:"upper-back rotation",ar:"دوران أعلى الظهر"},"mob.spine":{en:"spine mobility",ar:"مرونة العمود الفقري"},"mob.ham":{en:"hamstring flexibility",ar:"مرونة أوتار الركبة"},"mob.squat":{en:"squat mobility",ar:"مرونة القرفصاء"},
+"pf.aware":{en:"pelvic floor awareness",ar:"الوعي بقاع الحوض"},"pf.lying":{en:"pelvic floor training lying down",ar:"تقوية قاع الحوض استلقاءً"},"pf.upright":{en:"upright pelvic floor training",ar:"تقوية قاع الحوض في وضعية قائمة"},"pf.func":{en:"pelvic floor in movement",ar:"قاع الحوض أثناء الحركة"},"pf.relax":{en:"pelvic floor relaxation",ar:"إرخاء قاع الحوض"}};
+var BREL={"knee.squat":["knee.single","pow.fast"],"knee.single":["knee.squat"],"pow.fast":["knee.squat"],"bal.static":["bal.dynamic"],"bal.dynamic":["bal.static"],"core.lateral":["core.rot"],"core.rot":["core.lateral"],"pf.relax":["mob.hip","mob.spine"],"mob.hip":["pf.relax"],"mob.spine":["pf.relax"],"bone.impact":["pow.jump"],"pow.jump":["bone.impact","pow.land"],"pow.land":["pow.jump"],"pow.lateral":["bal.dynamic","pow.feet"],"pow.feet":["pow.lateral","pow.fast"],"pull.prone":["shoulder.scap"],"shoulder.scap":["pull.prone"],"pf.upright":["pf.lying"],"pf.lying":["pf.upright"]};
+function bL(o){return o?(o[LANG]||o.en):"";}
+
+/* ---- isolation of number ranges for mixed-direction text ---- */
+function bxStrip(s){return String(s==null?"":s).replace(/[⁦⁩]/g,"");}
+function bxIso(s){return bxStrip(s).replace(/(\d+(?:[.,]\d+)?(?:\s?[–×]\s?\d+(?:[.,]\d+)?)+)/g,"⁦$1⁩");}
+
+/* ---- state ---- */
+function bxLoad(){var s=store.get("bx",null)||{};return {fav:s.fav||[],custom:s.custom||{},draft:s.draft||{},prev:s.prev||{},sel:s.sel||"Q10A",tab:s.tab||"all",nodb:0,wk:s.wk||null,log:s.log||[]};}
+var BX=bxLoad();
+function bxSave(){store.set("bx",BX);}
+var BXBASE=Object.keys(ROUT).concat(["W","P1","P2","P3","P4"]);
+function bxReg(){Object.keys(BX.custom).forEach(function(id){var c=BX.custom[id];if(ALLP[c.base])ALLP[id]=ALLP[c.base];});}
+bxReg();
+var BV=null,BK=null,BW=null,bxOpenDays={},bxToastT=0,BXPI=false;
+
+function bxKind(k){if(ROUT[k])return ROUT[k].kind;if(k==="W")return "pelvic";if(/^P\d$/.test(k))return "pelvic";return "";}
+function bxBaseTitle(k){if(ROUT[k])return ROUT[k].t[LANG];if(k==="W")return LANG==="ar"?AR_HER.day.name+": "+AR_HER.day.focus:HER.days[0].name+": "+HER.days[0].focus;if(PFR[k])return LANG==="ar"?AR_PFR[k].t:PFR[k].t;return k;}
+function bxWho(k){if(ROUT[k])return ROUT[k].who[LANG];if(k==="W")return LANG==="ar"?AR_HER.intro:HER.intro;if(PFR[k])return LANG==="ar"?AR_PFR[k].who:PFR[k].who;return "";}
+function bxProg(k){if(ROUT[k])return ROUT[k].prog[LANG];if(PFR[k])return LANG==="ar"?AR_PFR[k].prog:PFR[k].prog;return "";}
+function bxTime(k){if(ROUT[k])return "~"+ROUT[k].min+" "+bt("min");if(k==="W")return LANG==="ar"?AR_HER.day.time:HER.days[0].time;if(PFR[k])return LANG==="ar"?AR_PFR[k].freq:PFR[k].freq;return "";}
+function bxBadge(k){if(ROUT[k])return String(ROUT[k].min);if(k==="W")return "♀";return k.slice(1);}
+function bxPlan(pid){
+  if(BXBASE.indexOf(pid)>=0)return {id:pid,base:pid,custom:false,name:bxBaseTitle(pid),subs:BX.draft[pid]||{}};
+  var c=BX.custom[pid];if(c&&BXBASE.indexOf(c.base)>=0)return {id:pid,base:c.base,custom:true,name:c.name,subs:c.subs||{}};
+  return null;
+}
+function bxSubs(pid){if(BXBASE.indexOf(pid)>=0){BX.draft[pid]=BX.draft[pid]||{};return BX.draft[pid];}var c=BX.custom[pid];c.subs=c.subs||{};return c.subs;}
+function bxLen(k){return ALLP[k].days[0].items.length;}
+/* normalised item: ex, dose{en,ar}, rest (s), note{en,ar}, star */
+function bxItem(k,i){
+  if(ROUT[k]){var it=ROUT[k].items[i];return {ex:it[0],dose:{en:it[1]||defDose(it[0],"en"),ar:it[2]||defDose(it[0],"ar")},rest:it[3]||0,note:it[4]?{en:it[4],ar:it[5]||it[4]}:null,star:0};}
+  var b=(k==="W"?HER.days[0]:PFR[k].days[0]).items[i],A=(k==="W"?AR_HER.items[i]:AR_PFR[k].items[i])||{},a=Object.assign({},b,A);
+  function ds(o){return o.sets?o.sets+" × "+bxStrip(o.reps):o.reps;}
+  return {ex:b.ex,dose:{en:ds(b),ar:ds(a)},rest:restSecs(b.rest),note:b.note?{en:b.note,ar:a.note||b.note}:null,star:b.star?1:0};
+}
+function bxCurP(pl,i){var s=pl.subs["0-"+i],b=bxItem(pl.base,i).ex;return (s&&EX[s])?s:b;}
+function bxCur(pl,i){var td=ckToday();if(td&&td.on&&td.subs){var x=td.subs[pl.id+"|"+i];if(x&&EX[x])return x;}return bxCurP(pl,i);}
+function bxSwapCount(pl){var n=0;Object.keys(pl.subs).forEach(function(k){var i=+k.split("-")[1];if(i<bxLen(pl.base)&&EX[pl.subs[k]]&&pl.subs[k]!==bxItem(pl.base,i).ex)n++;});return n;}
+function bxAllIds(){return BXBASE.concat(Object.keys(BX.custom).filter(function(id){return !!bxPlan(id);}));}
+function bxIsFav(pid){return BX.fav.indexOf(pid)>=0;}
+
+/* ---- matching ---- */
+function bxRelated(a,b){return (EX[a].rel||[]).indexOf(b)>=0||(EX[b].rel||[]).indexOf(a)>=0;}
+function bxMatch(base,id){
+  if(!EX[id]||!BROLE[id]||!BROLE[base])return null;
+  var ra=BROLE[base],rb=BROLE[id],fa=ra.split(".")[0],fb=rb.split(".")[0],s=0,tier,why=[],W=BXS[LANG].why;
+  if(id===base)return {id:id,score:999,tier:3,why:[W.orig]};
+  if(ra!==rb&&(ra==="pf.relax"||rb==="pf.relax")&&(BREL[ra]||[]).indexOf(rb)<0)return null;
+  if(ra===rb){s=40;tier=2;why.push(bf(W.same,{s:bL(BSUB[rb])}));}
+  else if(fa===fb){s=24;tier=1;why.push(bf(W.fam,{f:bL(BFAM[fb])}));}
+  else if((BREL[ra]||[]).indexOf(rb)>=0){s=14;tier=1;why.push(bf(W.rel,{s:bL(BSUB[rb])}));}
+  else return null;
+  if(bxRelated(base,id)){s+=15;if(tier<2)tier=2;why.push(W.path);}
+  var ca=catsOf(base),cb=catsOf(id);s+=ca.filter(function(c){return cb.indexOf(c)>=0;}).length*4;
+  if(tier===1&&fa===fb&&!bxRelated(base,id)&&!ca.some(function(c){return cb.indexOf(c)>=0;}))tier=0;
+  return {id:id,score:s,tier:tier,why:why};
+}
+function bxProfBlock(id){return profActive()&&reasonsFor(id).length>0;}
+/* mode: best | easier | same | harder | all | L1..L4 */
+function bxCands(base,ref,mode,o){
+  o=o||{};var rl=lvlNum(ref),out=[],loose=[],hid=0;
+  Object.keys(EX).forEach(function(id){
+    if(id===ref)return;var m=bxMatch(base,id);if(!m)return;
+    if(o.noImp&&(EX[id].imp||0)>=1)return;
+    if(o.noProne&&hasF(id,"prone"))return;
+    if(!o.prof&&bxProfBlock(id)){hid++;return;}
+    m.d=lvlNum(id)-rl;
+    var ok=mode==="best"?Math.abs(m.d)<=1:mode==="easier"?m.d<0:mode==="same"?m.d===0:mode==="harder"?m.d>0:mode==="all"?true:(lvlNum(id)===+String(mode).slice(1));
+    if(!ok)return;(m.tier>=1?out:loose).push(m);
+  });
+  function srt(a,b){if(a.tier===3)return -1;if(b.tier===3)return 1;
+    if(mode==="easier"&&a.d!==b.d)return b.d-a.d;if(mode==="harder"&&a.d!==b.d)return a.d-b.d;if(mode==="all"&&a.d!==b.d)return a.d-b.d;
+    if(mode==="best"&&b.tier!==a.tier)return b.tier-a.tier;if(b.score!==a.score)return b.score-a.score;return Math.abs(a.d)-Math.abs(b.d);}
+  out.sort(srt);loose.sort(srt);return {list:out,loose:loose,hid:hid};
+}
+
+/* ---- dose ---- */
+function bxTimed(r){r=bxStrip(r);return /\d\s*(s|sec|min)\b|holds?\b|breaths?|\d\s*ث|دقيق|ثبات|أنفاس|نفس/.test(r);}
+function bxSide(r){r=bxStrip(r);return /per side|per leg|each (way|direction|side)|لكل جهة|لكل رِجل|لكل رجل|لكل اتجاه|في كل اتجاه/.test(r);}
+function bxFlex(r){r=bxStrip(r);return / or | أو /.test(r);}
+function bxDose(it,id,lang){
+  lang=lang||LANG;var o={dose:it.dose[lang],adj:""};
+  if(id===it.ex)return o;
+  var a=bxStrip(it.dose[lang]),own=bxStrip(defDose(id,lang));
+  if(/\d/.test(a)&&!bxFlex(a)&&!bxFlex(own)&&(bxTimed(a)!==bxTimed(own)||bxSide(a)!==bxSide(own))){o.dose=own;o.adj=bf(BXS[lang].ownDose,{d:bxIso(own)});}
+  else if(lvlNum(id)-lvlNum(it.ex)>=2)o.adj=BXS[lang].much;
+  return o;
+}
+function bxLessSets(d){var s=bxStrip(d),m=s.match(/^\s*(\d+)(?:\s*[–-]\s*(\d+))?\s*×/);if(!m)return null;var a=Math.max(1,+m[1]-1),b=m[2]?Math.max(1,+m[2]-1):null;if(+m[1]<=1&&(!m[2]||+m[2]<=1))return null;var head=b&&b!==a?a+"–"+b:String(b||a);return head+" ×"+s.slice(m[0].length);}
+function bxEffDose(pl,i,id){var it=bxItem(pl.base,i),r=bxDose(it,id),td=ckToday(),cut=false;if(td&&td.on&&td.tier>=2){var l=bxLessSets(r.dose);if(l){r.dose=l;cut=true;}}r.cut=cut;return r;}
+function bxDiff(ref,id){
+  var d=lvlNum(id)-lvlNum(ref),e=X(id),D=BXS[LANG].d,out=[];
+  out.push(d<0?["",bf(D.easier,{l:lvlName(id)})]:d>0?["w",bf(D.harder,{l:lvlName(id)})]:["",bf(D.same,{l:lvlName(id)})]);
+  if(eqName(id)!==eqName(ref))out.push(["",bf(D.eq,{e:eqName(id)})]);
+  if(d>0&&e.pre&&!/^(None|لا يوجد|لا شيء)/.test(e.pre))out.push(["w",bf(D.pre,{p:e.pre})]);
+  if(lvlNum(id)>=4)out.push(["w",bf(D.elite,{l:lvlName(id)})]);
+  if(EX[id].gate)out.push(["w",D.gate]);
+  if((EX[id].imp||0)>=1)out.push(["",D.imp]);
+  if(hasF(id,"invert"))out.push(["w",D.invert]);
+  if(hasF(id,"prone"))out.push(["",D.prone]);
+  if(hasF(id,"wrist"))out.push(["",D.wrist]);
+  if(profActive()){var rs=reasonsFor(id);if(rs.length)out.push(["w",bf(D.prof,{r:u("reasons")[rs[0]]})]);}
+  return out;
+}
+function bxDiffHTML(ref,id){return '<div class="px-diff">'+bxDiff(ref,id).map(function(x){return '<span class="'+x[0]+'">'+esc(x[1])+'</span>';}).join("")+'</div>';}
+
+/* ---- rendering ---- */
+function bxChips(it,ds){var c='<span class="dose">'+esc(bxIso(ds.dose))+'</span>';if(it.rest)c+='<button type="button" data-rest="'+it.rest+'" aria-label="'+esc(t("tTitle")+" "+it.rest)+'">'+CLOCK+esc(t("restBtn")+" "+it.rest+(LANG==="ar"?" ث":" s"))+'</button>';return c;}
+function bxSlotHTML(pl,i){
+  var it=bxItem(pl.base,i),k="0-"+i,raw=pl.subs[k],missing=raw&&!EX[raw],cur=bxCur(pl,i),curP=bxCurP(pl,i),base=it.ex,sw=curP!==base,td=ckToday(),tdx=td&&td.on&&td.subs&&td.subs[pl.id+"|"+i]&&cur!==curP;
+  var pv=(BV&&BV.pid===pl.id&&BV.slot===i)?BV:null,show=pv?pv.list[pv.pos].id:cur,x=X(show),key=pl.id+"-0-"+i,isDone=!!done[key],ds=bxEffDose(pl,i,show),rsn=profActive()?reasonsFor(show):[];
+  var gentleOffer=!pv&&!tdx&&td&&td.on&&td.tier>=2&&(((EX[cur].imp||0)>=1)||(td.noProne&&hasF(cur,"prone")));
+  return '<div class="exrow slot'+(isDone?" done":"")+(pv?" pv":"")+(sw||tdx?" swapped":"")+'" data-key="'+key+'" data-slot="'+pl.id+'|'+i+'" tabindex="-1">'+
+  '<label class="check"><input type="checkbox"'+(isDone?" checked":"")+' aria-label="'+esc(t("mark")+x.name)+'"><span></span></label>'+
+  '<div class="px-swipe"><div class="px-top"><div class="px-tags">'+(pv?'<span class="px-badge pv">'+esc(bf(bt("preview"),{i:pv.pos+1,n:pv.list.length}))+'</span>':'')+(pv&&pv.list[pv.pos].tier===3?'<span class="px-badge">'+esc(bt("origTag"))+'</span>':'')+(!pv&&sw&&!tdx?'<span class="px-badge sw">'+esc(bt("swapped"))+'</span>':'')+(!pv&&tdx?'<span class="px-badge td">'+esc(bt("today"))+'</span>':'')+(ds.cut&&!pv?'<span class="px-badge td">'+esc(bt("todaySet"))+'</span>':'')+'</div>'+
+  '<div class="exline"><button type="button" class="exname" data-open-ex="'+show+'">'+esc(x.name)+'</button>'+(it.star?'<span class="star" aria-label="'+esc(t("priority"))+'">★</span>':'')+(pv?'':'<span class="lvl-badge" data-ex="'+show+'"></span>')+'</div>'+
+  '<div class="px-meta2">'+lvlHTML(show)+'<span class="tag">'+esc(eqName(show))+'</span>'+(EX[show].imp?'<span class="tag imp">'+esc(EX[show].imp>1?u("imp2"):u("imp1"))+'</span>':'')+'</div><div class="px-mus">'+esc(x.muscles)+'</div></div>'+
+  '<button type="button" class="exthumb" data-open-ex="'+show+'" aria-label="'+esc(t("showHow")+x.name)+'">'+thumbSVG(show)+'</button>'+
+  '<div class="px-rest"><div class="rx">'+bxChips(it,ds)+(rsn.length?'<span class="warnchip">⚠ '+esc(u("reasons")[rsn[0]])+'</span>':'')+'</div>'+
+  (ds.adj?'<div class="px-adj">'+esc(ds.adj)+'</div>':'')+
+  (!pv&&show===base&&it.note?'<div class="note">'+esc(bxIso(it.note[LANG]))+'</div>':'')+
+  (show!==base&&it.note?'<div class="note px-hid">'+esc(bf(bt("noteHid"),{x:X(base).name}))+'</div>':'')+
+  (missing?'<div class="px-adj">'+esc(bt("missing"))+'</div>':'')+
+  (!pv&&(sw||tdx)?'<div class="px-was">'+esc(bt("was"))+' <button type="button" class="linkbtn" data-open-ex="'+base+'">'+esc(X(base).name)+'</button></div>':'')+
+  (pv?'<div class="px-why">'+esc(pv.list[pv.pos].why.join(" · "))+'</div>'+bxDiffHTML(cur,show):'')+
+  '</div></div>'+
+  '<div class="px-ctl"><button type="button" class="px-nav" data-bx="prev" aria-label="'+esc(bt("prevAlt"))+'">‹</button><button type="button" class="px-nav" data-bx="next" aria-label="'+esc(bt("nextAlt"))+'">›</button>'+
+  (pv?'<button type="button" class="btn sm primary" data-bx="use">'+esc(bt("use"))+'</button><button type="button" class="btn sm" data-bx="cancel">'+esc(bt("cancel"))+'</button>'
+     :'<button type="button" class="btn sm px-rep" data-bx="replace"><span aria-hidden="true">⇄</span> '+esc(bt("replace"))+'</button>'+(sw&&!tdx?'<button type="button" class="btn sm ghost" data-bx="restore">'+esc(bt("origBtn"))+'</button>':'')+
+      (tdx?'<button type="button" class="btn sm ghost" data-bx="tdback">'+esc(bt("todayBack"))+'</button>':'')+(gentleOffer?'<button type="button" class="btn sm td" data-bx="gentle">'+esc(bt("todayBtn"))+'</button>':''))+
+  '</div></div>';
+}
+function bxBodyHTML(pl){
+  var n=bxLen(pl.base),sw=0;for(var i=0;i<n;i++)if(bxCurP(pl,i)!==bxItem(pl.base,i).ex)sw++;
+  var k=pl.id,open=bxOpenDays[k]!=null?bxOpenDays[k]:true;
+  return '<details class="day rcard" data-bxday="'+k+'"'+(open?" open":"")+'><summary><div class="day-badge sm">'+esc(bxBadge(pl.base))+'</div><div><div class="day-title">'+esc(pl.name)+'</div><div class="day-sub">'+esc(bxIso(bxTime(pl.base)))+' · <span data-count="'+k+'-0">'+dayCount(k,0)+'</span>'+(sw?' · <span class="px-swc">'+esc(bf(bt("swN"),{n:sw}))+'</span>':'')+'</div></div>'+CHEV+'</summary>'+
+  '<div class="day-body"><div class="px-dayact no-print"><button type="button" class="btn sm primary" data-bx="start">'+esc(bt("startMode"))+'</button><span class="small muted">'+esc(bt("hint"))+'</span></div>'+
+  Array.from({length:n},function(_,i){return bxSlotHTML(pl,i);}).join("")+
+  (bxProg(pl.base)?'<p class="small pf-prog"><strong>'+esc(bt("prog"))+':</strong> '+esc(bxIso(bxProg(pl.base)))+'</p>':'')+
+  '<div class="day-foot"><button type="button" class="btn sm ghost" data-reset-day="'+k+'-0">'+esc(t("clear"))+'</button></div></div></details>';
+}
+function bxLvRange(pl){var mn=9,mx=0,n=bxLen(pl.base);for(var i=0;i<n;i++){var v=lvlNum(bxCurP(pl,i));mn=Math.min(mn,v);mx=Math.max(mx,v);}return mn===mx?u("lv")[mn-1]:bf(bt("lvRange"),{a:u("lv")[mn-1],b:u("lv")[mx-1]});}
+function bxEquip(pl){var s=[],n=bxLen(pl.base);for(var i=0;i<n;i++){var id=bxCurP(pl,i),q=eqName(id);if(!/^(None|No equipment|بدون|لا شيء|لا يوجد)/i.test(q)&&s.indexOf(q)<0)s.push(q);}return s;}
+function bxHeadHTML(pl){
+  var sw=bxSwapCount(pl),fav=bxIsFav(pl.id),eq=bxEquip(pl);
+  var badges=pl.custom?'<span class="px-badge cust">'+esc(bt("mine"))+'</span><span class="px-badge">'+esc(bt("based"))+': '+esc(bxBaseTitle(pl.base))+'</span>':'<span class="px-badge">'+esc(bt("orig"))+'</span>';
+  if(sw)badges+='<span class="px-badge '+(pl.custom?"sw":"mod")+'">'+esc(bf(bt("swN"),{n:sw}))+' · '+esc(pl.custom?bt("saved"):bt("unsaved"))+'</span>';
+  return '<div class="px-head"><span class="bx-kit" aria-hidden="true">'+esc(bxBadge(pl.base))+'</span><div class="px-ht"><div class="px-badges">'+badges+'</div><h3 id="bxTitle">'+esc(pl.name)+'</h3>'+
+  '<div class="px-meta"><span class="tag acc">'+esc(bxIso(bxTime(pl.base)))+'</span><span class="tag">'+esc(bf(bt("exN"),{n:bxLen(pl.base)}))+'</span><span class="tag">'+esc(bxLvRange(pl))+'</span></div>'+
+  '<p class="px-eq"><b>'+esc(bt("eqL"))+':</b> '+(eq.length?esc(eq.join(LANG==="ar"?"، ":"; ")):esc(bt("noEq")))+'</p></div>'+
+  '<button type="button" class="px-star" data-bx="fav" aria-pressed="'+fav+'" aria-label="'+esc(bt("favLbl"))+'" title="'+esc(bt("favLbl"))+'">'+(fav?"★":"☆")+'</button></div>'+
+  '<p class="small muted">'+esc(bxIso(bxWho(pl.base)))+'</p>'+
+  '<div class="px-actions"><button type="button" class="btn sm primary" data-bx="start">'+esc(bt("start"))+'</button><button type="button" class="btn sm" data-bx="adapt">'+esc(bt("adapt"))+'</button>'+
+  (pl.custom?'<button type="button" class="btn sm" data-bx="rename">'+esc(bt("rename"))+'</button>':'<button type="button" class="btn sm'+(sw?' go':'')+'" data-bx="saveas">'+esc(bt("saveas"))+'</button>')+
+  '<button type="button" class="btn sm" data-bx="dup">'+esc(bt("dup"))+'</button>'+(sw?'<button type="button" class="btn sm ghost" data-bx="reset">'+esc(bt("reset"))+'</button>':'')+(pl.custom?'<button type="button" class="btn sm ghost danger" data-bx="delete">'+esc(bt("del"))+'</button>':'')+'</div>';
+}
+function bxCardHTML(pid){
+  var pl=bxPlan(pid),sw=bxSwapCount(pl),f=bxIsFav(pid);
+  return '<button type="button" class="px-card" data-bxsel="'+pid+'" aria-current="'+(BX.sel===pid)+'"><span class="bx-kit sm" aria-hidden="true">'+esc(bxBadge(pl.base))+'</span><b>'+esc(pl.name)+'</b><span class="pstar">'+(f?"★":"")+'</span><small>'+esc((pl.custom?bt("mine"):bt("orig"))+" · "+bxStrip(bxTime(pl.base)))+(sw?" · "+esc(bf(bt("swN"),{n:sw})):"")+'</small></button>';
+}
+function bxTabIds(){
+  var ids=bxAllIds(),T=BX.tab;
+  if(T==="fav")return ids.filter(bxIsFav);
+  if(T==="mine")return ids.filter(function(id){return BXBASE.indexOf(id)<0;});
+  if(T==="quick"||T==="session"||T==="cycle"||T==="pelvic")return ids.filter(function(id){return BXBASE.indexOf(id)>=0&&bxKind(id)===T;});
+  return ids;
+}
+function bxListHTML(){
+  if(BX.tab==="hist"){if(!BX.log.length)return '<div class="px-empty">'+esc(bt("emptyHist"))+'</div>';
+    return '<ol class="px-log">'+BX.log.slice().reverse().slice(0,40).map(function(l){var d=new Date(l.t);return '<li><b>'+esc(l.plan)+'</b><span>'+esc(bf(bt("logLine"),{a:l.done,b:l.total}))+'</span><small>'+esc(d.toLocaleDateString(LANG==="ar"?"ar-SA-u-ca-gregory-nu-latn":undefined,{weekday:"short",day:"numeric",month:"short"})+" · "+d.toLocaleTimeString(LANG==="ar"?"ar-SA-u-nu-latn":undefined,{hour:"2-digit",minute:"2-digit"}))+'</small></li>';}).join("")+'</ol>';}
+  var ids=bxTabIds();
+  if(!ids.length)return '<div class="px-empty">'+esc(BX.tab==="fav"?bt("emptyFav"):bt("emptyMine"))+'</div>';
+  return ids.map(bxCardHTML).join("");
+}
+function bxTabsHTML(){
+  var nf=bxAllIds().filter(bxIsFav).length,nm=Object.keys(BX.custom).length,TT=bt("tabs");
+  return [["all",""],["quick",""],["session",""],["cycle",""],["pelvic",""],["fav",nf],["mine",nm],["week",""],["hist",BX.log.length]].map(function(x){return '<button type="button" role="tab" data-bxtab="'+x[0]+'" aria-selected="'+(BX.tab===x[0])+'">'+esc(TT[x[0]])+(x[1]!==""?'<span class="ct">'+x[1]+'</span>':'')+'</button>';}).join("");
+}
+function renderRoutines(){
+  if(!bxPlan(BX.sel))BX.sel="Q10A";
+  var T=BX.tab,pl=bxPlan(BX.sel);
+  $("#bxTabs").innerHTML=bxTabsHTML();
+  $("#bxToday").innerHTML=ckBannerHTML();
+  var showPlan=T!=="week"&&T!=="hist";
+  $("#bxList").innerHTML=T==="week"?"":bxListHTML();$("#bxList").hidden=T==="week";
+  $("#rBody").innerHTML=T==="week"?plansHTML():(T==="mine"&&myR.length?myHTML():"");
+  if(showPlan&&bxTabIds().indexOf(BX.sel)<0&&bxTabIds().length&&T!=="all"){/* keep selection visible: select first in tab */BX.sel=bxTabIds()[0];pl=bxPlan(BX.sel);}
+  $("#bxHead").innerHTML=showPlan?bxHeadHTML(pl):"";$("#bxHead").hidden=!showPlan;
+  $("#bxPanel").innerHTML=showPlan?bxBodyHTML(pl):"";$("#bxPanel").hidden=!showPlan;
+  refreshLevels();renderRefs($("#routines"));bxResume();bxSave();
+  var L=$("#bxList"),c=L.querySelector('[aria-current="true"]');if(c&&L.scrollWidth>L.clientWidth){var r=L.getBoundingClientRect(),cr=c.getBoundingClientRect();L.scrollLeft+=(cr.left-r.left)-8*(BXRTL()?-1:1);}
+}
+function bxShow(k){if(!bxPlan(k))return;BX.sel=k;BV=null;var kd=bxKind(k);if(BX.tab!=="all"&&BX.tab!=="fav"&&BX.tab!==(BXBASE.indexOf(k)<0?"mine":kd))BX.tab=BXBASE.indexOf(k)<0?"mine":(kd||"all");bxSave();renderRoutines();}
+function goRoutine(r){if(!bxPlan(r))return;BX.tab="all";bxShow(r);var h=$("#bxHead");if(h)h.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});}
+function bxRefreshSlot(pid,i){var el=document.querySelector('[data-slot="'+pid+'|'+i+'"]'),pl=bxPlan(pid);if(!el||!pl)return;el.outerHTML=bxSlotHTML(pl,+i);refreshLevels();}
+function bxFocusSlot(pid,i){var el=document.querySelector('[data-slot="'+pid+'|'+i+'"]');if(el)try{el.focus({preventScroll:true});}catch(e){}}
+
+/* ---- preview carousel ---- */
+function bxPreview(pid,i,dir){
+  i=+i;var pl=bxPlan(pid),it=bxItem(pl.base,i),cur=bxCur(pl,i);
+  if(BV&&BV.pid===pid&&BV.slot===i){BV.pos=(BV.pos+dir+BV.list.length)%BV.list.length;bxRefreshSlot(pid,i);bxFocusSlot(pid,i);return;}
+  var old=BV;BV=null;if(old)bxRefreshSlot(old.pid,old.slot);
+  var c=bxCands(it.ex,cur,"best",{}).list;
+  if(cur!==it.ex&&!c.some(function(x){return x.id===it.ex;}))c.unshift(bxMatch(it.ex,it.ex));
+  if(!c.length){bxToast(bf(bt("noAlt"),{x:X(cur).name}));return;}
+  BV={pid:pid,slot:i,list:c,pos:dir>0?0:c.length-1};bxRefreshSlot(pid,i);bxFocusSlot(pid,i);
+}
+function bxSet(pid,i,id,quiet){
+  var pl=bxPlan(pid),it=bxItem(pl.base,+i),prev=bxCurP(pl,+i),s=bxSubs(pid),k="0-"+i;
+  if(id===prev)return;
+  if(id===it.ex)delete s[k];else s[k]=id;
+  BX.prev[pid+"|"+k]=prev;if(BXBASE.indexOf(pid)>=0&&!Object.keys(s).length)delete BX.draft[pid];
+  bxSave();
+  if(!quiet)bxToast(bf(bt("replaced"),{a:X(prev).name,b:X(id).name}),function(){bxSet(pid,i,prev,true);bxAfter(pid,i);bxToast(bf(bt("restored"),{a:X(prev).name}));});
+}
+function bxAfter(pid,i){
+  if(BX.sel===pid&&document.querySelector('[data-slot="'+pid+'|'+i+'"]')){bxRefreshSlot(pid,i);$("#bxHead").innerHTML=bxHeadHTML(bxPlan(pid));$("#bxList").innerHTML=bxListHTML();$("#bxTabs").innerHTML=bxTabsHTML();bxDaySub(pid);}
+  else renderRoutines();
+  if(BW&&$("#bwDlg").open)bwRender();
+}
+function bxDaySub(pid){var d=document.querySelector('[data-bxday="'+pid+'"]');if(!d)return;var pl=bxPlan(pid),n=bxLen(pl.base),sw=0;for(var i=0;i<n;i++)if(bxCurP(pl,i)!==bxItem(pl.base,i).ex)sw++;var s=d.querySelector(".day-sub");if(s)s.innerHTML=esc(bxIso(bxTime(pl.base)))+' · <span data-count="'+pid+'-0">'+dayCount(pid,0)+'</span>'+(sw?' · <span class="px-swc">'+esc(bf(bt("swN"),{n:sw}))+'</span>':'');}
+
+/* ---- toast ---- */
+function bxToast(msg,undo){
+  var tt=$("#bxToast"),host=(BW&&$("#bwDlg").open)?$("#bwDlg"):(document.querySelector("dialog.sheet[open]")||document.body);
+  if(tt.parentNode!==host)host.appendChild(tt);
+  tt.innerHTML='<span>'+esc(msg)+'</span>'+(undo?'<button type="button" id="bxUndo">'+esc(bt("undo"))+'</button>':'');tt.hidden=false;
+  if(undo)$("#bxUndo").onclick=function(){tt.hidden=true;undo();};
+  clearTimeout(bxToastT);bxToastT=setTimeout(function(){tt.hidden=true;},undo?7000:4000);
+}
+
+/* ---- picker ---- */
+function bkOpen(pid,i){
+  i=+i;var pl=bxPlan(pid);BK={pid:pid,i:i,sel:null,mode:"best",noImp:false,prof:false};
+  if(BV){var o=BV;BV=null;bxRefreshSlot(o.pid,o.slot);}
+  $("#bxDlgT").textContent=bt("pkTitle");$("#bxDlgCtx").textContent=bf(bt("pkCtx"),{i:i+1,n:bxLen(pl.base)});
+  bkRender();var dl=$("#bxDlg");if(!dl.open)dl.showModal();dl.scrollTop=0;
+}
+function bkRender(){
+  var pl=bxPlan(BK.pid),it=bxItem(pl.base,BK.i),cur=bxCur(pl,BK.i),base=it.ex,mode=BK.mode,M=bt("modes");
+  var r=bxCands(base,cur,mode,{noImp:BK.noImp,prof:BK.prof}),list=r.list.slice();
+  if(cur!==base&&!list.some(function(x){return x.id===base;})){var bm=bxMatch(base,base);if(bm)list.unshift(bm);}
+  if(BK.sel&&!list.concat(r.loose).some(function(x){return x.id===BK.sel;}))BK.sel=null;
+  var s=BK.sel;
+  $("#bxCmp").innerHTML='<div class="c"><span class="small muted">'+esc(bt("now"))+'</span>'+thumbSVG(cur)+'<b>'+esc(X(cur).name)+'</b>'+lvlHTML(cur)+'</div><div class="px-arr" aria-hidden="true">→</div>'+
+   (s?'<div class="c on"><span class="small muted">'+esc(bt("sel"))+'</span>'+thumbSVG(s)+'<b>'+esc(X(s).name)+'</b>'+lvlHTML(s)+'</div>':'<div class="c empty"><span class="small muted">'+esc(bt("pick"))+'</span></div>');
+  $("#bxFilt").innerHTML=["best","easier","same","harder","all"].map(function(m){return '<button type="button" data-bkmode="'+m+'" aria-pressed="'+(mode===m)+'">'+esc(M[m])+'</button>';}).join("")+
+   '<select id="bkLv" aria-label="'+esc(bt("anyLv"))+'"><option value="">'+esc(bt("anyLv"))+'</option>'+u("lv").map(function(l,j){return '<option value="L'+(j+1)+'"'+(mode==="L"+(j+1)?" selected":"")+'>'+esc(l)+'</option>';}).join("")+'</select>'+
+   '<label class="px-tog"><input type="checkbox" id="bkNoImp"'+(BK.noImp?" checked":"")+'> '+esc(bt("noImp"))+'</label>'+(profActive()?'<label class="px-tog"><input type="checkbox" id="bkProf"'+(BK.prof?" checked":"")+'> '+esc(bt("profInc"))+'</label>':'');
+  var msg;
+  if(!BROLE[base])msg=bt("pkNoData");else if(!list.length&&!r.loose.length)msg=bt("pkNone");else if(!list.length)msg=bt("pkLoose");else msg=bf(bt("pkMsg"),{m:bL(BSUB[BROLE[base]])});
+  if(r.hid&&!BK.prof)msg+=" "+bf(bt("profHidden"),{n:r.hid});
+  $("#bxMsg").textContent=msg;
+  function card(m,loose){var on=s===m.id,x=X(m.id);return '<div class="px-alt'+(on?" on":"")+'"><button type="button" class="px-pick" data-bkpick="'+m.id+'" aria-pressed="'+on+'"><span class="px-at">'+thumbSVG(m.id)+'</span><span class="px-ab"><b>'+esc(x.name)+'</b>'+(m.tier===3?'<span class="px-badge">'+esc(bt("origPlan"))+'</span>':'')+lvlHTML(m.id)+'<span class="px-why">'+esc((loose?bt("looserTag")+" · ":"")+m.why.join(" · "))+'</span><span class="px-mus">'+esc(x.muscles)+'</span></span></button>'+
+   bxDiffHTML(cur,m.id)+'<button type="button" class="btn sm ghost px-det" data-open-ex="'+m.id+'">'+esc(bt("full"))+'</button></div>';}
+  $("#bxGrid").innerHTML=list.map(function(m){return card(m,false);}).join("")+(r.loose.length&&(mode==="all"||!list.length)?'<div class="px-grp">'+esc(bt("looser"))+'</div>'+r.loose.map(function(m){return card(m,true);}).join(""):"");
+  $("#bkUse").disabled=!s;$("#bkUse").textContent=s?bf(bt("useX"),{x:X(s).name}):bt("useDef");
+  $("#bkRestore").hidden=bxCurP(pl,BK.i)===base;$("#bkRestore").textContent=bt("restoreOrig");$("#bkCancel").textContent=bt("cancel");
+}
+function bkClose(){var dl=$("#bxDlg");if(dl.open)dl.close();BK=null;}
+
+/* ---- name/confirm dialog ---- */
+var BN=null;
+function bnOpen(o){BN=o;$("#bnTitle").textContent=o.title;$("#bnText").textContent=o.text||"";var inp=$("#bnInput");inp.hidden=!o.input;$("#bnLabel").hidden=!o.input;$("#bnLabel").textContent=bt("nameLbl");inp.value=o.value||"";$("#bnOk").textContent=o.ok;$("#bnOk").className="btn "+(o.danger?"danger":"primary");$("#bnCancel").textContent=bt("cancel");$("#bnDlg").showModal();if(o.input){inp.focus();inp.select();}}
+function bnDone(ok){var o=BN;$("#bnDlg").close();BN=null;if(!ok||!o)return;var v=$("#bnInput").value.trim();if(o.input&&!v)return;o.cb(v);}
+function bxNewId(){return "u"+Date.now().toString(36)+Math.floor(Math.random()*1e3).toString(36);}
+function bxCreate(name,base,subs){var id=bxNewId();BX.custom[id]={name:name.slice(0,60),base:base,subs:JSON.parse(JSON.stringify(subs||{})),t:Date.now()};ALLP[id]=ALLP[base];return id;}
+
+/* ---- adapt difficulty ---- */
+var BD=null;
+function bdCompute(pid,T){
+  var pl=bxPlan(pid),res=[],n=bxLen(pl.base),used={};for(var q=0;q<n;q++)used[bxCurP(pl,q)]=1;
+  for(var i=0;i<n;i++){
+    var it=bxItem(pl.base,i),cur=bxCurP(pl,i),base=it.ex,r={i:i,from:cur,to:cur,why:""};
+    if(!BROLE[base]){r.why=bt("adKeptNo");res.push(r);continue;}
+    if(lvlNum(cur)===T){r.why=bf(bt("adAlready"),{l:u("lv")[T-1]});res.push(r);continue;}
+    var pool=[bxMatch(base,base)].concat(bxCands(base,base,"L"+T,{}).list).filter(function(m){return m&&lvlNum(m.id)===T&&BROLE[m.id]===BROLE[base]&&(m.tier===3||!used[m.id])&&!bxProfBlock(m.id);});
+    pool.sort(function(a,b){return (b.tier===3?99:b.tier)-(a.tier===3?99:a.tier)||b.score-a.score;});
+    if(pool.length){r.to=pool[0].id;used[r.to]=1;r.why=pool[0].why[0];}
+    else{var near=bxCands(base,base,"all",{}).list.concat([bxMatch(base,base)]).filter(function(m){return m&&BROLE[m.id]===BROLE[base]&&!bxProfBlock(m.id);}).sort(function(a,b){return Math.abs(lvlNum(a.id)-T)-Math.abs(lvlNum(b.id)-T);})[0];
+      r.why=bf(bt("adKept"),{l:u("lv")[T-1],s:bL(BSUB[BROLE[base]])})+(near&&near.id!==cur?bf(bt("adClosest"),{x:X(near.id).name,l:lvlName(near.id)}):"");}
+    res.push(r);
+  }
+  return res;
+}
+function bdRender(){
+  var res=bdCompute(BD.pid,BD.T),ch=res.filter(function(r){return r.to!==r.from;}).length;
+  $("#bdT").textContent=bt("adTitle");$("#bdText").textContent=bt("adText");$("#bdCtx").textContent=bxPlan(BD.pid).name;
+  $("#bdLv").innerHTML=u("lv").map(function(l,i){return '<button type="button" data-bdlv="'+(i+1)+'" aria-pressed="'+(BD.T===i+1)+'">'+dotsHTML(i+1,l)+'</button>';}).join("");
+  $("#bdSum").innerHTML='<b>'+esc(bf(bt("adSum"),{c:ch,n:res.length}))+'</b>'+esc((res.length-ch?bf(bt("adKeep"),{k:res.length-ch}):"")+bt("adNote"));
+  $("#bdList").innerHTML=res.map(function(r){var c=r.to!==r.from;return '<li class="ad-row'+(c?" ch":"")+'"><span class="ad-f">'+esc(X(r.from).name)+' <small>'+esc(lvlName(r.from))+'</small></span>'+(c?'<span class="ad-a" aria-hidden="true">→</span><span class="ad-t"><button type="button" class="linkbtn" data-open-ex="'+r.to+'">'+esc(X(r.to).name)+'</button> <small>'+esc(lvlName(r.to))+'</small></span>':'')+'<span class="ad-w">'+esc(r.why)+'</span></li>';}).join("");
+  $("#bdApply").disabled=!ch;$("#bdSave").disabled=!ch;$("#bdApply").textContent=bt("adApply");$("#bdSave").textContent=bt("adSave");BD.res=res;
+}
+function bdApply(pid){var n=0,pl=bxPlan(pid);BD.res.forEach(function(r){if(r.to!==r.from){var s=bxSubs(pid),k="0-"+r.i,base=bxItem(pl.base,r.i).ex;BX.prev[pid+"|"+k]=r.from;if(r.to===base)delete s[k];else s[k]=r.to;n++;}});if(BXBASE.indexOf(pid)>=0&&BX.draft[pid]&&!Object.keys(BX.draft[pid]).length)delete BX.draft[pid];bxSave();return n;}
+
+/* ---- workout mode ---- */
+function bwSetsN(d){var m=bxStrip(d).match(/^\s*(\d+)(?:\s*[–-]\s*(\d+))?\s*×/);return m?Math.min(8,+(m[2]||m[1])):1;}
+function bwStart(pid){
+  var keep=BX.wk&&BX.wk.pid===pid&&!BX.wk.fin;
+  BW=keep?BX.wk:{pid:pid,idx:0,sets:{},t0:Date.now()};
+  if(!keep){var n=bxLen(bxPlan(pid).base);for(var i=0;i<n;i++){if(!done[pid+"-0-"+i]){BW.idx=i;break;}}}
+  BX.wk=BW;bxSave();bwRest(0);$("#bwDlg").showModal();bwRender();bxResume();
+}
+var bwT=null,bwEnd=0,bwLeft=0,bwPaused=false;
+function bwRest(s){clearInterval(bwT);bwLeft=s;bwPaused=false;if(s>0){bwEnd=Date.now()+s*1000;bwT=setInterval(bwTick,250);}bwRestUI();}
+function bwTick(){if(bwPaused)return;bwLeft=Math.max(0,(bwEnd-Date.now())/1000);if(bwLeft<=0){clearInterval(bwT);try{if(navigator.vibrate)navigator.vibrate([250,120,250]);}catch(e){}beep();}bwRestUI();}
+function bwRestUI(){var el=$("#bwRest");if(!el)return;if(bwLeft<=0){el.hidden=true;return;}el.hidden=false;$("#bwRestT").textContent=fmt(bwLeft);$("#bwRestP").textContent=bwPaused?bt("wkResume"):bt("wkPause");}
+function bwRender(){
+  if(!BW)return;var pl=bxPlan(BW.pid);if(!pl){bwExit();return;}
+  var n=bxLen(pl.base),i=BW.idx,it=bxItem(pl.base,i),id=bxCur(pl,i),x=X(id),ds=bxEffDose(pl,i,id),key=BW.pid+"-0-"+i,ns=bwSetsN(ds.dose),got=BW.sets[i]||0,isDone=!!done[key],f=FIGS[id],nd=0;
+  for(var j=0;j<n;j++)if(done[BW.pid+"-0-"+j])nd++;
+  var sm=bxStrip(ds.dose).match(/^\s*(\d+\s*[–-]\s*\d+)\s*×/);
+  $("#bwIn").innerHTML='<div class="wo-top"><button type="button" class="btn sm" data-bw="exit">'+esc(bt("wkExit"))+'</button><div class="wo-title">'+esc(pl.name)+'<small>'+esc(bxStrip(bxTime(pl.base)))+'</small></div><div class="wo-n" dir="ltr">'+(i+1)+'<small>/'+n+'</small></div></div>'+
+  '<div class="wo-bar" role="progressbar" aria-valuemin="0" aria-valuemax="'+n+'" aria-valuenow="'+nd+'" aria-label="'+esc(bt("wkProg"))+'"><i style="width:'+(nd/n*100)+'%"></i></div>'+
+  (BW.fin?'<div class="wo-sum"><span class="bx-kit lg" aria-hidden="true">✓</span><h3>'+esc(bt("wkSumT"))+'</h3><p>'+esc(bf(bt("wkSum"),{d:pl.name,a:nd,b:n}))+'</p><div class="btn-row"><button type="button" class="btn primary" data-bw="close">'+esc(bt("wkBack"))+'</button><button type="button" class="btn" data-bw="review">'+esc(bt("wkReview"))+'</button></div></div>':
+  '<div class="wo-body"><div class="wo-fig wo-swipe">'+(f?'<div class="fig-anim" data-fig-anim="'+id+'" data-paused="'+(RM?1:0)+'" role="img" aria-label="'+esc(x.name)+'">'+figSVG(f,figPose(f,RM?thumbIdx(f):0),frOpts(f,RM?thumbIdx(f):0))+'</div>':'')+'</div>'+
+  '<div class="wo-info"><div class="px-tags">'+(id!==it.ex?'<span class="px-badge sw">'+esc(bt("swapped"))+'</span>':'')+(ds.cut?'<span class="px-badge td">'+esc(bt("todaySet"))+'</span>':'')+(isDone?'<span class="px-badge cust">'+esc(bt("wkDone"))+'</span>':'')+'</div>'+
+  '<button type="button" class="wo-name" data-open-ex="'+id+'">'+esc(x.name)+'</button><div class="px-meta2">'+lvlHTML(id)+'<span class="tag">'+esc(eqName(id))+'</span></div><div class="px-mus">'+esc(x.muscles)+'</div>'+
+  '<div class="wo-dose">'+esc(bxIso(ds.dose))+'</div>'+(it.rest?'<div class="small muted">'+esc(t("restBtn")+" "+it.rest+(LANG==="ar"?" ث":" s"))+'</div>':'')+
+  (ds.adj?'<div class="px-adj">'+esc(ds.adj)+'</div>':'')+(id===it.ex&&it.note?'<div class="note">'+esc(bxIso(it.note[LANG]))+'</div>':'')+
+  '<div class="wo-sets" role="group">'+Array.from({length:ns},function(_,s){return '<button type="button" data-bwset="'+s+'" aria-pressed="'+(s<got)+'">'+esc(ns===1?(/×/.test(ds.dose)?bt("wkSetDone"):bt("wkDone")):bf(bt("wkSet"),{n:s+1}))+'</button>';}).join("")+'</div>'+
+  (sm?'<p class="small muted">'+esc(bf(bt("wkOpt"),{s:bxIso(sm[1])}))+'</p>':'')+
+  '<div class="wo-rest" id="bwRest" hidden><span>'+esc(bt("wkRest"))+'</span><b id="bwRestT" dir="ltr">0:00</b><button type="button" class="btn sm" data-bw="rpause" id="bwRestP">'+esc(bt("wkPause"))+'</button><button type="button" class="btn sm" data-bw="rplus">'+esc(bt("wkPlus"))+'</button><button type="button" class="btn sm ghost" data-bw="rskip">'+esc(bt("wkSkip"))+'</button></div>'+
+  '<div class="wo-tools"><button type="button" class="btn sm" data-bw="swap">'+esc(bt("wkSwap"))+'</button><button type="button" class="btn sm" data-open-ex="'+id+'">'+esc(bt("full"))+'</button><button type="button" class="btn sm ghost" data-bw="toggle">'+esc(isDone?bt("wkUnmark"):bt("wkMark"))+'</button></div></div></div>'+
+  '<div class="wo-nav"><button type="button" class="btn" data-bw="prev"'+(i===0?" disabled":"")+'>'+esc(bt("wkPrev"))+'</button><button type="button" class="btn primary" data-bw="next">'+esc(i===n-1?bt("wkFin"):bt("wkNext"))+'</button></div>');
+  bwRestUI();registerAnims($("#bwIn"),true);
+}
+function bwGo(i){var n=bxLen(bxPlan(BW.pid).base);BW.idx=Math.max(0,Math.min(n-1,i));BX.wk=BW;bxSave();bwRender();$("#bwDlg").scrollTop=0;}
+function bwMark(i,v){var key=BW.pid+"-0-"+i;if(v)done[key]=1;else delete done[key];store.set("done",done);var row=document.querySelector('.exrow[data-key="'+key+'"]');if(row){row.classList.toggle("done",!!v);var cb=$("input",row);if(cb)cb.checked=!!v;}var c=document.querySelector('[data-count="'+BW.pid+'-0"]');if(c)c.textContent=dayCount(BW.pid,0);}
+function bwFinish(){var pl=bxPlan(BW.pid),n=bxLen(pl.base),nd=0;for(var j=0;j<n;j++)if(done[BW.pid+"-0-"+j])nd++;BX.log.push({t:Date.now(),plan:pl.name,done:nd,total:n});if(BX.log.length>200)BX.log=BX.log.slice(-200);BW.fin=1;BX.wk=null;bxSave();bwRest(0);bwRender();}
+function bwExit(){clearInterval(bwT);bwLeft=0;var dl=$("#bwDlg");if(dl.open)dl.close();if(BW&&BW.fin)BW=null;renderRoutines();}
+function bxResume(){var b=$("#bxResume");if(!b)return;var w=BX.wk,pl=w&&bxPlan(w.pid);if(!w||!pl||$("#bwDlg").open){b.hidden=true;return;}b.hidden=false;b.innerHTML=esc(bt("resume"))+'<small>'+esc(pl.name)+' · <span dir="ltr">'+(w.idx+1)+'/'+bxLen(pl.base)+'</span></small>';}
+
+/* ---- today (cycle) gentler options ---- */
+function bxGentle(pl,i){var td=ckToday(),cur=bxCurP(pl,i),base=bxItem(pl.base,i).ex,o={noImp:true,noProne:!!(td&&td.noProne)};
+  var c=bxCands(base,cur,"all",o).list.filter(function(m){return lvlNum(m.id)<=lvlNum(cur);});
+  c.sort(function(a,b){return (b.tier===3?99:b.tier)-(a.tier===3?99:a.tier)||b.score-a.score;});return c.length?c[0].id:null;}
+function bxGentleSet(pid,i){var pl=bxPlan(pid),cur=bxCur(pl,i),g=bxGentle(pl,i);if(!g){bxToast(bf(bt("todayNone"),{x:X(cur).name}));return false;}ckSub(pid+"|"+i,g);return true;}
+
+/* ---- events ---- */
+document.addEventListener("click",function(e){
+  var tg=e.target,b;
+  if((b=tg.closest("[data-bxtab]"))){BX.tab=b.getAttribute("data-bxtab");BV=null;bxSave();renderRoutines();return;}
+  if((b=tg.closest("[data-bxsel]"))){bxShow(b.getAttribute("data-bxsel"));var hd=$("#bxHead");if(hd&&hd.getBoundingClientRect().top<0)hd.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});return;}
+  if((b=tg.closest("[data-bkmode]"))){BK.mode=b.getAttribute("data-bkmode");bkRender();return;}
+  if((b=tg.closest("[data-bkpick]"))){BK.sel=b.getAttribute("data-bkpick");bkRender();return;}
+  if((b=tg.closest("[data-bdlv]"))){BD.T=+b.getAttribute("data-bdlv");bdRender();return;}
+  if((b=tg.closest("[data-bwset]"))){var s=+b.getAttribute("data-bwset"),i=BW.idx,got=BW.sets[i]||0,pl=bxPlan(BW.pid),it=bxItem(pl.base,i),ds=bxEffDose(pl,i,bxCur(pl,i)),ns=bwSetsN(ds.dose),n=bxLen(pl.base);
+    BW.sets[i]=s<got?s:s+1;var full=BW.sets[i]>=ns;if(s>=got&&it.rest&&!(full&&i===n-1))bwRest(it.rest);
+    if(full&&!done[BW.pid+"-0-"+i])bwMark(i,true);BX.wk=BW;bxSave();bwRender();return;}
+  if((b=tg.closest("[data-bw]"))){var a=b.getAttribute("data-bw");
+    if(a==="exit"||a==="close"){bwExit();return;}
+    if(a==="prev"){bwGo(BW.idx-1);return;}
+    if(a==="next"){if(BW.idx>=bxLen(bxPlan(BW.pid).base)-1)bwFinish();else bwGo(BW.idx+1);return;}
+    if(a==="toggle"){bwMark(BW.idx,!done[BW.pid+"-0-"+BW.idx]);bwRender();return;}
+    if(a==="swap"){bkOpen(BW.pid,BW.idx);return;}
+    if(a==="rskip"){bwRest(0);return;}
+    if(a==="rplus"){bwEnd+=15000;bwLeft+=15;bwRestUI();return;}
+    if(a==="rpause"){if(bwPaused){bwPaused=false;bwEnd=Date.now()+bwLeft*1000;}else bwPaused=true;bwRestUI();return;}
+    if(a==="review"){BW.fin=0;BW.idx=0;bwRender();return;}
+    return;}
+  if((b=tg.closest("#bxResume"))){if(BX.wk)bwStart(BX.wk.pid);return;}
+  if((b=tg.closest("[data-ck]"))){var ca=b.getAttribute("data-ck");if(ca==="off"){ckSetOn(false);renderRoutines();return;}if(ca==="open"){var cy=$("#cyCheck");if(cy)cy.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});return;}
+    if(ca==="all"){var pl0=bxPlan(BX.sel),cnt=0,td0=ckToday();for(var q=0;q<bxLen(pl0.base);q++){var c0=bxCur(pl0,q);if(((EX[c0].imp||0)>=1||(td0.noProne&&hasF(c0,"prone")))&&bxGentle(pl0,q)){ckSub(pl0.id+"|"+q,bxGentle(pl0,q));cnt++;}}renderRoutines();bxToast(bf(bt("todayApplied"),{n:cnt}));return;}return;}
+  if(!(b=tg.closest("[data-bx]")))return;
+  var act=b.getAttribute("data-bx"),slot=b.closest("[data-slot]"),pid=BX.sel,pl=bxPlan(pid);
+  if(slot){var sp=slot.getAttribute("data-slot").split("|");pid=sp[0];var si=+sp[1];
+    if(act==="next"||act==="prev"){bxPreview(pid,si,act==="next"?1:-1);return;}
+    if(act==="cancel"){BV=null;bxRefreshSlot(pid,si);bxFocusSlot(pid,si);return;}
+    if(act==="use"){var nid=BV.list[BV.pos].id;BV=null;bxSet(pid,si,nid);bxAfter(pid,si);bxFocusSlot(pid,si);return;}
+    if(act==="replace"){bkOpen(pid,si);return;}
+    if(act==="restore"){bxSet(pid,si,bxItem(bxPlan(pid).base,si).ex);bxAfter(pid,si);return;}
+    if(act==="gentle"){if(bxGentleSet(pid,si))bxAfter(pid,si);return;}
+    if(act==="tdback"){ckSub(pid+"|"+si,null);bxAfter(pid,si);return;}
+  }
+  if(act==="start"){bwStart(pid);return;}
+  if(act==="fav"){var fi=BX.fav.indexOf(pid);if(fi>=0)BX.fav.splice(fi,1);else BX.fav.push(pid);bxSave();renderRoutines();bxToast(fi>=0?bt("favRm"):bt("favAdd"));return;}
+  if(act==="saveas"){bnOpen({title:bt("nameTitleSave"),text:bt("nameTextSave"),input:1,value:bf(bt("nameDef"),{t:pl.name}),ok:bt("saveBtn"),cb:function(v){var id=bxCreate(v,pl.base,pl.subs);delete BX.draft[pl.id];BX.sel=id;BX.tab="mine";bxSave();renderRoutines();bxToast(bf(bt("savedT"),{n:v}));}});return;}
+  if(act==="rename"){bnOpen({title:bt("nameTitleRen"),input:1,value:pl.name,ok:bt("renBtn"),cb:function(v){BX.custom[pid].name=v.slice(0,60);bxSave();renderRoutines();}});return;}
+  if(act==="dup"){bnOpen({title:bt("nameTitleDup"),text:bt("nameTextDup"),input:1,value:pl.name+" "+bt("copy"),ok:bt("dupBtn"),cb:function(v){var id=bxCreate(v,pl.base,pl.subs);BX.sel=id;BX.tab="mine";bxSave();renderRoutines();bxToast(bf(bt("created"),{n:v}));}});return;}
+  if(act==="reset"){var old=JSON.parse(JSON.stringify(pl.subs));if(pl.custom)BX.custom[pid].subs={};else delete BX.draft[pid];bxSave();renderRoutines();bxToast(bt("resetT"),function(){if(pl.custom)BX.custom[pid].subs=old;else BX.draft[pid]=old;bxSave();renderRoutines();});return;}
+  if(act==="delete"){bnOpen({title:bf(bt("delTitle"),{n:pl.name}),text:bt("delText"),ok:bt("delBtn"),danger:1,cb:function(){delete BX.custom[pid];BX.fav=BX.fav.filter(function(x){return x!==pid;});if(BX.wk&&BX.wk.pid===pid)BX.wk=null;Object.keys(done).forEach(function(k){if(k.indexOf(pid+"-")===0)delete done[k];});store.set("done",done);BX.sel=pl.base;bxSave();renderRoutines();bxToast(bt("deleted"));}});return;}
+  if(act==="adapt"){var sm=0,n=bxLen(pl.base);for(var z=0;z<n;z++)sm+=lvlNum(bxCurP(pl,z));BD={pid:pid,T:Math.min(4,Math.max(1,Math.round(sm/n)))};bdRender();$("#bdDlg").showModal();return;}
+});
+document.addEventListener("change",function(e){var tg=e.target;
+  if(tg.id==="bkNoImp"){BK.noImp=tg.checked;bkRender();return;}
+  if(tg.id==="bkProf"){BK.prof=tg.checked;bkRender();return;}
+  if(tg.id==="bkLv"){if(tg.value){BK.mode=tg.value;bkRender();}return;}
+});
+document.addEventListener("toggle",function(e){var d=e.target;if(d&&d.getAttribute&&d.getAttribute("data-bxday"))bxOpenDays[d.getAttribute("data-bxday")]=d.open;},true);
+document.addEventListener("keydown",function(e){
+  var slot=e.target.closest&&e.target.closest("[data-slot]");
+  if(slot&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){var sp=slot.getAttribute("data-slot").split("|"),fw=BXRTL()?"ArrowLeft":"ArrowRight",bw=BXRTL()?"ArrowRight":"ArrowLeft";
+    if(e.key===fw||e.key===bw){e.preventDefault();bxPreview(sp[0],+sp[1],e.key===fw?1:-1);return;}
+    if(e.key==="Escape"&&BV){e.preventDefault();BV=null;bxRefreshSlot(sp[0],+sp[1]);bxFocusSlot(sp[0],+sp[1]);return;}}
+  if($("#bwDlg").open&&BW&&!BW.fin&&!document.querySelector("dialog.sheet[open]")&&!$("#bnDlg").open&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){var f2=BXRTL()?"ArrowLeft":"ArrowRight",b2=BXRTL()?"ArrowRight":"ArrowLeft";
+    if(e.key===f2&&BW.idx<bxLen(bxPlan(BW.pid).base)-1)bwGo(BW.idx+1);if(e.key===b2)bwGo(BW.idx-1);}
+});
+/* swipe: horizontal only; vertical scroll stays with the page */
+var bxSW=null,bxSwiped=false;
+document.addEventListener("click",function(e){if(bxSwiped&&e.target.closest&&e.target.closest(".px-swipe,.wo-swipe")){bxSwiped=false;e.preventDefault();e.stopPropagation();}},true);
+function bxStart(z,x,y){bxSW={z:z,x:x,y:y,lock:0,dx:0};}
+function bxMove(x,y,e){if(!bxSW)return;var dx=x-bxSW.x,dy=y-bxSW.y;
+  if(!bxSW.lock){if(Math.abs(dy)>8&&Math.abs(dy)>Math.abs(dx)){bxSW=null;return;}if(Math.abs(dx)>=Math.abs(dy)&&e&&e.cancelable)e.preventDefault();if(Math.abs(dx)>12&&Math.abs(dx)>Math.abs(dy)*1.3)bxSW.lock=1;else return;}
+  else if(e&&e.cancelable)e.preventDefault();
+  bxSW.dx=dx;if(!RM)bxSW.z.style.transform="translateX("+Math.max(-80,Math.min(80,dx*0.45))+"px)";}
+function bxEnd(){if(!bxSW)return;var s=bxSW;bxSW=null;s.z.style.transform="";if(!s.lock||Math.abs(s.dx)<45)return;bxSwiped=true;setTimeout(function(){bxSwiped=false;},400);var dir=(s.dx<0?1:-1)*(BXRTL()?-1:1);
+  if(s.z.classList.contains("wo-swipe")){if(!BW||BW.fin)return;bwGo(BW.idx+dir);return;}
+  var sl=s.z.closest("[data-slot]");if(!sl)return;var sp=sl.getAttribute("data-slot").split("|");bxPreview(sp[0],+sp[1],dir);}
+document.addEventListener("touchstart",function(e){var z=e.target.closest&&e.target.closest(".px-swipe,.wo-swipe");if(!z||e.touches.length!==1)return;bxStart(z,e.touches[0].clientX,e.touches[0].clientY);},{passive:true});
+document.addEventListener("touchmove",function(e){if(bxSW&&e.touches.length===1)bxMove(e.touches[0].clientX,e.touches[0].clientY,e);},{passive:false});
+document.addEventListener("touchend",bxEnd);document.addEventListener("touchcancel",function(){if(bxSW){bxSW.z.style.transform="";bxSW=null;}});
+document.addEventListener("pointerdown",function(e){if(e.pointerType==="touch")return;var z=e.target.closest(".px-swipe,.wo-swipe");if(!z||e.button!==0)return;bxStart(z,e.clientX,e.clientY);},{passive:true});
+document.addEventListener("pointermove",function(e){if(e.pointerType!=="touch")bxMove(e.clientX,e.clientY,null);},{passive:true});
+document.addEventListener("pointerup",function(e){if(e.pointerType!=="touch")bxEnd();});
+
+$("#bxDlgClose").addEventListener("click",bkClose);$("#bkCancel").addEventListener("click",bkClose);
+$("#bxDlg").addEventListener("close",function(){BK=null;});
+$("#bkUse").addEventListener("click",function(){if(!BK||!BK.sel)return;var pid=BK.pid,i=BK.i,id=BK.sel;bkClose();var td=ckToday();if(td&&td.subs&&td.subs[pid+"|"+i])ckSub(pid+"|"+i,null);bxSet(pid,i,id);bxAfter(pid,i);});
+$("#bkRestore").addEventListener("click",function(){if(!BK)return;var pid=BK.pid,i=BK.i;bkClose();bxSet(pid,i,bxItem(bxPlan(pid).base,i).ex);bxAfter(pid,i);});
+$("#bnOk").addEventListener("click",function(){bnDone(true);});$("#bnCancel").addEventListener("click",function(){bnDone(false);});
+$("#bnInput").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();bnDone(true);}});
+$("#bdClose").addEventListener("click",function(){$("#bdDlg").close();});
+$("#bdApply").addEventListener("click",function(){var n=bdApply(BD.pid);$("#bdDlg").close();renderRoutines();bxToast(bf(bt("adDone"),{n:n,l:u("lv")[BD.T-1]}));});
+$("#bdSave").addEventListener("click",function(){var src=bxPlan(BD.pid),T=BD.T;bnOpen({title:bt("nameTitleSave"),text:bt("nameTextSave"),input:1,value:bf(bt("adName"),{t:bxBaseTitle(src.base),l:u("lv")[T-1]}),ok:bt("saveBtn"),cb:function(v){var id=bxCreate(v,src.base,src.subs),keep=BD.res;BD.pid=id;BD.res=keep;bdApply(id);$("#bdDlg").close();BX.sel=id;BX.tab="mine";bxSave();renderRoutines();bxToast(bf(bt("savedT"),{n:v}));}});});
+$("#bwDlg").addEventListener("cancel",function(e){e.preventDefault();bwExit();});
+
+/* ----- language hook (final override: adds cycle + routines experience) ----- */
+function applyLang(){
+  root.lang=LANG;root.dir=LANG==="ar"?"rtl":"ltr";document.title=TITLES[LANG];
+  $("#langBtn").textContent=t("lang");$("#langBtn").setAttribute("aria-label",t("langLabel"));
+  $("#themeBtn").setAttribute("aria-label",t("theme"));$("#printBtn").setAttribute("aria-label",t("print"));
+  $("#dlgClose").setAttribute("aria-label",t("close"));$("#tClose").setAttribute("aria-label",t("close"));
+  ["#bxDlgClose","#bdClose"].forEach(function(s){$(s).setAttribute("aria-label",t("close"));});
+  $("#pfSearch").placeholder=LANG==="ar"?"ابحثي عن تمرين…":"Search exercises…";
+  BV=null;THUMBS={};renderHer();renderPfLib();renderPfRoutines();pfShow();renderPfToday();tRender();
+  renderFind();renderLibUI();renderLib2();renderRoutines();renderCycle();renderGuide();refreshLevels();
+  if(BW&&$("#bwDlg").open)bwRender();if(BK&&$("#bxDlg").open)bkRender();if(BD&&$("#bdDlg").open)bdRender();
+  if(dlg.open&&dlgId)openEx(dlgId);
+}
+renderRefList();renderRefs(document);pfSetLift(0);applyLang();
+window.__bloom=Object.assign(window.__bloom||{},{BX:function(){return BX;},CK:function(){return CK;},bxPlan:bxPlan,bxCur:bxCur,bxCands:bxCands,bxItem:bxItem,BROLE:BROLE,BREL:BREL,ROUT:ROUT,PFR:PFR,HER:HER,EX:EX,reasonsFor:reasonsFor,lvlNum:lvlNum,ckToday:ckToday,bdCompute:bdCompute,bxEffDose:bxEffDose,cpEstimate:cpEstimate,CYC:CYC,REFS:REFS,done:function(){return done;}});
 
 })();
 </script>
